@@ -178,18 +178,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Contract\IUserService.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\IdentityExtensions.cs" />
-    <Compile Include="Models\LoginView.cs" />
-    <Compile Include="Models\RegisterView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\NinjectDependencyResolver.cs" />
-    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -198,6 +193,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,8 +203,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CP.Authorization.Contract\CP.Authorization.Contract.csproj">
+      <Project>{800FDFC7-7560-49AE-852B-CEB7CBE95AB2}</Project>
+      <Name>CP.Authorization.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.Authorization\CP.Authorization.csproj">
+      <Project>{0d2083e0-7e08-408c-9e59-2601805c88d6}</Project>
+      <Name>CP.Authorization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
       <Project>{2e345f9f-5f60-4f6a-b3fa-872f1e05784c}</Project>
       <Name>CP.Platform</Name>
@@ -224,6 +229,10 @@
     <ProjectReference Include="..\CP.Shared\CP.Shared.csproj">
       <Project>{f2f1978a-406e-43c4-ba79-f1f0be68b424}</Project>
       <Name>CP.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TESTS\CP.Platform.Tests\CP.Platform.Tests.csproj">
+      <Project>{7651085a-a3ae-4f84-8e6c-e4fccb70809a}</Project>
+      <Name>CP.Platform.Tests</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

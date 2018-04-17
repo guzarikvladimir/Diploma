@@ -1,5 +1,5 @@
 using System.Web.Mvc;
-using WebApi.Services;
+using CP.Platform.DependencyResolvers.Services;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(WebApi.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(WebApi.App_Start.NinjectWebCommon), "Stop")]

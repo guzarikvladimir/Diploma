@@ -1,14 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Models
+namespace CP.Authorization.Contract.Models
 {
     public class RegisterView
     {
         [Required]
         public string Name { get; set; }
-
-        [Required]
-        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

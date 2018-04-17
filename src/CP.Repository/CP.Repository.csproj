@@ -50,6 +50,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contract\IEntityWithId.cs" />
+    <Compile Include="Migrations\201804161911234_InitialCreate.cs" />
+    <Compile Include="Migrations\201804161911234_InitialCreate.Designer.cs">
+      <DependentUpon>201804161911234_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804161952512_AddEmployeeRoleTable.cs" />
+    <Compile Include="Migrations\201804161952512_AddEmployeeRoleTable.Designer.cs">
+      <DependentUpon>201804161952512_AddEmployeeRoleTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171157475_RemoveEmailFromUser.cs" />
+    <Compile Include="Migrations\201804171157475_RemoveEmailFromUser.Designer.cs">
+      <DependentUpon>201804171157475_RemoveEmailFromUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeRole.cs" />
     <Compile Include="Models\Role.cs" />
@@ -61,6 +74,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804161911234_InitialCreate.resx">
+      <DependentUpon>201804161911234_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804161952512_AddEmployeeRoleTable.resx">
+      <DependentUpon>201804161952512_AddEmployeeRoleTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171157475_RemoveEmailFromUser.resx">
+      <DependentUpon>201804171157475_RemoveEmailFromUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,11 +5,8 @@ using System.Reflection;
 using System.Web.Mvc;
 using AutoMapper;
 using Ninject;
-using Ninject.Web.Common;
-using WebApi.Contract;
-using Module = CP.Platform.DependencyResolvers.Services.Module;
 
-namespace WebApi.Services
+namespace CP.Platform.DependencyResolvers.Services
 {
     public class NinjectDependencyResolver : IDependencyResolver
     {
@@ -18,9 +15,7 @@ namespace WebApi.Services
         public NinjectDependencyResolver(IKernel kernel)
         {
             this.kernel = kernel;
-            RegisterWebApiServices();
             RegisterFromModules();
-            RegisterControlelrs();
         }
 
         public object GetService(Type service)
@@ -41,11 +36,6 @@ namespace WebApi.Services
         public IEnumerable<T> GetServices<T>()
         {
             return kernel.GetAll<T>();
-        }
-
-        private void RegisterWebApiServices()
-        {
-            kernel.Bind<IUserService>().To<UserService>().InRequestScope();
         }
 
         private void RegisterFromModules()
@@ -70,20 +60,6 @@ namespace WebApi.Services
                     }
                 }
             });
-        }
-
-        private void RegisterControlelrs()
-        {
-            IEnumerable<Assembly> assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (Assembly assembly in assemblies)
-            {
-                IEnumerable<Type> controllers = assembly.GetTypes()
-                    .Where(t => t.Name.EndsWith("Controller"));
-                foreach (Type type in controllers)
-                {
-                    kernel.Bind(type).ToSelf().InRequestScope();
-                }
-            }
         }
     }
 }

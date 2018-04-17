@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F2F1978A-406E-43C4-BA79-F1F0BE68B424}</ProjectGuid>
+    <ProjectGuid>{0D2083E0-7E08-408C-9E59-2601805C88D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CP.Shared</RootNamespace>
-    <AssemblyName>CP.Shared</AssemblyName>
+    <RootNamespace>CP.Authorization</RootNamespace>
+    <AssemblyName>CP.Authorization</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,14 +34,6 @@
       <HintPath>..\..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -55,9 +47,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,39 +62,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Services\SimpleModifyingService.cs" />
-    <Compile Include="Core\Services\SimpleRetrievingService.cs" />
-    <Compile Include="EmployeeRole\EmployeeRoleModule.cs" />
-    <Compile Include="EmployeeRole\Mappers\EmployeeRoleMapper.cs" />
-    <Compile Include="EmployeeRole\Services\EmployeeRoleRetrievingService.cs" />
-    <Compile Include="Employee\EmployeeModule.cs" />
-    <Compile Include="Employee\Mappers\EmployeeMapper.cs" />
-    <Compile Include="Employee\Services\EmployeeRetrievingService.cs" />
+    <Compile Include="AuthorizationModule.cs" />
+    <Compile Include="Mappers\AuthorizationMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role\Mappers\RoleMapper.cs" />
-    <Compile Include="Role\RoleModule.cs" />
-    <Compile Include="Role\Services\RoleRetrievingService.cs" />
-    <Compile Include="User\Mappers\UserMapper.cs" />
-    <Compile Include="User\Services\UserModifyingService.cs" />
-    <Compile Include="User\Services\UserRetrievingService.cs" />
-    <Compile Include="User\UserModule.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CP.Authorization.Contract\CP.Authorization.Contract.csproj">
+      <Project>{800fdfc7-7560-49ae-852b-ceb7cbe95ab2}</Project>
+      <Name>CP.Authorization.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
-      <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
+      <Project>{2e345f9f-5f60-4f6a-b3fa-872f1e05784c}</Project>
       <Name>CP.Platform</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CP.Repository\CP.Repository.csproj">
-      <Project>{a565953b-77e4-4cdf-a8f5-d395b16fe73a}</Project>
-      <Name>CP.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CP.Shared.Contract\CP.Shared.Contract.csproj">
-      <Project>{C862C837-F423-4E0C-B447-6D8601518582}</Project>
+      <Project>{c862c837-f423-4e0c-b447-6d8601518582}</Project>
       <Name>CP.Shared.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

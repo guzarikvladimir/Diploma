@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C862C837-F423-4E0C-B447-6D8601518582}</ProjectGuid>
+    <ProjectGuid>{800FDFC7-7560-49AE-852B-CEB7CBE95AB2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CP.Shared.Contract</RootNamespace>
-    <AssemblyName>CP.Shared.Contract</AssemblyName>
+    <RootNamespace>CP.Authorization.Contract</RootNamespace>
+    <AssemblyName>CP.Authorization.Contract</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,27 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Models\IModelWithId.cs" />
-    <Compile Include="Core\Services\ISimpleModifyingService.cs" />
-    <Compile Include="Core\Services\ISimpleRetrievingService.cs" />
-    <Compile Include="EmployeeRole\Models\EmployeeRoleView.cs" />
-    <Compile Include="EmployeeRole\Services\IEmployeeRoleRetrievingService.cs" />
-    <Compile Include="Employee\Models\EmployeeView.cs" />
-    <Compile Include="Employee\Services\IEmployeeRetrievingService.cs" />
+    <Compile Include="Models\LoginView.cs" />
+    <Compile Include="Models\RegisterView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role\Models\RoleView.cs" />
-    <Compile Include="Role\Services\IRoleRetrievingService.cs" />
-    <Compile Include="User\Models\UserModel.cs" />
-    <Compile Include="User\Models\UserView.cs" />
-    <Compile Include="User\Services\IUserModifyingService.cs" />
-    <Compile Include="User\Services\IUserRetrievingService.cs" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\CP.Repository\CP.Repository.csproj">
-      <Project>{A565953B-77E4-4CDF-A8F5-D395B16FE73A}</Project>
-      <Name>CP.Repository</Name>
-    </ProjectReference>
+    <Compile Include="Services\IUserService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

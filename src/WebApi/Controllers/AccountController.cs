@@ -2,10 +2,11 @@
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using CP.Authorization.Contract.Models;
+using CP.Authorization.Contract.Services;
 using Microsoft.Owin.Security;
 using Ninject;
-using WebApi.Contract;
-using WebApi.Models;
+using LoginView = CP.Authorization.Contract.Models.LoginView;
 
 namespace WebApi.Controllers
 {
@@ -38,6 +39,36 @@ namespace WebApi.Controllers
                     }, claim);
 
                     return RedirectToAction("Index", "Home");
+                }
+                catch (Exception e)
+                {
+                    ModelState.AddModelError("", e.Message);
+                }
+            }
+
+            return View(model);
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(RegisterView model)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    UserService.Register(model);
+
+                    return Login(new LoginView()
+                    {
+                        Name = model.Name,
+                        Password = model.Password
+                    });
                 }
                 catch (Exception e)
                 {

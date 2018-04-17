@@ -1,13 +1,13 @@
 ﻿using AutoFixture;
+using CP.Authorization.Contract.Models;
+using CP.Authorization.Contract.Services;
+using CP.Authorization.Services;
 using CP.Platform.Tests.Core.Services;
 using Ninject.Web.Common;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
-using WebApi.Contract;
-using WebApi.Models;
-using WebApi.Services;
 
-namespace WebApi.Tests.User.Services
+namespace CP.Authorization.Tests.Services
 {
     [Binding]
     public class RegisterSteps : StepsBase

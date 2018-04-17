@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Models
+namespace CP.Authorization.Contract.Models
 {
     public class LoginView
     {
         [Required]
-        public string Email { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

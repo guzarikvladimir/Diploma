@@ -27,13 +27,17 @@ namespace CP.Repository.Services
             var user = new User
             {
                 Id = userId,
-                Email = "user",
                 Password = "123456"
             };
-
+            var employee2 = new Employee()
+            {
+                Id = Guid.NewGuid(),
+                Name = "Admin"
+            };
 
             db.Roles.Add(role);
             db.Employees.Add(employee);
+            db.Employees.Add(employee2);
             db.Users.Add(user);
             db.EmployeeRoles.Add(employeeRole);
 

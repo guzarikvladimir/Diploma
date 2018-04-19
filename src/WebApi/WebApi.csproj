@@ -178,7 +178,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,10 +228,6 @@
     <ProjectReference Include="..\CP.Shared\CP.Shared.csproj">
       <Project>{f2f1978a-406e-43c4-ba79-f1f0be68b424}</Project>
       <Name>CP.Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TESTS\CP.Platform.Tests\CP.Platform.Tests.csproj">
-      <Project>{7651085a-a3ae-4f84-8e6c-e4fccb70809a}</Project>
-      <Name>CP.Platform.Tests</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

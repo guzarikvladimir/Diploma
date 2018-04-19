@@ -13,6 +13,9 @@ namespace CP.Platform.Mappers
             kernel.Bind(typeof(IEntityMapper<,>))
                 .To(typeof(SimpleEntityMapper<,>))
                 .InRequestScope();
+            kernel.Bind(typeof(IEntityModifyingMapper<,>))
+                .To(typeof(SimpleEntityModifyingMapper<,>))
+                .InRequestScope();
         }
     }
 }

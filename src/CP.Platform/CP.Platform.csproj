@@ -109,6 +109,7 @@
     <Compile Include="Mappers\Contract\IEntityModifyingMapper.cs" />
     <Compile Include="Mappers\MappersModule.cs" />
     <Compile Include="Mappers\Services\SimpleEntityMapper.cs" />
+    <Compile Include="Mappers\Services\SimpleEntityModifyingMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

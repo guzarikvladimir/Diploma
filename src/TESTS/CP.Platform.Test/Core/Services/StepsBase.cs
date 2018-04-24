@@ -1,6 +1,7 @@
 ﻿using AutoFixture;
 using CP.Platform.Test.Core.Models;
 using Ninject;
+using Ninject.MockingKernel.Moq;
 using TechTalk.SpecFlow;
 
 namespace CP.Platform.Test.Core.Services
@@ -17,8 +18,7 @@ namespace CP.Platform.Test.Core.Services
             if (data.Kernel == null)
             {
                 var ninjectSettings = new NinjectSettings { AllowNullInjection = true, InjectNonPublic = true };
-                //data.Kernel = new MoqMockingKernel(ninjectSettings);
-                data.Kernel = new StandardKernel(ninjectSettings);
+                data.Kernel = new MoqMockingKernel(ninjectSettings);
 
                 data.Fixture = new Fixture();
                 data.Kernel.Bind<IFixture>().ToConstant(data.Fixture).InSingletonScope();

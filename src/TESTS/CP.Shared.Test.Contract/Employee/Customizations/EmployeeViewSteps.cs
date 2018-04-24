@@ -1,4 +1,5 @@
-﻿using AutoFixture;
+﻿using System.Collections.Generic;
+using AutoFixture;
 using CP.Platform.Test.Core.Models;
 using CP.Platform.Test.Core.Services;
 using CP.Shared.Contract.Employee.Models;
@@ -10,8 +11,11 @@ namespace CP.Shared.Test.Contract.Employee.Customizations
     [Binding]
     public class EmployeeViewSteps : EntityStepsBase<EmployeeView>
     {
+        List<EmployeeView> employees = new List<EmployeeView>();
+
         public EmployeeViewSteps(BaseTestData data) : base(data)
         {
+            Fixture.Register(() => employees);
         }
 
         [Given(@"Employees are configured to have properties")]
@@ -21,6 +25,7 @@ namespace CP.Shared.Test.Contract.Employee.Customizations
             {
                 EmployeeView employee = Fixture.Create<EmployeeView>();
                 employee.Name = model.Name;
+                employees.Add(employee);
             }
         }
     }

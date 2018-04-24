@@ -6,9 +6,11 @@ namespace WebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
+            RegisterRoutes(config);
+        }
 
-            // Web API routes
+        private static void RegisterRoutes(HttpConfiguration config)
+        {
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

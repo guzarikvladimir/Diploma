@@ -53,7 +53,7 @@ namespace CP.Authorization.Services
 
             if (user.Password != model.Password)
             {
-                throw new ActivationException("Invalid password.");
+                throw new ArgumentException("Invalid password.");
             }
             
             ClaimsIdentity claim = new ClaimsIdentity(WebConfigurationManager.AppSettings["AuthenticationType"], 

@@ -62,10 +62,40 @@
     <Compile Include="Migrations\201804171157475_RemoveEmailFromUser.Designer.cs">
       <DependentUpon>201804171157475_RemoveEmailFromUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804241957432_AddAllNecessaryEntities.cs" />
+    <Compile Include="Migrations\201804241957432_AddAllNecessaryEntities.Designer.cs">
+      <DependentUpon>201804241957432_AddAllNecessaryEntities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804242005331_UpdateEmployeeProperties.cs" />
+    <Compile Include="Migrations\201804242005331_UpdateEmployeeProperties.Designer.cs">
+      <DependentUpon>201804242005331_UpdateEmployeeProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804261820593_ReplaceTableWithEnums.cs" />
+    <Compile Include="Migrations\201804261820593_ReplaceTableWithEnums.Designer.cs">
+      <DependentUpon>201804261820593_ReplaceTableWithEnums.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804261906475_AddCurrencyRateTable.cs" />
+    <Compile Include="Migrations\201804261906475_AddCurrencyRateTable.Designer.cs">
+      <DependentUpon>201804261906475_AddCurrencyRateTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BonusPromotion.cs" />
+    <Compile Include="Models\CompensationPromotion.cs" />
+    <Compile Include="Models\CurrencyRate.cs" />
+    <Compile Include="Models\CurrencyRateType.cs" />
+    <Compile Include="Models\SalaryPromotion.cs" />
+    <Compile Include="Models\CompensationPromotionType.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Currency.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeRole.cs" />
+    <Compile Include="Models\EmployeeStatus.cs" />
+    <Compile Include="Models\JobFunction.cs" />
+    <Compile Include="Models\JobFunctionPosition.cs" />
+    <Compile Include="Models\JobFunctionTitle.cs" />
+    <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SalaryType.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ApplicationContext.cs" />
@@ -84,6 +114,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804171157475_RemoveEmailFromUser.resx">
       <DependentUpon>201804171157475_RemoveEmailFromUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804241957432_AddAllNecessaryEntities.resx">
+      <DependentUpon>201804241957432_AddAllNecessaryEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804242005331_UpdateEmployeeProperties.resx">
+      <DependentUpon>201804242005331_UpdateEmployeeProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804261820593_ReplaceTableWithEnums.resx">
+      <DependentUpon>201804261820593_ReplaceTableWithEnums.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804261906475_AddCurrencyRateTable.resx">
+      <DependentUpon>201804261906475_AddCurrencyRateTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

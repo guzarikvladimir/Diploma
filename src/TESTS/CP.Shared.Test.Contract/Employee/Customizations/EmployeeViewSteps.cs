@@ -11,11 +11,8 @@ namespace CP.Shared.Test.Contract.Employee.Customizations
     [Binding]
     public class EmployeeViewSteps : EntityStepsBase<EmployeeView>
     {
-        List<EmployeeView> employees = new List<EmployeeView>();
-
         public EmployeeViewSteps(BaseTestData data) : base(data)
         {
-            Fixture.Register(() => employees);
         }
 
         [Given(@"Employees are configured to have properties")]
@@ -25,7 +22,7 @@ namespace CP.Shared.Test.Contract.Employee.Customizations
             {
                 EmployeeView employee = Fixture.Create<EmployeeView>();
                 employee.Name = model.Name;
-                employees.Add(employee);
+                list.Add(employee);
             }
         }
     }

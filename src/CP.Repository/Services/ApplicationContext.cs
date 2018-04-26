@@ -16,5 +16,27 @@ namespace CP.Repository.Services
         public DbSet<Employee> Employees { get; set; }
 
         public DbSet<EmployeeRole> EmployeeRoles { get; set; }
+
+        public DbSet<EmployeeStatus> EmployeeStatuses { get; set; }
+
+        public DbSet<Country> Countries { get; set; }
+
+        public DbSet<Location> Locations { get; set; }
+
+        public DbSet<JobFunctionPosition> JobFunctionPositions { get; set; }
+
+        public DbSet<JobFunctionTitle> JobFunctionTitles { get; set; }
+
+        public DbSet<JobFunction> JobFunctions { get; set; }
+
+        public DbSet<Currency> Currencies { get; set; }
+
+        public DbSet<SalaryPromotion> SalaryPromotions { get; set; }
+
+        public DbSet<BonusPromotion> BonusPromotions { get; set; }
+
+        public DbSet<CompensationPromotion> CompensationPromotions { get; set; }
+
+        public DbSet<CurrencyRate> CurrencyRates { get; set; }
     }
 }

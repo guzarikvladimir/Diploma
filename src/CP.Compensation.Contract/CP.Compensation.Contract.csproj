@@ -40,8 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\CompensationView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ICompensationSerivce.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CP.Shared.Contract\CP.Shared.Contract.csproj">
+      <Project>{C862C837-F423-4E0C-B447-6D8601518582}</Project>
+      <Name>CP.Shared.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

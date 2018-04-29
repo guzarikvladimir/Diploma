@@ -166,7 +166,7 @@
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\compensation.js" />
+    <Content Include="Scripts\Compensation\compensation.js" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

@@ -78,6 +78,10 @@
     <Compile Include="Migrations\201804261906475_AddCurrencyRateTable.Designer.cs">
       <DependentUpon>201804261906475_AddCurrencyRateTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804291254391_AddApplyDateAndCreatedBy.cs" />
+    <Compile Include="Migrations\201804291254391_AddApplyDateAndCreatedBy.Designer.cs">
+      <DependentUpon>201804291254391_AddApplyDateAndCreatedBy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BonusPromotion.cs" />
     <Compile Include="Models\CompensationPromotion.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804261906475_AddCurrencyRateTable.resx">
       <DependentUpon>201804261906475_AddCurrencyRateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804291254391_AddApplyDateAndCreatedBy.resx">
+      <DependentUpon>201804291254391_AddApplyDateAndCreatedBy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -31,6 +31,7 @@ namespace CP.Shared.CompensationPromotion.Mappers
             CompensationPromotionView view = Mapper.Map<CompensationPromotionView>(model);
             view.Employee = EmployeeRetrievingService.GetById(model.EmployeeId);
             view.Currency = CurrencyRetrievingService.GetById(model.CurrencyId);
+            view.CreatedBy = EmployeeRetrievingService.GetById(model.CreatedById);
 
             return view;
         }

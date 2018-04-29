@@ -38,5 +38,13 @@ namespace CP.Repository.Services
         public DbSet<CompensationPromotion> CompensationPromotions { get; set; }
 
         public DbSet<CurrencyRate> CurrencyRates { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CompensationPromotion>()
+                .HasRequired(cp => cp.CreatedByEmployee)
+                .WithMany(e => e.CompensationPromotions)
+                .HasForeignKey(cp => cp.CreatedById);
+        }
     }
 }

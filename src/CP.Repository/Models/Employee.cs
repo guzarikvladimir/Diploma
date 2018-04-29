@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using CP.Repository.Contract;
 
@@ -10,13 +11,16 @@ namespace CP.Repository.Models
 
         public string Name { get; set; }
 
-        [ForeignKey("EmployeeStatus")]
         public Guid StatusId { get; set; }
-
-        public EmployeeStatus EmployeeStatus { get; set; }
 
         public Guid LocationId { get; set; }
 
         public Guid JobFunctionId { get; set; }
+
+
+        [ForeignKey("StatusId")]
+        public virtual EmployeeStatus EmployeeStatus { get; set; }
+
+        public virtual ICollection<CompensationPromotion> CompensationPromotions { get; set; }
     }
 }

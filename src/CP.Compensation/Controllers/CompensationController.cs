@@ -5,7 +5,7 @@ namespace CP.Compensation.Controllers
     [Authorize]
     public class CompensationController : Controller
     {
-        public ActionResult Get()
+        public ActionResult Index()
         {
             return View();
         }

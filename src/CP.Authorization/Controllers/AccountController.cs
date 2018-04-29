@@ -38,7 +38,7 @@ namespace CP.Authorization.Controllers
                         IsPersistent = true
                     }, claim);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Compensation");
                 }
                 catch (Exception e)
                 {
@@ -83,7 +83,7 @@ namespace CP.Authorization.Controllers
         {
             AuthenticationManager.SignOut();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login");
         }
     }
 }

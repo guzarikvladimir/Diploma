@@ -15,6 +15,7 @@ namespace CP.Shared.Role
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IRoleRetrievingService>().To<RoleRetrievingService>().InRequestScope();
+
             kernel.Bind<IEntityMapper<Repository.Models.Role, RoleView>>()
                 .To<RoleMapper>()
                 .InRequestScope();

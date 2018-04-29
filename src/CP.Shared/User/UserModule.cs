@@ -17,6 +17,7 @@ namespace CP.Shared.User
         {
             kernel.Bind<IUserRetrievingService>().To<UserRetrievingService>().InRequestScope();
             kernel.Bind<IUserModifyingService>().To<UserModifyingService>().InRequestScope();
+
             kernel.Bind<IEntityMapper<UserEntity, UserView>>().To<UserMapper>().InRequestScope();
             kernel.Bind<IEntityModifyingMapper<UserModel, UserEntity>>().To<UserMapper>().InRequestScope();
         }

@@ -15,6 +15,7 @@ namespace CP.Shared.Employee
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IEmployeeRetrievingService>().To<EmployeeRetrievingService>().InRequestScope();
+
             kernel.Bind<IEntityMapper<Repository.Models.Employee, EmployeeView>>()
                 .To<EmployeeMapper>()
                 .InRequestScope();

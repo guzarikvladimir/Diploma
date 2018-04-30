@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var ah = (function() {
+var co = (function() {
     var model = {
         compensations: ko.observableArray()
     }
@@ -11,22 +11,8 @@ var ah = (function() {
     });
 
     function getAll() {
-        sendAjax('GET')
-            .then(addAll, (error) => alert(error.message));
-    }
-
-    function sendAjax(httpMethod, url, data, options) {
-        return new Promise(function (resolve, reject) {
-            $.ajax({
-                url: "/api/compensations" + (url ? "/" + url : ""),
-                type: httpMethod,
-                data: data,
-                contentType: options ? options.contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                processData: options ? options.processData : true,
-                success: resolve,
-                error: reject
-            });
-        });
+        request.sendAjax('GET', "/api/compensations")
+            .then(addAll, (error) => alert.show(error));
     }
 
     function addAll(data) {

@@ -1,0 +1,35 @@
+﻿.tn-box {
+    width: 360px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-shadow:
+              0 1px 1px rgba(0,0,0,0.1),
+              inset 0 1px 0 rgba(255,255,255,0.6);
+    opacity: 0;
+    display: none;
+}
+ 
+.tn-box-color-error{
+    background: #ff6347;
+    border: 1px solid #ff0000;
+}
+
+.tn-box.tn-box-active {
+    display: block;
+    animation: fadeOut 5s linear forwards;
+}
+
+@keyframes fadeOut {
+    0%  { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; transform: translateY(0px);}
+    99% { opacity: 0; transform: translateY(-30px);}
+    100% { opacity: 0; }
+}
+
+.tn-box.tn-box-hoverpause:hover {
+    animation-play-state: paused;
+}

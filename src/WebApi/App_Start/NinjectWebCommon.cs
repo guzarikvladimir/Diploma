@@ -1,26 +1,21 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
-using AutoMapper;
 using CP.Platform.DependencyResolvers.Services;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
 using Ninject.Web.Common.WebHost;
 using WebApi;
-using Module = CP.Platform.DependencyResolvers.Services.Module;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
-[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
+[assembly: WebActivator.ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
 
 namespace WebApi
 {
     public static class NinjectWebCommon
     {
-        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
+        public static readonly Bootstrapper Bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
@@ -29,7 +24,7 @@ namespace WebApi
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
-            bootstrapper.Initialize(CreateKernel);
+            Bootstrapper.Initialize(CreateKernel);
         }
 
         /// <summary>
@@ -37,7 +32,7 @@ namespace WebApi
         /// </summary>
         public static void Stop()
         {
-            bootstrapper.ShutDown();
+            Bootstrapper.ShutDown();
         }
 
         /// <summary>
@@ -62,27 +57,6 @@ namespace WebApi
         private static void RegisterServices(IKernel kernel)
         {
             DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
-
-            IEnumerable<Assembly> assemblies = AppDomain.CurrentDomain.GetAssemblies()
-                .Where(a => a.FullName.StartsWith("CP"));
-            Mapper.Initialize(cfg =>
-            {
-                cfg.AllowNullDestinationValues = true;
-                foreach (Assembly assembly in assemblies)
-                {
-                    IEnumerable<Type> modules = assembly.GetTypes()
-                        .Where(t => !t.IsAbstract && t.IsSubclassOf(typeof(Module)));
-                    foreach (Type type in modules)
-                    {
-                        Module module = Activator.CreateInstance(type) as Module;
-                        if (module != null)
-                        {
-                            module.RegisterServices(kernel);
-                            module.RegisterMappers(cfg);
-                        }
-                    }
-                }
-            });
         }
     }
 }

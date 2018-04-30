@@ -15,7 +15,7 @@ namespace CP.Shared.Test.Contract.EmployeeRole.Mocks.EmployeeRoleRetrieving
     [Binding]
     public class GetByEmployeeSteps : ConfigurationStepsBase<Func<Guid, List<EmployeeRoleView>>>
     {
-        public const string Default = "IEmployeeRoleRetrievingService.GetByEmployee is configured";
+        public const string Default = "IEmployeeRoleRetrievingService.Get is configured";
 
         public GetByEmployeeSteps(BaseTestData data) : base(data)
         {

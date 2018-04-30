@@ -1,9 +1,10 @@
 ﻿using System;
+using CP.Shared.Contract.Core.Models;
 using CP.Shared.Contract.Country.Models;
 
 namespace CP.Shared.Contract.Location.Models
 {
-    public class LocationView
+    public class LocationView : IViewWithId<Guid>
     {
         public Guid Id { get; set; }
 

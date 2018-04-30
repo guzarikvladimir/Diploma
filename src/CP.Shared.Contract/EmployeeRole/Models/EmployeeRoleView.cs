@@ -1,10 +1,11 @@
 ﻿using System;
+using CP.Shared.Contract.Core.Models;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Role.Models;
 
 namespace CP.Shared.Contract.EmployeeRole.Models
 {
-    public class EmployeeRoleView
+    public class EmployeeRoleView : IViewWithId<Guid>
     {
         public Guid Id { get; set; }
 

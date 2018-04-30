@@ -7,6 +7,7 @@ using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
 using Ninject;
 using Ninject.Web.Common;
+using CompensationPromotionEntity = CP.Repository.Models.CompensationPromotion;
 
 namespace CP.Shared.CompensationPromotion
 {
@@ -18,7 +19,7 @@ namespace CP.Shared.CompensationPromotion
                 .To<CompensationPromotionRetrievingService>()
                 .InRequestScope();
 
-            kernel.Bind<IEntityMapper<Repository.Models.CompensationPromotion, CompensationPromotionView>>()
+            kernel.Bind<IEntityMapper<CompensationPromotionEntity, CompensationPromotionView>>()
                 .To<CompensationPromotionMapper>()
                 .InRequestScope();
         }

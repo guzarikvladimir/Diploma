@@ -5,10 +5,11 @@ using CP.Shared.Contract.EmployeeStatus.Services;
 using CP.Shared.Contract.JobFunction.Services;
 using CP.Shared.Contract.Location.Services;
 using Ninject;
+using EmployeeEntity = CP.Repository.Models.Employee;
 
 namespace CP.Shared.Employee.Mappers
 {
-    public class EmployeeMapper : IEntityMapper<Repository.Models.Employee, EmployeeView>
+    public class EmployeeMapper : IEntityMapper<EmployeeEntity, EmployeeView>
     {
         #region Injects
 
@@ -25,10 +26,13 @@ namespace CP.Shared.Employee.Mappers
 
         public static void Register(IMapperConfigurationExpression config)
         {
-            config.CreateMap<Repository.Models.Employee, EmployeeView>();
+            config.CreateMap<EmployeeEntity, EmployeeView>()
+                .ForMember(dst => dst.EmployeeStatus, cfg => cfg.Ignore())
+                .ForMember(dst => dst.Location, cfg => cfg.Ignore())
+                .ForMember(dst => dst.JobFunctionView, cfg => cfg.Ignore());
         }
 
-        public EmployeeView Map(Repository.Models.Employee model)
+        public EmployeeView Map(EmployeeEntity model)
         {
             EmployeeView view =  Mapper.Map<EmployeeView>(model);
             view.EmployeeStatus = EmployeeStatusRetrievingService.GetById(model.StatusId);

@@ -5,15 +5,16 @@ using CP.Platform.Db.Contract;
 using CP.Platform.Mappers.Contract;
 using CP.Repository.Contract;
 using CP.Repository.Services;
+using CP.Shared.Contract.Core.Models;
 using CP.Shared.Contract.Core.Services;
 using Ninject;
 
 namespace CP.Shared.Core.Services
 {
-    public class SimpleRetrievingService<TEntity, TView> : 
+    public class SimpleRetrievingService<TEntity, TView> :
         ISimpleRetrievingService<TView>
         where TEntity : class, IEntityWithId<Guid>
-        where TView : class
+        where TView : class, IViewWithId<Guid>
     {
         #region Injects
 
@@ -25,19 +26,33 @@ namespace CP.Shared.Core.Services
 
         #endregion
 
-        public IEnumerable<TView> Get()
+        private static List<TView> cache;
+
+        public virtual List<TView> Get()
         {
+            if (cache != null)
+            {
+                return cache;
+            }
+
             List<TEntity> models;
             using (var scope = new ApplicationContext())
             {
                 models = scope.Set<TEntity>().ToList();
             }
+            
+            cache = new List<TView>(models.Select(e => Mapper.Map(e)));
 
-            return models.Select(e => Mapper.Map(e));
+            return cache;
         }
 
-        public TView GetById(Guid id)
+        public virtual TView GetById(Guid id)
         {
+            if (cache != null)
+            {
+                return cache.FirstOrDefault(view => view.Id == id);
+            }
+
             TEntity model;
             using (var scope = DbFactory.Create())
             {

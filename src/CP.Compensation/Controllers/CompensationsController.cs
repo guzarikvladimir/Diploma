@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using CP.Compensation.Contract.Models;
 using CP.Compensation.Contract.Services;
@@ -14,6 +15,11 @@ namespace CP.Compensation.Controllers
         public IEnumerable<CompensationView> Get()
         {
             return CompensationSerivce.Get();
+        }
+
+        public CompensationView Get(Guid employeeId)
+        {
+            return CompensationSerivce.Get(employeeId);
         }
     }
 }

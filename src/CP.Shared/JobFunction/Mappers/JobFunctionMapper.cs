@@ -22,7 +22,9 @@ namespace CP.Shared.JobFunction.Mappers
 
         public static void Register(IMapperConfigurationExpression config)
         {
-            config.CreateMap<JobFunctionEntity, JobFunctionView>();
+            config.CreateMap<JobFunctionEntity, JobFunctionView>()
+                .ForMember(dst => dst.JobFunctionPosition, cfg => cfg.Ignore())
+                .ForMember(dst => dst.JobFunctionTitle, cfg => cfg.Ignore());
         }
 
         public JobFunctionView Map(JobFunctionEntity model)

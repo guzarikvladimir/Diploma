@@ -24,7 +24,7 @@ namespace CP.Repository.Models
 
 
         [ForeignKey("CreatedById")]
-        [InverseProperty("CompensationPromotions")]
+        [InverseProperty("CreatedCompensationPromotions")]
         public virtual Employee CreatedByEmployee { get; set; }
     }
 }

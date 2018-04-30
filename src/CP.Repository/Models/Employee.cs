@@ -21,6 +21,6 @@ namespace CP.Repository.Models
         [ForeignKey("StatusId")]
         public virtual EmployeeStatus EmployeeStatus { get; set; }
 
-        public virtual ICollection<CompensationPromotion> CompensationPromotions { get; set; }
+        public virtual ICollection<CompensationPromotion> CreatedCompensationPromotions { get; set; }
     }
 }

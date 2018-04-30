@@ -43,7 +43,7 @@ namespace CP.Repository.Services
         {
             modelBuilder.Entity<CompensationPromotion>()
                 .HasRequired(cp => cp.CreatedByEmployee)
-                .WithMany(e => e.CompensationPromotions)
+                .WithMany(e => e.CreatedCompensationPromotions)
                 .HasForeignKey(cp => cp.CreatedById);
         }
     }

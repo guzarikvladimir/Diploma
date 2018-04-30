@@ -91,8 +91,10 @@
     <Compile Include="CompensationModule.cs" />
     <Compile Include="Controllers\CompensationController.cs" />
     <Compile Include="Controllers\CompensationsController.cs" />
+    <Compile Include="Controllers\CompensationWorkflowController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CompensationSerivce.cs" />
+    <Compile Include="Services\CompensationWorkflowService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -106,6 +108,10 @@
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
       <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
       <Name>CP.Platform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.Repository\CP.Repository.csproj">
+      <Project>{A565953B-77E4-4CDF-A8F5-D395B16FE73A}</Project>
+      <Name>CP.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\CP.Shared.Contract\CP.Shared.Contract.csproj">
       <Project>{C862C837-F423-4E0C-B447-6D8601518582}</Project>

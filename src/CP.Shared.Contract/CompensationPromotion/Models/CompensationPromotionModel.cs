@@ -6,9 +6,9 @@ using CP.Shared.Contract.Employee.Models;
 
 namespace CP.Shared.Contract.CompensationPromotion.Models
 {
-    public class CompensationPromotionView : IViewWithId<Guid>
+    public class CompensationPromotionModel : IModelWithId<Guid?>
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
 
         public decimal Value { get; set; }
 
@@ -20,10 +20,10 @@ namespace CP.Shared.Contract.CompensationPromotion.Models
 
         public DateTime ApplyDate { get; set; }
 
+        public string Comment { get; set; }
+
         public EmployeeView CreatedBy { get; set; }
 
-        public DateTime CreatedDate { get; set; }
-
-        public string Comment { get; set; }
+        public DateTime? CreatedDate { get; set; }
     }
 }

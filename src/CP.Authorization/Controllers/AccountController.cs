@@ -37,7 +37,7 @@ namespace CP.Authorization.Controllers
                     {
                         IsPersistent = true
                     }, claim);
-
+                    
                     return RedirectToAction("Index", "Compensation");
                 }
                 catch (Exception e)

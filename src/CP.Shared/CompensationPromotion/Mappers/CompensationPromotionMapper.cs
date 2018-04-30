@@ -9,7 +9,8 @@ using CompensationPromotionEntity = CP.Repository.Models.CompensationPromotion;
 namespace CP.Shared.CompensationPromotion.Mappers
 {
     public class CompensationPromotionMapper : 
-        IEntityMapper<CompensationPromotionEntity, CompensationPromotionView>
+        IEntityMapper<CompensationPromotionEntity, CompensationPromotionView>,
+        IEntityModifyingMapper<CompensationPromotionModel, CompensationPromotionEntity>
     {
         #region Injects
 
@@ -24,6 +25,7 @@ namespace CP.Shared.CompensationPromotion.Mappers
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<CompensationPromotionEntity, CompensationPromotionView>();
+            config.CreateMap<CompensationPromotionModel, CompensationPromotionEntity>();
         }
 
         public CompensationPromotionView Map(CompensationPromotionEntity model)
@@ -34,6 +36,16 @@ namespace CP.Shared.CompensationPromotion.Mappers
             view.CreatedBy = EmployeeRetrievingService.GetById(model.CreatedById);
 
             return view;
+        }
+
+        public void Map(CompensationPromotionModel viewModel, CompensationPromotionEntity entityModel)
+        {
+            Mapper.Map(viewModel, entityModel);
+        }
+
+        public CompensationPromotionEntity Map(CompensationPromotionModel viewModel)
+        {
+            return Mapper.Map<CompensationPromotionEntity>(viewModel);
         }
     }
 }

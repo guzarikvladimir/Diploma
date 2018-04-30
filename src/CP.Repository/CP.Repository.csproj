@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201804291254391_AddApplyDateAndCreatedBy.Designer.cs">
       <DependentUpon>201804291254391_AddApplyDateAndCreatedBy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804301143131_AddCommentFieldToCompensationPromotion.cs" />
+    <Compile Include="Migrations\201804301143131_AddCommentFieldToCompensationPromotion.Designer.cs">
+      <DependentUpon>201804301143131_AddCommentFieldToCompensationPromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BonusPromotion.cs" />
     <Compile Include="Models\CompensationPromotion.cs" />
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804291254391_AddApplyDateAndCreatedBy.resx">
       <DependentUpon>201804291254391_AddApplyDateAndCreatedBy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804301143131_AddCommentFieldToCompensationPromotion.resx">
+      <DependentUpon>201804301143131_AddCommentFieldToCompensationPromotion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

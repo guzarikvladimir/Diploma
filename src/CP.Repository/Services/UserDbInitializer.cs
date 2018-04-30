@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using CP.Repository.Models;
 
@@ -96,7 +97,41 @@ namespace CP.Repository.Services
             };
             db.EmployeeRoles.Add(employeeRole);
 
+            AddCurrencies(db);
+
             base.Seed(db);
+        }
+
+        private void AddCurrencies(ApplicationContext db)
+        {
+            db.Currencies.AddRange(new List<Currency>()
+            {
+                new Currency()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "USD"
+                },
+                new Currency()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "EUR"
+                },
+                new Currency()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "BYR"
+                },
+                new Currency()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "RUR"
+                },
+                new Currency()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "UAH"
+                }
+            });
         }
     }
 }

@@ -18,8 +18,14 @@ namespace CP.Shared.CompensationPromotion
             kernel.Bind<ICompensationPromotionRetrievingService>()
                 .To<CompensationPromotionRetrievingService>()
                 .InRequestScope();
+            kernel.Bind<ICompensationPromotionModifyingService>()
+                .To<CompensationPromotionModifyingService>()
+                .InRequestScope();
 
             kernel.Bind<IEntityMapper<CompensationPromotionEntity, CompensationPromotionView>>()
+                .To<CompensationPromotionMapper>()
+                .InRequestScope();
+            kernel.Bind<IEntityModifyingMapper<CompensationPromotionModel, CompensationPromotionEntity>>()
                 .To<CompensationPromotionMapper>()
                 .InRequestScope();
         }

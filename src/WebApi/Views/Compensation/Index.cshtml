@@ -6,6 +6,7 @@
 <link href="~/Content/Compensation/side-panel.css" rel="stylesheet">
 <script src="~/Scripts/Compensation/compensation-side-panel.js"></script>
 <script src="~/Scripts/Compensation/compensation.js"></script>
+<script src="~/Scripts/Compensation/compensation-new.js"></script>
 
 <h2>Compensations</h2>
 
@@ -51,14 +52,29 @@
 </div>
 
 <!-- ko with: coSide -->
-<div data-bind="if: isOpened" id="sidenav" class="sidenav">
-    <a data-bind="click: { single: hide }" href="javascript:void(0)" class="closebtn">&times;</a>
-    <p data-bind="text: employeeCompensations().Employee.Name"></p>
-</div>
-<!-- /ko -->
-
-<!-- ko with: alert -->
-<div class="tn-box tn-box-hoverpause tn-box-color-error">
-    <p data-bind="text: message"></p>
+<div data-bind="if: coSide.isOpened" id="sidenav" class="sidenav">
+    <a data-bind="click: { single: coSide.hide }" href="javascript:void(0)" class="closebtn">&times;</a>
+    <p data-bind="text: coSide.employeeCompensations().Employee.Name"></p>
+    
+    <div class="compensations-list">
+        <ul data-bind="foreach: coSide.employeeCompensations.CompensationPromotions">
+            <li data-bind="$data"></li>
+        </ul>
+    </div>
+    
+    <form data-bind="submit: coNew.submitHandler">
+        <select data-bind="options: co.promotionTypes,
+                optionsText: 'name',
+                optionsValue: 'id',
+                value: coNew.promotionType"></select>
+        <input data-bind="value: coNew.value"/>
+        <select data-bind="options: co.currencies,
+            optionsText: 'Name',
+            optionsValue: $data,
+            value: coNew.currency"></select>
+        <input data-bind="value: coNew.applyDate" type="date"/>
+        <textarea data-bind="value: coNew.comment"></textarea>
+        <button type="submit">Add Compensation</button>
+    </form>
 </div>
 <!-- /ko -->

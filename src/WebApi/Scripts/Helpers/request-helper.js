@@ -7,8 +7,8 @@ var request = (function() {
                 url: url,
                 type: httpMethod,
                 data: data,
-                contentType: options ? options.contentType : 'application/x-www-form-urlencoded; charset=UTF-8',
-                processData: options ? options.processData : true,
+                contentType: options ? options.contentType : 'application/x-www-form-urlencoded',
+                //processData: options ? options.processData : true,
                 success: resolve,
                 error: reject
             });

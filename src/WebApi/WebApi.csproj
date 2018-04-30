@@ -194,10 +194,12 @@
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Compensation\compensation-new.js" />
     <Content Include="Scripts\Compensation\compensation-side-panel.js" />
     <Content Include="Scripts\Compensation\compensation.js" />
     <None Include="Scripts\JQuery\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\Helpers\alert-helper.js" />
+    <Content Include="Scripts\Helpers\guid-helper.js" />
     <Content Include="Scripts\Helpers\request-helper.js" />
     <Content Include="Scripts\Helpers\dblclick-helper.js" />
     <Content Include="Scripts\JQuery\jquery-1.9.1.js" />
@@ -224,7 +226,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\IdentityExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +254,10 @@
     <ProjectReference Include="..\CP.Authorization\CP.Authorization.csproj">
       <Project>{0d2083e0-7e08-408c-9e59-2601805c88d6}</Project>
       <Name>CP.Authorization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.Common\CP.Common.csproj">
+      <Project>{d1597422-b4af-432b-a699-32fd73c27610}</Project>
+      <Name>CP.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\CP.Compensation.Contract\CP.Compensation.Contract.csproj">
       <Project>{0fd7003c-c7ed-45f6-8676-9895ccef1cac}</Project>

@@ -1,4 +1,4 @@
-﻿"use strict"
+﻿"use strict";
 
 var dblclickHelper = (function () {
     ko.bindingHandlers.click = {

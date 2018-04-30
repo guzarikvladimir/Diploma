@@ -20,9 +20,9 @@ namespace CP.Shared.User.Mappers
             return Mapper.Map<UserView>(model);
         }
 
-        public void Map(UserModel model, UserEntity entityModel)
+        public void Map(UserModel viewModel, UserEntity entityModel)
         {
-            Mapper.Map(model, entityModel);
+            Mapper.Map(viewModel, entityModel);
         }
 
         public UserEntity Map(UserModel viewModel)

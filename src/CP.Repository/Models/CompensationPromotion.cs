@@ -22,6 +22,8 @@ namespace CP.Repository.Models
 
         public DateTime CreatedDate { get; set; }
 
+        public string Comment { get; set; }
+
 
         [ForeignKey("CreatedById")]
         [InverseProperty("CreatedCompensationPromotions")]

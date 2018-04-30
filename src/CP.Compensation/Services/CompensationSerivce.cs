@@ -41,10 +41,13 @@ namespace CP.Compensation.Services
         public CompensationView Get(Guid employeeId)
         {
             EmployeeView employee = EmployeeRetrievingService.GetById(employeeId);
+            IEnumerable<CompensationPromotionView> compensations = CompensationPromotionRetrievingService.Get()
+                .Where(cp => cp.Employee.Id == employeeId);
 
             return new CompensationView()
             {
-                Employee = employee
+                Employee = employee,
+                CompensationPromotions = compensations
             };
         }
     }

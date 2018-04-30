@@ -28,7 +28,7 @@ namespace CP.Shared.Core.Services
 
         private static List<TView> cache;
 
-        public virtual List<TView> Get()
+        public virtual IEnumerable<TView> Get()
         {
             if (cache != null)
             {

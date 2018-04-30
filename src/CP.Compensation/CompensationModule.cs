@@ -11,6 +11,7 @@ namespace CP.Compensation
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICompensationSerivce>().To<CompensationSerivce>().InRequestScope();
+            kernel.Bind<ICompensationWorkflowService>().To<CompensationWorkflowService>().InRequestScope();
         }
     }
 }

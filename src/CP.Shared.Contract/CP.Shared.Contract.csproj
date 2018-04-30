@@ -42,9 +42,10 @@
   <ItemGroup>
     <Compile Include="Bonus\Models\BonusPromotionView.cs" />
     <Compile Include="Bonus\Services\IBonusPromotionRetrievingService.cs" />
+    <Compile Include="CompensationPromotion\Models\CompensationPromotionModel.cs" />
     <Compile Include="CompensationPromotion\Models\CompensationPromotionView.cs" />
+    <Compile Include="CompensationPromotion\Services\ICompensationPromotionModifyingService.cs" />
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionRetrievingService.cs" />
-    <Compile Include="CompensationPromotion\Services\ICompensationPromotionService.cs" />
     <Compile Include="Core\Models\IModelWithId.cs" />
     <Compile Include="Core\Models\IViewWithId.cs" />
     <Compile Include="Core\Services\ISimpleModifyingService.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="CurrencyRate\Services\ICurrencyRateRetrievingService.cs" />
     <Compile Include="Currency\Models\CurrencyView.cs" />
     <Compile Include="Currency\Services\ICurrencyRetrievingService.cs" />
+    <Compile Include="Currency\Services\ICurrencyService.cs" />
     <Compile Include="EmployeeRole\Models\EmployeeRoleView.cs" />
     <Compile Include="EmployeeRole\Services\IEmployeeRoleRetrievingService.cs" />
     <Compile Include="EmployeeStatus\Models\EmployeeStatusView.cs" />

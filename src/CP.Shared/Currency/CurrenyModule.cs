@@ -15,6 +15,7 @@ namespace CP.Shared.Currency
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICurrencyRetrievingService>().To<CurrencyRetrievingService>().InRequestScope();
+            kernel.Bind<ICurrencyService>().To<CurrencyService>().InRequestScope();
 
             kernel.Bind<IEntityMapper<Repository.Models.Currency, CurrencyView>>()
                 .To<CurrencyMapper>()

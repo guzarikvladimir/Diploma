@@ -13,8 +13,9 @@ namespace WebApi
                 .Include("~/Scripts/Knockout/knockout-{version}.js")
                 .Include("~/Scripts/Helpers/dblclick-helper.js")
                 .Include("~/Scripts/Helpers/request-helper.js")
-                .Include("~/Scripts/Helpers/alert-helper.js"));
-
+                .Include("~/Scripts/Helpers/alert-helper.js")
+                .Include("~/Scripts/Helpers/guid-helper.js"));
+            
             bundles.Add(new ScriptBundle("~/bundles/compensation")
                 .Include("~/Scripts/Compensation/compensation.js")
                 .Include("~/Scripts/Compensation/compensation-side-panel.js"));

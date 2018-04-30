@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace CP.Shared.Contract.Core.Services
 {
-    public interface ISimpleRetrievingService<TView>
+    public interface ISimpleRetrievingService<out TView>
         where TView : class
     {
-        List<TView> Get();
+        IEnumerable<TView> Get();
 
         TView GetById(Guid id);
     }

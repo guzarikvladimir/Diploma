@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bonus\Models\BonusPromotionModel.cs" />
     <Compile Include="Bonus\Models\BonusPromotionView.cs" />
+    <Compile Include="Bonus\Services\IBonusPromotionModifyingService.cs" />
     <Compile Include="Bonus\Services\IBonusPromotionRetrievingService.cs" />
     <Compile Include="CompensationPromotion\Models\CompensationPromotionModel.cs" />
     <Compile Include="CompensationPromotion\Models\CompensationPromotionView.cs" />
@@ -74,7 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role\Models\RoleView.cs" />
     <Compile Include="Role\Services\IRoleRetrievingService.cs" />
+    <Compile Include="Salary\Models\SalaryPromotionModel.cs" />
     <Compile Include="Salary\Models\SalaryPromotionView.cs" />
+    <Compile Include="Salary\Services\ISalaryPromotionModifyingService.cs" />
     <Compile Include="Salary\Services\ISalaryPromotionRetrievingService.cs" />
     <Compile Include="User\Models\UserModel.cs" />
     <Compile Include="User\Models\UserView.cs" />

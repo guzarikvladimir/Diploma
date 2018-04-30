@@ -18,6 +18,8 @@ namespace CP.Shared.Contract.CompensationPromotion.Models
 
         public CompensationPromotionType PromotionType { get; set; }
 
+        public CompensationPromotionStatus PromotionStatus { get; set; }
+
         public DateTime ApplyDate { get; set; }
 
         public EmployeeView CreatedBy { get; set; }

@@ -16,6 +16,8 @@ namespace CP.Repository.Models
 
         public CompensationPromotionType PromotionType { get; set; }
 
+        public CompensationPromotionStatus PromotionStatus { get; set; }
+
         public DateTime ApplyDate { get; set; }
         
         public Guid CreatedById { get; set; }

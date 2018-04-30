@@ -6,7 +6,11 @@ var co = (function() {
         currencies: ko.observableArray(),
         promotionTypes: ko.observableArray([
             { id: 0, name: "Salary" },
-            { id: 1, name: "Bonus" }])
+            { id: 1, name: "Bonus" }]),
+        salaryTypes: ko.observableArray([
+            { id: 0, name: "Monthly" },
+            { id: 1, name: "Annual" }
+        ])
     }
 
     $(document).ready(function () {
@@ -16,15 +20,15 @@ var co = (function() {
     });
 
     function getCompensations() {
-        request.sendAjax('GET', "/api/compensations")
+        request.sendAjax('GET', "/api/Compensations/Table")
             .then((data) => addAll(data, model.compensations),
-                (error) => alert.show(error));
+                (error) => alert.error(error));
     }
 
     function getCurrencies() {
-        request.sendAjax('GET', "/api/currency")
+        request.sendAjax('GET', "/api/Currency")
             .then((data) => addAll(data, model.currencies), 
-                (error) => alert.show(error));
+                (error) => alert.error(error));
     }
 
     function addAll(data, array) {
@@ -38,6 +42,7 @@ var co = (function() {
         compensations: model.compensations,
         getCompensations: getCompensations,
         currencies: model.currencies,
-        promotionTypes: model.promotionTypes
+        promotionTypes: model.promotionTypes,
+        salaryTypes: model.salaryTypes
     }
 })();

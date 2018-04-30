@@ -13,10 +13,10 @@ var coSide = (function () {
                 obj = model.employeeCompensations();
             }
 
-            request.sendAjax('GET', "/api/compensations/" + obj.Employee.Id)
+            request.sendAjax('GET', "/api/Compensations/SidePanel/" + obj.Employee.Id)
                 .then((data) => {
-                    model.employeeCompensations(data[0]);
-                }, (error) => alert.show(error))
+                    model.employeeCompensations(data);
+                }, (error) => alert.error(error))
                 .then(() => {
                     model.isOpened(true);
                     document.getElementById("sidenav").style.display = "block";

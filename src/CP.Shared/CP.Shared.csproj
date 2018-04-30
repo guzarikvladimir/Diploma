@@ -71,6 +71,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bonus\BonusModule.cs" />
+    <Compile Include="Bonus\Mappers\BonusPromotionMapper.cs" />
+    <Compile Include="Bonus\Services\BonusPromotionModifyingService.cs" />
     <Compile Include="Bonus\Services\BonusPromotionRetrievingService.cs" />
     <Compile Include="CompensationPromotion\CompensationPromotionModule.cs" />
     <Compile Include="CompensationPromotion\Mappers\CompensationPromotionMapper.cs" />
@@ -113,7 +115,9 @@
     <Compile Include="Role\Mappers\RoleMapper.cs" />
     <Compile Include="Role\RoleModule.cs" />
     <Compile Include="Role\Services\RoleRetrievingService.cs" />
+    <Compile Include="Salary\Mappers\SalaryPromotionMapper.cs" />
     <Compile Include="Salary\SalaryModule.cs" />
+    <Compile Include="Salary\Services\SalaryPromotionModifyingService.cs" />
     <Compile Include="Salary\Services\SalaryPromotionRetrievingService.cs" />
     <Compile Include="User\Mappers\UserMapper.cs" />
     <Compile Include="User\Services\UserModifyingService.cs" />

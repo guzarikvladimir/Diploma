@@ -2,8 +2,7 @@
 {
     public enum SalaryType
     {
-        Approved,
-        Confirmed,
-        Rejected
+        Monthly,
+        Annual
     }
 }

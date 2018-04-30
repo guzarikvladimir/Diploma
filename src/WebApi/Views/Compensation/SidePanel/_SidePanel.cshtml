@@ -1,0 +1,32 @@
+﻿<div data-bind="if: coSide.isOpened" id="sidenav" class="sidenav">
+    <a data-bind="click: { single: coSide.hide }" href="javascript:void(0)" class="closebtn">&times;</a>
+    <p data-bind="text: coSide.employeeCompensations().Employee.Name"></p>
+
+    <div class="compensations-list">
+        <ul data-bind="foreach: coSide.employeeCompensations.CompensationPromotions">
+            <li data-bind="$data"></li>
+        </ul>
+    </div>
+    
+    <form data-bind="submit: coNew.submitHandler">
+        <select data-bind="options: co.promotionTypes,
+                optionsText: 'name',
+                optionsValue: 'id',
+                value: coNew.promotionType,
+                event: { change: coNew.triggerIsSalary }"></select>
+        <input data-bind="value: coNew.value"/>
+        <select data-bind="options: co.currencies,
+            optionsText: 'Name',
+            optionsValue: $data,
+            value: coNew.currency"></select>
+        <div data-bind="if: coNew.isSalary">
+            <select data-bind="options: co.salaryTypes,
+                optionsText: 'name',
+                optionsValue: 'id',
+                value: coNew.salaryType"></select>
+        </div>
+        <input data-bind="value: coNew.applyDate" type="date"/>
+        <textarea data-bind="value: coNew.comment"></textarea>
+        <button type="submit">Add Compensation</button>
+    </form>
+</div>

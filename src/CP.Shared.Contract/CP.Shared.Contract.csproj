@@ -48,6 +48,7 @@
     <Compile Include="CompensationPromotion\Models\CompensationPromotionView.cs" />
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionModifyingService.cs" />
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionRetrievingService.cs" />
+    <Compile Include="CompensationPromotion\Services\ICompensationPromotionService.cs" />
     <Compile Include="Core\Models\IModelWithId.cs" />
     <Compile Include="Core\Models\IViewWithId.cs" />
     <Compile Include="Core\Services\ISimpleModifyingService.cs" />

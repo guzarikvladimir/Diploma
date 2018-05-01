@@ -1,0 +1,21 @@
+﻿.side-panel-list {
+    padding: 20px;
+}
+
+.compensationApproved {
+    background-color: #98FB98;
+    border: 1px solid #228b22;
+}
+
+.compensationRejected {
+    background: #ff6347;
+    border: 1px solid #ff0000;
+}
+
+.side-panel-item {
+    cursor: pointer;
+    border-radius: 3px;
+    height: 25px;
+    margin: 5px 0;
+    font-size: 17px;
+}

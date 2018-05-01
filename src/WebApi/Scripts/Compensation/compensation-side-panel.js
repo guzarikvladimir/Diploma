@@ -1,31 +1,31 @@
 ﻿"use strict";
 
-var coSide = (function () {
+var cosp = (function () {
     var model = {
         employeeCompensations: ko.observable(),
-        compensation: ko.observable(
-            {
-                value: 0
-            }),
         isOpened: ko.observable(false),
-        show: function (obj) {
-            if (obj === undefined) {
-                obj = model.employeeCompensations();
-            }
+        show: show,
+        hide: hide
+    }
 
-            request.sendAjax('GET', "/api/Compensations/SidePanel/" + obj.Employee.Id)
-                .then((data) => {
-                    model.employeeCompensations(data);
-                }, (error) => alert.error(error))
-                .then(() => {
-                    model.isOpened(true);
-                    document.getElementById("sidenav").style.display = "block";
-                });
-        },
-        hide: function () {
-            model.isOpened(false);
-            document.getElementById("sidenav").style.display = "none";
+    function show(obj) {
+        if (obj === undefined) {
+            obj = model.employeeCompensations();
         }
+
+        request.sendAjax('GET', "/api/Compensations/SidePanel/" + obj.Employee.Id)
+            .then((data) => {
+                model.employeeCompensations(data);
+            }, (error) => alert.error(error))
+            .then(() => {
+                model.isOpened(true);
+                document.getElementById("sidenav").style.display = "block";
+            });
+    }
+
+    function hide() {
+        model.isOpened(false);
+        document.getElementById("sidenav").style.display = "none";
     }
 
     return {

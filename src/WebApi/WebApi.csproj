@@ -180,10 +180,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Readme\readme.txt" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Compensation\alert.css" />
+    <Content Include="Content\Compensation\side-panel-form.css" />
+    <Content Include="Content\Compensation\side-panel-list.css" />
+    <Content Include="Content\Core\alert.css" />
     <Content Include="Content\Compensation\compensation.css" />
     <Content Include="Content\Compensation\side-panel.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -194,7 +195,8 @@
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
-    <Content Include="Scripts\Compensation\compensation-new.js" />
+    <Content Include="Scripts\Compensation\compensation-side-panel-form.js" />
+    <Content Include="Scripts\Compensation\compensation-side-panel-list.js" />
     <Content Include="Scripts\Compensation\compensation-side-panel.js" />
     <Content Include="Scripts\Compensation\compensation.js" />
     <None Include="Scripts\JQuery\jquery-1.9.1.intellisense.js" />
@@ -236,6 +238,10 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Compensation\Index.cshtml" />
+    <Content Include="Views\Compensation\SidePanel\_SidePanel.cshtml" />
+    <Content Include="Views\Compensation\SidePanel\_Form.cshtml" />
+    <Content Include="Views\Compensation\SidePanel\_List.cshtml" />
+    <Content Include="Views\Compensation\SidePanel\_Header.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

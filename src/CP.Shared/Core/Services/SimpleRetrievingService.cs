@@ -26,33 +26,19 @@ namespace CP.Shared.Core.Services
 
         #endregion
 
-        private static List<TView> cache;
-
         public virtual IEnumerable<TView> Get()
         {
-            if (cache != null)
-            {
-                return cache;
-            }
-
             List<TEntity> models;
             using (var scope = new ApplicationContext())
             {
                 models = scope.Set<TEntity>().ToList();
             }
             
-            cache = new List<TView>(models.Select(e => Mapper.Map(e)));
-
-            return cache;
+            return models.Select(e => Mapper.Map(e));
         }
 
         public virtual TView GetById(Guid id)
         {
-            if (cache != null)
-            {
-                return cache.FirstOrDefault(view => view.Id == id);
-            }
-
             TEntity model;
             using (var scope = DbFactory.Create())
             {

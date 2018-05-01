@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var coNew = (function () {
+var cospform = (function () {
     var model = {
         value: ko.observable(),
         currency: ko.observable(),
@@ -16,13 +16,13 @@ var coNew = (function () {
                 .then(() => {
                     alert.show(action + ' successfully created.');
                     co.getCompensations();
-                    coSide.show();
+                    cosp.show();
                     clearData();
                 }, (error) => alert.error(error));
         },
         isSalary: ko.observable(true),
         triggerIsSalary: function() {
-            if (model.promotionType() === 0) {
+            if (model.promotionType() === co.promotionTypes()[0]) {
                 model.isSalary(true);
             } else {
                 model.isSalary(false);
@@ -39,7 +39,7 @@ var coNew = (function () {
         var data = {
             value: model.value(),
             currency: model.currency(),
-            employee: coSide.employeeCompensations().Employee,
+            employee: cosp.employeeCompensations().Employee,
             promotionType: model.promotionType(),
             applyDate: model.applyDate(),
             comment: model.comment()

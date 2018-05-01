@@ -4,13 +4,8 @@ var co = (function() {
     var model = {
         compensations: ko.observableArray(),
         currencies: ko.observableArray(),
-        promotionTypes: ko.observableArray([
-            { id: 0, name: "Salary" },
-            { id: 1, name: "Bonus" }]),
-        salaryTypes: ko.observableArray([
-            { id: 0, name: "Monthly" },
-            { id: 1, name: "Annual" }
-        ])
+        promotionTypes: ko.observableArray(["Salary", "Bonus"]),
+        salaryTypes: ko.observableArray(["Monthly", "Annual"])
     }
 
     $(document).ready(function () {

@@ -1,0 +1,5 @@
+﻿<div data-bind="foreach: cosp.employeeCompensations().CompensationPromotions" class="side-panel-list">
+    <div data-bind="css: { compensationApproved: cosplist.isApproved, compensationRejected: !cosplist.isApproved }" class="side-panel-item">
+        <p data-bind="text: cosplist.getListItemPreview($data)"></p>
+    </div>
+</div>

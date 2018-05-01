@@ -25,7 +25,7 @@ namespace WebApi
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/bootstrap.min.css")
-                .Include("~/Content/Compensation/alert.css"));
+                .Include("~/Content/Core/alert.css"));
 
             bundles.Add(new StyleBundle("~/Content/compensation/css")
                 .Include("~/Content/Compensation/compensation.css"));

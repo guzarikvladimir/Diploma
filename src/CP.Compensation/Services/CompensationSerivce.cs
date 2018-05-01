@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using CP.Compensation.Contract.Models;
 using CP.Compensation.Contract.Services;
+using CP.Shared.Contract.Bonus.Models;
+using CP.Shared.Contract.Bonus.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
+using CP.Shared.Contract.Salary.Models;
+using CP.Shared.Contract.Salary.Services;
 using Ninject;
 
 namespace CP.Compensation.Services
@@ -19,7 +23,7 @@ namespace CP.Compensation.Services
         IEmployeeRetrievingService EmployeeRetrievingService { get; set; }
 
         [Inject]
-        ICompensationPromotionRetrievingService CompensationPromotionRetrievingService { get; set; }
+        ICompensationPromotionService CompensationPromotionService { get; set; }
 
         #endregion
 
@@ -28,8 +32,8 @@ namespace CP.Compensation.Services
             IEnumerable<EmployeeView> employees = EmployeeRetrievingService.Get();
             foreach (EmployeeView employee in employees)
             {
-                IEnumerable<CompensationPromotionView> compensations = CompensationPromotionRetrievingService.Get()
-                    .Where(cp => cp.Employee.Id == employee.Id);
+                List<CompensationPromotionView> compensations = CompensationPromotionService.Get(employee.Id);
+
                 yield return new CompensationView()
                 {
                     Employee = employee,
@@ -41,8 +45,7 @@ namespace CP.Compensation.Services
         public CompensationView Get(Guid employeeId)
         {
             EmployeeView employee = EmployeeRetrievingService.GetById(employeeId);
-            IEnumerable<CompensationPromotionView> compensations = CompensationPromotionRetrievingService.Get()
-                .Where(cp => cp.Employee.Id == employeeId);
+            List<CompensationPromotionView> compensations = CompensationPromotionService.Get(employeeId);
 
             return new CompensationView()
             {

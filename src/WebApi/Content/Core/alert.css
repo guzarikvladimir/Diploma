@@ -29,6 +29,7 @@
 @keyframes fadeOut {
     0% {
         opacity: 0;
+        top: 20px;
     }
 
     10% {
@@ -42,11 +43,13 @@
 
     99% {
         opacity: 0;
+        top: 20px;
         transform: translateY(-30px);
     }
 
     100% {
         opacity: 0;
+        top: -1000px;
     }
 }
 

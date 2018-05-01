@@ -18,7 +18,8 @@ namespace CP.Shared.Salary
             kernel.Bind<ISalaryPromotionRetrievingService>().To<SalaryPromotionRetrievingService>().InRequestScope();
             kernel.Bind<ISalaryPromotionModifyingService>().To<SalaryPromotionModifyingService>().InRequestScope();
 
-            kernel.Bind<IEntityModifyingMapper<SalaryPromotionModel, SalaryPromotion>>()
+            kernel.Bind<IEntityModifyingMapper<SalaryPromotionModel, SalaryPromotion>,
+                    IEntityMapper<SalaryPromotion, SalaryPromotionView>>()
                 .To<SalaryPromotionMapper>()
                 .InRequestScope();
         }

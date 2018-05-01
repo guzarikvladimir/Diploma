@@ -4,54 +4,59 @@
 
 <link href="~/Content/Compensation/compensation.css" rel="stylesheet">
 <link href="~/Content/Compensation/side-panel.css" rel="stylesheet">
+<link href="~/Content/Compensation/side-panel-list.css" rel="stylesheet">
+<link href="~/Content/Compensation/side-panel-form.css" rel="stylesheet">
 <script src="~/Scripts/Compensation/compensation-side-panel.js"></script>
 <script src="~/Scripts/Compensation/compensation.js"></script>
-<script src="~/Scripts/Compensation/compensation-new.js"></script>
+<script src="~/Scripts/Compensation/compensation-side-panel-list.js"></script>
+<script src="~/Scripts/Compensation/compensation-side-panel-form.js"></script>
 
 <h2>Compensations</h2>
 
 <div>
-    <table class="table table-hover table-bordered">
-        <thead>
-        <tr>
-            <th>Employee name</th>
-            <th>January</th>
-            <th>February</th>
-            <th>March</th>
-            <th>April</th>
-            <th>May</th>
-            <th>June</th>
-            <th>July</th>
-            <th>August</th>
-            <th>September</th>
-            <th>October</th>
-            <th>November</th>
-            <th>Decemper</th>
-            <th>Total</th>
-        </tr>
-        </thead>
-        <tbody data-bind="foreach: co.compensations">
-        <tr data-bind="click: { double: coSide.show }">
-            <td data-bind="text: Employee.Name"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+    <div>
+        <table class="table table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>Employee name</th>
+                <th>January</th>
+                <th>February</th>
+                <th>March</th>
+                <th>April</th>
+                <th>May</th>
+                <th>June</th>
+                <th>July</th>
+                <th>August</th>
+                <th>September</th>
+                <th>October</th>
+                <th>November</th>
+                <th>Decemper</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody data-bind="foreach: co.compensations">
+            <tr data-bind="click: { double: cosp.show }">
+                <td data-bind="text: Employee.Name"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
-@Html.Partial("SidePanel/_SidePanel")
+    @Html.Partial("SidePanel/_SidePanel")
+</div>
 
 <!-- ko with: alert -->
 <div class="tn-box tn-box-hoverpause tn-box-color-error">

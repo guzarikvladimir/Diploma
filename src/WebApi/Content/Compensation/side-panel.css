@@ -3,7 +3,7 @@
     height: 100%;
     width: 600px;
     position: fixed;
-    z-index: 1;
+    z-index: 200;
     top: 0;
     right: 0;
     border: 5px solid cornflowerblue;

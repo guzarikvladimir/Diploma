@@ -3,15 +3,20 @@
 var alert = (function () {
     var model = {
         message: ko.observable(),
-        show: function(mes) {
+        show: function (mes) {
             model.message(mes);
-            $('.tn-box-color-success').addClass('tn-box-active');
+            trigger('.tn-box-color-success');
         },
-        error: function(error) {
+        error: function (error) {
             model.message(error.responseText);
-            $('.tn-box-color-error').addClass('tn-box-active');
+            trigger('.tn-box-color-error');
         }
     };
+
+    function trigger(name) {
+        $(name).removeClass('tn-box-active');
+        setTimeout(() => $(name).addClass('tn-box-active'), 10);
+    }
 
     return {
         message: model.message,

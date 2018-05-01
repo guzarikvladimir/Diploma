@@ -21,11 +21,10 @@ namespace CP.Shared.CompensationPromotion
             kernel.Bind<ICompensationPromotionModifyingService>()
                 .To<CompensationPromotionModifyingService>()
                 .InRequestScope();
+            kernel.Bind<ICompensationPromotionService>().To<CompensationPromotionService>().InRequestScope();
 
-            kernel.Bind<IEntityMapper<CompensationPromotionEntity, CompensationPromotionView>>()
-                .To<CompensationPromotionMapper>()
-                .InRequestScope();
-            kernel.Bind<IEntityModifyingMapper<CompensationPromotionModel, CompensationPromotionEntity>>()
+            kernel.Bind<IEntityModifyingMapper<CompensationPromotionModel, CompensationPromotionEntity>,
+                    IEntityMapper<CompensationPromotionEntity, CompensationPromotionView>>()
                 .To<CompensationPromotionMapper>()
                 .InRequestScope();
         }

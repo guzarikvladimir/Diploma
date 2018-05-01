@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var cospform = (function () {
+var cosideform = (function () {
     var model = {
         value: ko.observable(),
         currency: ko.observable(),
@@ -15,8 +15,8 @@ var cospform = (function () {
             request.sendAjax('POST', '/api/Compensations/' + action + '/Create', data)
                 .then(() => {
                     alert.show(action + ' successfully created.');
-                    co.getCompensations();
-                    cosp.show();
+                    cotable.getCompensations();
+                    coside.show();
                     clearData();
                 }, (error) => alert.error(error));
         },
@@ -39,7 +39,7 @@ var cospform = (function () {
         var data = {
             value: model.value(),
             currency: model.currency(),
-            employee: cosp.employeeCompensations().Employee,
+            employee: coside.employeeCompensations().Employee,
             promotionType: model.promotionType(),
             applyDate: model.applyDate(),
             comment: model.comment()

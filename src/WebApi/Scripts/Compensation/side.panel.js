@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var cosp = (function () {
+var coside = (function () {
     var model = {
         employeeCompensations: ko.observable(),
         isOpened: ko.observable(false),

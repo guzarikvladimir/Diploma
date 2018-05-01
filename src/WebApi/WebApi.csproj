@@ -195,14 +195,15 @@
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
-    <Content Include="Scripts\Compensation\compensation.js" />
-    <Content Include="Scripts\Compensation\compensation-side-panel-form.js" />
-    <Content Include="Scripts\Compensation\compensation-side-panel-list.js" />
-    <Content Include="Scripts\Compensation\compensation-side-panel.js" />
+    <Content Include="Scripts\Compensation\table.js" />
+    <Content Include="Scripts\Compensation\side.panel.form.js" />
+    <Content Include="Scripts\Compensation\side.panel.list.js" />
+    <Content Include="Scripts\Compensation\side.panel.js" />
     <None Include="Scripts\JQuery\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\Helpers\alert-helper.js" />
-    <Content Include="Scripts\Helpers\guid-helper.js" />
-    <Content Include="Scripts\Helpers\request-helper.js" />
+    <Content Include="Scripts\Compensation\common.js" />
+    <Content Include="Scripts\Helpers\alert.js" />
+    <Content Include="Scripts\Helpers\guid.js" />
+    <Content Include="Scripts\Helpers\request.js" />
     <Content Include="Scripts\Helpers\dblclick-helper.js" />
     <Content Include="Scripts\JQuery\jquery-1.9.1.js" />
     <Content Include="Scripts\JQuery\jquery-1.9.1.min.js" />
@@ -242,6 +243,7 @@
     <Content Include="Views\Compensation\SidePanel\_Form.cshtml" />
     <Content Include="Views\Compensation\SidePanel\_List.cshtml" />
     <Content Include="Views\Compensation\SidePanel\_Header.cshtml" />
+    <Content Include="Views\Compensation\Table\_Table.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var cosplist = (function() {
+var cosidelist = (function() {
     var model = {
         getListItemPreview: getListItemPreview,
         isApproved: function (item) {

@@ -6,61 +6,22 @@
 <link href="~/Content/Compensation/side-panel.css" rel="stylesheet">
 <link href="~/Content/Compensation/side-panel-list.css" rel="stylesheet">
 <link href="~/Content/Compensation/side-panel-form.css" rel="stylesheet">
-<script src="~/Scripts/Compensation/compensation-side-panel.js"></script>
-<script src="~/Scripts/Compensation/compensation.js"></script>
-<script src="~/Scripts/Compensation/compensation-side-panel-list.js"></script>
-<script src="~/Scripts/Compensation/compensation-side-panel-form.js"></script>
-
-@Html.ActionLink("Logout", "Logout", "Account")
-<h2>Compensations</h2>
+<script src="~/Scripts/Compensation/common.js"></script>
+<script src="~/Scripts/Compensation/table.js"></script>
+<script src="~/Scripts/Compensation/side.panel.js"></script>
+<script src="~/Scripts/Compensation/side.panel.list.js"></script>
+<script src="~/Scripts/Compensation/side.panel.form.js"></script>
 
 <div>
-    <div>
-        <table class="table table-hover table-bordered">
-            <thead>
-            <tr>
-                <th>Employee name</th>
-                <th>January</th>
-                <th>February</th>
-                <th>March</th>
-                <th>April</th>
-                <th>May</th>
-                <th>June</th>
-                <th>July</th>
-                <th>August</th>
-                <th>September</th>
-                <th>October</th>
-                <th>November</th>
-                <th>Decemper</th>
-                <th>Total</th>
-            </tr>
-            </thead>
-            <tbody data-bind="foreach: co.compensations">
-            <tr data-bind="click: { double: cosp.show }">
-                <td data-bind="text: Employee.Name"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    @Html.ActionLink("Logout", "Logout", "Account")
+    <h2>Compensations</h2>
 
+    @Html.Partial("Table/_Table")
     @Html.Partial("SidePanel/_SidePanel")
 </div>
 
 <!-- ko with: alert -->
 <div class="tn-box tn-box-hoverpause">
-    <p data-bind="text: message"></p>
+    <p data-bind="text: alert.message"></p>
 </div>
 <!-- /ko -->

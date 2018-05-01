@@ -9,11 +9,11 @@
     border: 5px solid cornflowerblue;
     background-color: white;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 8px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
@@ -27,7 +27,6 @@
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    right: 0;
+    font-size: 16px;
 }

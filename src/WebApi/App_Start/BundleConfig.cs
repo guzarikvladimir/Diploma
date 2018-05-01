@@ -12,13 +12,9 @@ namespace WebApi
             bundles.Add(new ScriptBundle("~/bundles/knockout")
                 .Include("~/Scripts/Knockout/knockout-{version}.js")
                 .Include("~/Scripts/Helpers/dblclick-helper.js")
-                .Include("~/Scripts/Helpers/request-helper.js")
-                .Include("~/Scripts/Helpers/alert-helper.js")
-                .Include("~/Scripts/Helpers/guid-helper.js"));
-            
-            bundles.Add(new ScriptBundle("~/bundles/compensation")
-                .Include("~/Scripts/Compensation/compensation.js")
-                .Include("~/Scripts/Compensation/compensation-side-panel.js"));
+                .Include("~/Scripts/Helpers/request.js")
+                .Include("~/Scripts/Helpers/alert.js")
+                .Include("~/Scripts/Helpers/guid.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap")
                 .Include("~/Scripts/Bootstrap/bootstrap.min.js"));

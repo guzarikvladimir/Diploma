@@ -1,17 +1,17 @@
-﻿<form data-bind="submit: cospform.submitHandler">
+﻿<form data-bind="submit: cosideform.submitHandler">
     <select data-bind="options: co.promotionTypes,
-                value: cospform.promotionType,
-                event: { change: cospform.triggerIsSalary }"></select>
-    <input data-bind="value: cospform.value" />
+                value: cosideform.promotionType,
+                event: { change: cosideform.triggerIsSalary }"></select>
+    <input data-bind="value: cosideform.value" />
     <select data-bind="options: co.currencies,
             optionsText: 'Name',
             optionsValue: $data,
-            value: cospform.currency"></select>
-    <div data-bind="if: cospform.isSalary">
+            value: cosideform.currency"></select>
+    <div data-bind="if: cosideform.isSalary">
         <select data-bind="options: co.salaryTypes,
-                value: cospform.salaryType"></select>
+                value: cosideform.salaryType"></select>
     </div>
-    <input data-bind="value: cospform.applyDate" type="date" />
-    <textarea data-bind="value: cospform.comment"></textarea>
+    <input data-bind="value: cosideform.applyDate" type="date" />
+    <textarea data-bind="value: cosideform.comment"></textarea>
     <button type="submit">Add Compensation</button>
 </form>

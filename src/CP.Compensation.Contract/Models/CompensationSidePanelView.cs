@@ -4,7 +4,7 @@ using CP.Shared.Contract.Employee.Models;
 
 namespace CP.Compensation.Contract.Models
 {
-    public class CompensationView
+    public class CompensationSidePanelView
     {
         public EmployeeView Employee { get; set; }
 

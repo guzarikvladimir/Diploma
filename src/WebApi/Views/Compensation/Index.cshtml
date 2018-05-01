@@ -11,6 +11,7 @@
 <script src="~/Scripts/Compensation/compensation-side-panel-list.js"></script>
 <script src="~/Scripts/Compensation/compensation-side-panel-form.js"></script>
 
+@Html.ActionLink("Logout", "Logout", "Account")
 <h2>Compensations</h2>
 
 <div>
@@ -59,13 +60,7 @@
 </div>
 
 <!-- ko with: alert -->
-<div class="tn-box tn-box-hoverpause tn-box-color-error">
-    <p data-bind="text: message"></p>
-</div>
-<!-- /ko -->
-
-<!-- ko with: alert -->
-<div class="tn-box tn-box-hoverpause tn-box-color-success">
+<div class="tn-box tn-box-hoverpause">
     <p data-bind="text: message"></p>
 </div>
 <!-- /ko -->

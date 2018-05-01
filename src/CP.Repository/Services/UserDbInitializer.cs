@@ -9,6 +9,14 @@ namespace CP.Repository.Services
     {
         protected override void Seed(ApplicationContext db)
         {
+            AddEmployee(db);
+            AddCurrencies(db);
+
+            base.Seed(db);
+        }
+
+        private void AddEmployee(ApplicationContext db)
+        {
             Guid positionId = Guid.NewGuid();
             var position = new JobFunctionPosition()
             {
@@ -96,40 +104,71 @@ namespace CP.Repository.Services
                 RoleId = roleId
             };
             db.EmployeeRoles.Add(employeeRole);
-
-            AddCurrencies(db);
-
-            base.Seed(db);
         }
 
         private void AddCurrencies(ApplicationContext db)
         {
+            Guid usdId = Guid.NewGuid();
+            Guid eurId = Guid.NewGuid();
+            Guid byrId = Guid.NewGuid();
+            Guid rurId = Guid.NewGuid();
             db.Currencies.AddRange(new List<Currency>()
             {
                 new Currency()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = usdId,
                     Name = "USD"
                 },
                 new Currency()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = eurId,
                     Name = "EUR"
                 },
                 new Currency()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = byrId,
                     Name = "BYR"
                 },
                 new Currency()
                 {
-                    Id = Guid.NewGuid(),
+                    Id = rurId,
                     Name = "RUR"
-                },
-                new Currency()
+                }
+            });
+
+            db.CurrencyRates.AddRange(new List<CurrencyRate>()
+            {
+                new CurrencyRate()
                 {
                     Id = Guid.NewGuid(),
-                    Name = "UAH"
+                    CurrencyId = usdId,
+                    Date = new DateTime(2018, 4, 1),
+                    Ratio = decimal.Parse("1.0"),
+                    Type = CurrencyRateType.Daily
+                },
+                new CurrencyRate()
+                {
+                    Id = Guid.NewGuid(),
+                    CurrencyId = eurId,
+                    Date = new DateTime(2018, 4, 1),
+                    Ratio = decimal.Parse("0.821"),
+                    Type = CurrencyRateType.Daily
+                },
+                new CurrencyRate()
+                {
+                    Id = Guid.NewGuid(),
+                    CurrencyId = byrId,
+                    Date = new DateTime(2018, 4, 1),
+                    Ratio = decimal.Parse("2.0"),
+                    Type = CurrencyRateType.Daily
+                },
+                new CurrencyRate()
+                {
+                    Id = Guid.NewGuid(),
+                    CurrencyId = rurId,
+                    Date = new DateTime(2018, 4, 1),
+                    Ratio = decimal.Parse("61.8"),
+                    Type = CurrencyRateType.Daily
                 }
             });
         }

@@ -90,6 +90,14 @@
     <Compile Include="Migrations\201804301615565_AddCompensationPromotionStatus.Designer.cs">
       <DependentUpon>201804301615565_AddCompensationPromotionStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805011438476_RenameCurrencyRateValue.cs" />
+    <Compile Include="Migrations\201805011438476_RenameCurrencyRateValue.Designer.cs">
+      <DependentUpon>201805011438476_RenameCurrencyRateValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805011509329_AddDateColumnToCurrencyRate.cs" />
+    <Compile Include="Migrations\201805011509329_AddDateColumnToCurrencyRate.Designer.cs">
+      <DependentUpon>201805011509329_AddDateColumnToCurrencyRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BonusPromotion.cs" />
     <Compile Include="Models\CompensationPromotion.cs" />
@@ -148,6 +156,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804301615565_AddCompensationPromotionStatus.resx">
       <DependentUpon>201804301615565_AddCompensationPromotionStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805011438476_RenameCurrencyRateValue.resx">
+      <DependentUpon>201805011438476_RenameCurrencyRateValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805011509329_AddDateColumnToCurrencyRate.resx">
+      <DependentUpon>201805011509329_AddDateColumnToCurrencyRate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

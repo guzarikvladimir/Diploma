@@ -6,6 +6,6 @@ namespace CP.Shared.Contract.CompensationPromotion.Services
 {
     public interface ICompensationPromotionService
     {
-        List<CompensationPromotionView> Get(Guid employeeId);
+        List<CompensationPromotionView> Get(Guid employeeId, bool onlyApproved = false);
     }
 }

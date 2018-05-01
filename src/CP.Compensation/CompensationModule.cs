@@ -10,8 +10,9 @@ namespace CP.Compensation
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ICompensationSerivce>().To<CompensationSerivce>().InRequestScope();
+            kernel.Bind<ICompensationTableSerivce>().To<CompensationTableSerivce>().InRequestScope();
             kernel.Bind<ICompensationWorkflowService>().To<CompensationWorkflowService>().InRequestScope();
+            kernel.Bind<ICompensationSidePanelService>().To<CompensationSidePanelService>().InRequestScope();
         }
     }
 }

@@ -9,7 +9,9 @@ namespace CP.Repository.Models
 
         public Guid CurrencyId { get; set; }
 
-        public decimal Value { get; set; }
+        public DateTime Date { get; set; }
+
+        public decimal Ratio { get; set; }
 
         public CurrencyRateType Type { get; set; }
     }

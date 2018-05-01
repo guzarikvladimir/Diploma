@@ -10,19 +10,26 @@ namespace CP.Compensation.Controllers
     [RoutePrefix("api/Compensations")]
     public class CompensationsController : ApiController
     {
+        #region Injects
+
         [Inject]
-        ICompensationSerivce CompensationSerivce { get; set; }
+        ICompensationTableSerivce CompensationTableSerivce { get; set; }
+
+        [Inject]
+        ICompensationSidePanelService CompensationSidePanelService { get; set; }
+
+        #endregion
 
         [Route("Table")]
-        public IEnumerable<CompensationView> Get()
+        public IEnumerable<CompensationTableView> Get()
         {
-            return CompensationSerivce.Get();
+            return CompensationTableSerivce.Get();
         }
 
         [Route("SidePanel/{employeeId}")]
-        public CompensationView Get(Guid employeeId)
+        public CompensationSidePanelView Get(Guid employeeId)
         {
-            return CompensationSerivce.Get(employeeId);
+            return CompensationSidePanelService.Get(employeeId);
         }
     }
 }

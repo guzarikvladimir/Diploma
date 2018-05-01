@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CP.Repository.Models;
 using CP.Shared.Contract.Bonus.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
@@ -21,12 +22,18 @@ namespace CP.Shared.CompensationPromotion.Services
 
         #endregion
 
-        public List<CompensationPromotionView> Get(Guid employeeId)
+        public List<CompensationPromotionView> Get(Guid employeeId, bool onlyApproved = false)
         {
             IEnumerable<CompensationPromotionView> salaries = SalaryPromotionRetrievingService.Get()
                 .Where(s => s.Employee.Id == employeeId);
             IEnumerable<CompensationPromotionView> bonuses = BonusPromotionRetrievingService.Get()
                 .Where(b => b.Employee.Id == employeeId);
+            if (onlyApproved)
+            {
+                salaries = salaries.Where(cp => cp.PromotionStatus == CompensationPromotionStatus.Approved);
+                bonuses = bonuses.Where(cp => cp.PromotionStatus == CompensationPromotionStatus.Approved);
+            }
+
             List<CompensationPromotionView> compensations = salaries.ToList();
             compensations.AddRange(bonuses);
 

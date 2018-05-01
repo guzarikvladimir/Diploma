@@ -109,6 +109,7 @@
     <Compile Include="DependencyResolvers\Services\Module.cs" />
     <Compile Include="DependencyResolvers\Services\NinjectDependencyResolver.cs" />
     <Compile Include="DependencyResolvers\Services\ServiceAccessor.cs" />
+    <Compile Include="Helpers\DateTimeExtensions.cs" />
     <Compile Include="Identity\Contract\IUserService.cs" />
     <Compile Include="Identity\Helpers\IdentityExtensions.cs" />
     <Compile Include="Identity\IdentityModule.cs" />

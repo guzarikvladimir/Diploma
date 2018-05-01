@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\CompensationView.cs" />
+    <Compile Include="Models\CompensationSidePanelView.cs" />
+    <Compile Include="Models\CompensationTableView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ICompensationSerivce.cs" />
+    <Compile Include="Services\ICompensationSidePanelService.cs" />
+    <Compile Include="Services\ICompensationTableSerivce.cs" />
     <Compile Include="Services\ICompensationWorkflowService.cs" />
   </ItemGroup>
   <ItemGroup>

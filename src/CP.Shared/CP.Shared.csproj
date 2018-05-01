@@ -79,6 +79,8 @@
     <Compile Include="CompensationPromotion\Services\CompensationPromotionModifyingService.cs" />
     <Compile Include="CompensationPromotion\Services\CompensationPromotionRetrievingService.cs" />
     <Compile Include="CompensationPromotion\Services\CompensationPromotionService.cs" />
+    <Compile Include="Compensation\CompensationModule.cs" />
+    <Compile Include="Compensation\Services\CompensationCalculationService.cs" />
     <Compile Include="Core\Services\SimpleModifyingService.cs" />
     <Compile Include="Core\Services\SimpleRetrievingService.cs" />
     <Compile Include="Country\CountryModule.cs" />
@@ -87,10 +89,12 @@
     <Compile Include="CurrencyRate\CurrencyRateModule.cs" />
     <Compile Include="CurrencyRate\Mappers\CurrencyRateMapper.cs" />
     <Compile Include="CurrencyRate\Services\CurrencyRateRetrievingService.cs" />
+    <Compile Include="CurrencyRate\Services\CurrencyRateService.cs" />
     <Compile Include="Currency\CurrenyModule.cs" />
     <Compile Include="Currency\Mappers\CurrencyMapper.cs" />
+    <Compile Include="Currency\Services\CurrencyConverterService.cs" />
+    <Compile Include="Currency\Services\CurrencyResolverService.cs" />
     <Compile Include="Currency\Services\CurrencyRetrievingService.cs" />
-    <Compile Include="Currency\Services\CurrencyService.cs" />
     <Compile Include="EmployeeRole\EmployeeRoleModule.cs" />
     <Compile Include="EmployeeRole\Mappers\EmployeeRoleMapper.cs" />
     <Compile Include="EmployeeRole\Services\EmployeeRoleRetrievingService.cs" />

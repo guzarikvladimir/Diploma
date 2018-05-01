@@ -195,10 +195,10 @@
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
     <Content Include="Scripts\Bootstrap\bootstrap.js" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Compensation\compensation.js" />
     <Content Include="Scripts\Compensation\compensation-side-panel-form.js" />
     <Content Include="Scripts\Compensation\compensation-side-panel-list.js" />
     <Content Include="Scripts\Compensation\compensation-side-panel.js" />
-    <Content Include="Scripts\Compensation\compensation.js" />
     <None Include="Scripts\JQuery\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\Helpers\alert-helper.js" />
     <Content Include="Scripts\Helpers\guid-helper.js" />

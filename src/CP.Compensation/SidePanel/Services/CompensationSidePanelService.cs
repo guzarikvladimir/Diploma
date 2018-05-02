@@ -8,7 +8,7 @@ using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
 using Ninject;
 
-namespace CP.Compensation.Services
+namespace CP.Compensation.SidePanel.Services
 {
     public class CompensationSidePanelService : ICompensationSidePanelService
     {

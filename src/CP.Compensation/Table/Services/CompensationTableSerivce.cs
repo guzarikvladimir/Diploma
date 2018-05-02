@@ -11,7 +11,7 @@ using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
 using Ninject;
 
-namespace CP.Compensation.Services
+namespace CP.Compensation.Table.Services
 {
     public class CompensationTableSerivce : ICompensationTableSerivce
     {

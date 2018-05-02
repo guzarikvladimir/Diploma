@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using AutoFixture;
+﻿using AutoFixture;
 using CP.Platform.Test.Core.Models;
 using CP.Platform.Test.Core.Services;
 using CP.Shared.Contract.Employee.Models;

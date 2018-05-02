@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace CP.Compensation.Controllers
+namespace CP.Compensation.Table.Controllers
 {
     [Authorize]
     public class CompensationController : Controller

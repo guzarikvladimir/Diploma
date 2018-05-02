@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C10C370-9F82-49D4-8E25-7A0994009EBE}</ProjectGuid>
+    <ProjectGuid>{C93A53F2-E6E9-4D03-A89E-D80D56984341}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CP.Shared.Test.Contract</RootNamespace>
-    <AssemblyName>CP.Shared.Test.Contract</AssemblyName>
+    <RootNamespace>CP.Shared.Test</RootNamespace>
+    <AssemblyName>CP.Shared.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -41,29 +42,20 @@
       <HintPath>..\..\..\packages\AutoFixture.4.2.1\lib\net452\AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Moq, Version=4.7.145.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Moq.4.7.145\lib\net45\Moq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.0.5797.27534, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\NUnit.3.0.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
       <Private>True</Private>
@@ -86,53 +78,41 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Bonus\Customizations\BonusPromotionViewSteps.cs" />
-    <Compile Include="Bonus\Helpers\BonusPromotionHelper.cs" />
-    <Compile Include="Bonus\Models\BonusPromotionViewCustomizationModel.cs" />
-    <Compile Include="Bonus\Models\BonusPromotionViewTestModel.cs" />
-    <Compile Include="CompensationPromotion\Customizations\CompensationPromotionViewSteps.cs" />
-    <Compile Include="CompensationPromotion\Helpers\CompensationPromotionHelper.cs" />
-    <Compile Include="CompensationPromotion\Models\CompensationpromotionViewTestModel.cs" />
-    <Compile Include="CompensationPromotion\Models\CompensationPromotionViewCustomizationModel.cs" />
-    <Compile Include="CurrencyRate\Customizations\CurrencyRateViewSteps.cs" />
-    <Compile Include="CurrencyRate\Mocks\CurrencyRateRetrieving\GetSteps.cs" />
-    <Compile Include="CurrencyRate\Models\CurrencyRateViewCustomizationModel.cs" />
-    <Compile Include="Currency\Customizations\CurrencyViewSteps.cs" />
-    <Compile Include="Currency\Mocks\CurrencyRetrieving\GetByIdSteps.cs" />
-    <Compile Include="Currency\Mocks\CurrencyRetrieving\GetSteps.cs" />
-    <Compile Include="EmployeeRole\Mocks\EmployeeRoleRetrieving\GetByEmployeeSteps.cs" />
-    <Compile Include="EmployeeRole\Models\EmployeeRoleViewCustomizationModel.cs" />
-    <Compile Include="Employee\Customizations\EmployeeViewSteps.cs" />
-    <Compile Include="Employee\Mocks\EmployeeRetrieving\GetSteps.cs" />
+    <Compile Include="Compensation\CompensationCalculation\GetForCompensations.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetForCompensations.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Compensation\CompensationCalculation\GetForCompensationsSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Salary\Customizations\SalaryPromotionViewSteps.cs" />
-    <Compile Include="Salary\Helpers\SalaryPromotionHelper.cs" />
-    <Compile Include="Salary\Models\SalaryPromotionViewCustomizationModel.cs" />
-    <Compile Include="Salary\Models\SalaryPromotionViewTestModel.cs" />
-    <Compile Include="User\Customiztions\UserViewSteps.cs" />
-    <Compile Include="User\Mocks\UserRetrieving\GetByIdSteps.cs" />
-    <Compile Include="User\Mocks\UserRetrieving\GetSteps.cs" />
-    <Compile Include="User\Models\UserViewCustomizationModel.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\CP.Repository\CP.Repository.csproj">
-      <Project>{A565953B-77E4-4CDF-A8F5-D395B16FE73A}</Project>
-      <Name>CP.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\CP.Shared.Contract\CP.Shared.Contract.csproj">
       <Project>{C862C837-F423-4E0C-B447-6D8601518582}</Project>
       <Name>CP.Shared.Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\CP.Shared\CP.Shared.csproj">
+      <Project>{F2F1978A-406E-43C4-BA79-F1F0BE68B424}</Project>
+      <Name>CP.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Platform.Test\CP.Platform.Test.csproj">
-      <Project>{7651085a-a3ae-4f84-8e6c-e4fccb70809a}</Project>
+      <Project>{7651085A-A3AE-4F84-8E6C-E4FCCB70809A}</Project>
       <Name>CP.Platform.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.Shared.Test.Contract\CP.Shared.Test.Contract.csproj">
+      <Project>{8c10c370-9f82-49d4-8e25-7a0994009ebe}</Project>
+      <Name>CP.Shared.Test.Contract</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Compensation\CompensationCalculation\GetForCompensations.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GetForCompensations.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
@@ -159,6 +139,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\..\..\packages\SpecFlow.2.3.2\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\SpecFlow.2.3.2\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

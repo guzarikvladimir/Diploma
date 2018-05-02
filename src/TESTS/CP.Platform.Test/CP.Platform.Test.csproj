@@ -99,6 +99,7 @@
     <Compile Include="Core\Models\BaseTestData.cs" />
     <Compile Include="Core\Models\FunctionWrapper.cs" />
     <Compile Include="Core\Models\IBaseTestData.cs" />
+    <Compile Include="Core\Models\ITestModel.cs" />
     <Compile Include="Core\Services\ConfigurationStepsBase.cs" />
     <Compile Include="Core\Services\EntitiesStepsBase.cs" />
     <Compile Include="Core\Services\EntityStepsBase.cs" />

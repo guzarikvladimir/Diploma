@@ -40,6 +40,7 @@ namespace CP.Shared.Compensation.Services
                 if (salaryPromotion != null && salaryPromotion.SalaryType == SalaryType.Monthly)
                 {
                     total += value.Value * 12;
+                    continue;
                 }
 
                 total += value.Value;

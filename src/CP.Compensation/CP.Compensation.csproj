@@ -97,14 +97,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompensationModule.cs" />
-    <Compile Include="Controllers\CompensationController.cs" />
-    <Compile Include="Controllers\CompensationsController.cs" />
-    <Compile Include="Controllers\CompensationWorkflowController.cs" />
+    <Compile Include="SidePanel\Controllers\ComppensationSidePanelController.cs" />
+    <Compile Include="SidePanel\SidePanelModule.cs" />
+    <Compile Include="Table\Controllers\CompensationController.cs" />
+    <Compile Include="Table\Controllers\CompensationTableController.cs" />
+    <Compile Include="Table\TableModule.cs" />
+    <Compile Include="Workflow\Controllers\CompensationWorkflowController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\CompensationTableSerivce.cs" />
-    <Compile Include="Services\CompensationSidePanelService.cs" />
-    <Compile Include="Services\CompensationWorkflowService.cs" />
+    <Compile Include="Table\Services\CompensationTableSerivce.cs" />
+    <Compile Include="SidePanel\Services\CompensationSidePanelService.cs" />
+    <Compile Include="Workflow\Services\CompensationWorkflowService.cs" />
+    <Compile Include="Workflow\WorkflowModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

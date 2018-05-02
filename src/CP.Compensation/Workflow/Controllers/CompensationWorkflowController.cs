@@ -4,7 +4,7 @@ using CP.Shared.Contract.Bonus.Models;
 using CP.Shared.Contract.Salary.Models;
 using Ninject;
 
-namespace CP.Compensation.Controllers
+namespace CP.Compensation.Workflow.Controllers
 {
     [RoutePrefix("api/Compensations")]
     public class CompensationWorkflowController : ApiController

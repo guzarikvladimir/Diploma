@@ -2,7 +2,7 @@
 
 namespace CP.Platform.RequestTime.Contract
 {
-    public interface IRequestTimeService
+    public interface IRequestTime
     {
         DateTime Time { get; }
     }

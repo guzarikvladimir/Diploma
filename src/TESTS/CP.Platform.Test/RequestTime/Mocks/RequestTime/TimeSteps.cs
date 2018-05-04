@@ -12,7 +12,7 @@ namespace CP.Platform.Test.RequestTime.Mocks.RequestTime
     {
         public TimeSteps(BaseTestData data) : base(data)
         {
-            data.Mock<IRequestTimeService>()
+            data.Mock<IRequestTime>()
                 .Setup(service => service.Time)
                 .Returns(MockFunction.FunctionInvoker);
         }

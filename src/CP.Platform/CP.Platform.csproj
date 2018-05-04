@@ -120,9 +120,9 @@
     <Compile Include="Mappers\Services\SimpleEntityMapper.cs" />
     <Compile Include="Mappers\Services\SimpleEntityModifyingMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RequestTime\Contract\IRequestTimeService.cs" />
+    <Compile Include="RequestTime\Contract\IRequestTime.cs" />
     <Compile Include="RequestTime\RequestTimeModule.cs" />
-    <Compile Include="RequestTime\Services\RequestTimeService.cs" />
+    <Compile Include="RequestTime\Services\RequestTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

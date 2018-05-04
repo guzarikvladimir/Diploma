@@ -18,7 +18,7 @@ namespace CP.Shared.CurrencyRate.Services
         ICurrencyRateRetrievingService CurrencyRateRetrievingService { get; set; }
 
         [Inject]
-        IRequestTimeService RequestTimeService { get; set; }
+        IRequestTime RequestTime { get; set; }
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace CP.Shared.CurrencyRate.Services
                 ? currencyRates.Where(cr => cr.Type == CurrencyRateType.Monthly)
                     .FirstOrDefault(cr => cr.Date <= date.Value.ToUpperDate())
                 : currencyRates.Where(cr => cr.Type == CurrencyRateType.Daily)
-                    .FirstOrDefault(cr => cr.Date <= RequestTimeService.Time);
+                    .FirstOrDefault(cr => cr.Date <= RequestTime.Time);
 
             return currencyRate;
         }

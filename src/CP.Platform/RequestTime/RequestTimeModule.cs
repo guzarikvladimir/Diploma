@@ -10,7 +10,7 @@ namespace CP.Platform.RequestTime
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IRequestTimeService>().To<RequestTimeService>().InRequestScope();
+            kernel.Bind<IRequestTime>().To<Services.RequestTime>().InRequestScope();
         }
     }
 }

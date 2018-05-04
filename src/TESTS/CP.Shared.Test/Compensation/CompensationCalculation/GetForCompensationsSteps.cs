@@ -15,10 +15,10 @@ using CP.Shared.CurrencyRate.Services;
 using Ninject;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
 using GetCurrencies = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetSteps;
 using GetCurrencyById = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetByIdSteps;
 using GetCurrencyRates = CP.Shared.Test.Contract.CurrencyRate.Mocks.CurrencyRateRetrieving.GetSteps;
+using GetDefaultCurrency = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetDefaultSteps;
 
 namespace CP.Shared.Test.Compensation.CompensationCalculation
 {
@@ -38,11 +38,11 @@ namespace CP.Shared.Test.Compensation.CompensationCalculation
             BindInSingletonScope<ICurrencyResolverService, CurrencyResolverService>();
             BindInSingletonScope<ICurrencyConverterService, CurrencyConverterService>();
             BindInSingletonScope<ICurrencyRateService, CurrencyRateService>();
-
-            // Mock CurrencyRetrievingService.GetDefalut
+            
             Given(GetCurrencies.Default);
             Given(GetCurrencyById.Default);
             Given(GetCurrencyRates.Default);
+            Given(GetDefaultCurrency.Default);
         }
 
         [When(@"Calculate compensations is requested")]

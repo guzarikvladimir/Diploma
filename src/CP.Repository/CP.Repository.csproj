@@ -98,12 +98,22 @@
     <Compile Include="Migrations\201805011509329_AddDateColumnToCurrencyRate.Designer.cs">
       <DependentUpon>201805011509329_AddDateColumnToCurrencyRate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805041648414_AddLegalEntityTable.cs" />
+    <Compile Include="Migrations\201805041648414_AddLegalEntityTable.Designer.cs">
+      <DependentUpon>201805041648414_AddLegalEntityTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805041655577_AddLegalEntityFieldToCompensationPromotion.cs" />
+    <Compile Include="Migrations\201805041655577_AddLegalEntityFieldToCompensationPromotion.Designer.cs">
+      <DependentUpon>201805041655577_AddLegalEntityFieldToCompensationPromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BonusPromotion.cs" />
     <Compile Include="Models\CompensationPromotion.cs" />
     <Compile Include="Models\CompensationPromotionStatus.cs" />
     <Compile Include="Models\CurrencyRate.cs" />
     <Compile Include="Models\CurrencyRateType.cs" />
+    <Compile Include="Models\EmployeeToLegalEntity.cs" />
+    <Compile Include="Models\LegalEntity.cs" />
     <Compile Include="Models\SalaryPromotion.cs" />
     <Compile Include="Models\CompensationPromotionType.cs" />
     <Compile Include="Models\Country.cs" />
@@ -162,6 +172,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805011509329_AddDateColumnToCurrencyRate.resx">
       <DependentUpon>201805011509329_AddDateColumnToCurrencyRate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805041648414_AddLegalEntityTable.resx">
+      <DependentUpon>201805041648414_AddLegalEntityTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805041655577_AddLegalEntityFieldToCompensationPromotion.resx">
+      <DependentUpon>201805041655577_AddLegalEntityFieldToCompensationPromotion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

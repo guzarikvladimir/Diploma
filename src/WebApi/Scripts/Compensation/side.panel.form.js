@@ -8,16 +8,17 @@ var cosideform = (function () {
         applyDate: ko.observable(new Date().toISOString().split('T')[0]),
         comment: ko.observable(),
         salaryType: ko.observable(),
+        legalEntity: ko.observable(),
         submitHandler: function() {
             var data = getData();
             var action = model.isSalary() ? "Salary" : "Bonus";
 
             request.sendAjax('POST', '/api/Compensations/' + action + '/Create', data)
-                .then(() => {
+                .then(() => {   
                     alert.show(action + ' successfully created.');
                     cotable.getCompensations();
-                    coside.show();
                     clearData();
+                    coside.show();
                 }, (error) => alert.error(error));
         },
         isSalary: ko.observable(true),
@@ -38,8 +39,9 @@ var cosideform = (function () {
     function getData() {
         var data = {
             value: model.value(),
-            currency: model.currency(),
-            employee: coside.employeeCompensations().Employee,
+            currencyId: model.currency().Id,
+            employeeId: coside.employeeCompensations().Employee.Id,
+            legalEntityId: model.legalEntity().Id,
             promotionType: model.promotionType(),
             applyDate: model.applyDate(),
             comment: model.comment()
@@ -59,6 +61,7 @@ var cosideform = (function () {
         applyDate: model.applyDate,
         comment: model.comment,
         salaryType: model.salaryType,
+        legalEntity: model.legalEntity,
         submitHandler: model.submitHandler,
         isSalary: model.isSalary,
         triggerIsSalary: model.triggerIsSalary

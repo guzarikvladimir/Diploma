@@ -39,6 +39,10 @@ namespace CP.Repository.Services
 
         public DbSet<CurrencyRate> CurrencyRates { get; set; }
 
+        public DbSet<LegalEntity> LegalEntities { get; set; }
+
+        public DbSet<EmployeeToLegalEntity> EmployeeToLegalEntities { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CompensationPromotion>()

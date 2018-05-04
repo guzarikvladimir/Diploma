@@ -3,6 +3,7 @@ using CP.Repository.Models;
 using CP.Shared.Contract.Core.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Employee.Models;
+using CP.Shared.Contract.LegalEntity.Models;
 
 namespace CP.Shared.Contract.CompensationPromotion.Models
 {
@@ -15,6 +16,8 @@ namespace CP.Shared.Contract.CompensationPromotion.Models
         public CurrencyView Currency { get; set; }
 
         public EmployeeView Employee { get; set; }
+
+        public LegalEntityView LegalEntity { get; set; }
 
         public CompensationPromotionType PromotionType { get; set; }
 

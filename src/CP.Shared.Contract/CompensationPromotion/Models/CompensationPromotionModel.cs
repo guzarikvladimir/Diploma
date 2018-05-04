@@ -12,9 +12,11 @@ namespace CP.Shared.Contract.CompensationPromotion.Models
 
         public decimal Value { get; set; }
 
-        public CurrencyView Currency { get; set; }
+        public Guid CurrencyId { get; set; }
 
-        public EmployeeView Employee { get; set; }
+        public Guid EmployeeId { get; set; }
+
+        public Guid LegalEntityId { get; set; }
 
         public CompensationPromotionType PromotionType { get; set; }
 
@@ -24,7 +26,7 @@ namespace CP.Shared.Contract.CompensationPromotion.Models
 
         public string Comment { get; set; }
 
-        public EmployeeView CreatedBy { get; set; }
+        public Guid CreatedById { get; set; }
 
         public DateTime? CreatedDate { get; set; }
     }

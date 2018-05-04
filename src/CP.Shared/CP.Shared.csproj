@@ -101,6 +101,10 @@
     <Compile Include="EmployeeStatus\EmployeeStatusModule.cs" />
     <Compile Include="EmployeeStatus\Mappers\EmployeeStatusMapper.cs" />
     <Compile Include="EmployeeStatus\Services\EmployeeStatusRetrievingService.cs" />
+    <Compile Include="EmployeeToLegalEntity\EmployeeToLegalEntityModule.cs" />
+    <Compile Include="EmployeeToLegalEntity\Mappers\EmployeeToLegalEntityMapper.cs" />
+    <Compile Include="EmployeeToLegalEntity\Services\EmployeeToLegalEntityModifyingService.cs" />
+    <Compile Include="EmployeeToLegalEntity\Services\EmployeeToLegalEntityRetrievingService.cs" />
     <Compile Include="Employee\EmployeeModule.cs" />
     <Compile Include="Employee\Mappers\EmployeeMapper.cs" />
     <Compile Include="Employee\Services\EmployeeRetrievingService.cs" />
@@ -113,6 +117,10 @@
     <Compile Include="JobFunction\JobFunctionModule.cs" />
     <Compile Include="JobFunction\Mappers\JobFunctionMapper.cs" />
     <Compile Include="JobFunction\Services\JobFunctionRetrievingService.cs" />
+    <Compile Include="LegalEntity\LegalEntityModule.cs" />
+    <Compile Include="LegalEntity\Mappers\LegalEntityMapper.cs" />
+    <Compile Include="LegalEntity\Services\LegalEntityModifyingService.cs" />
+    <Compile Include="LegalEntity\Services\LegalEntityRetrievingService.cs" />
     <Compile Include="Location\LocationModule.cs" />
     <Compile Include="Location\Mappers\LocationMapper.cs" />
     <Compile Include="Location\Services\LocationRetrievingService.cs" />

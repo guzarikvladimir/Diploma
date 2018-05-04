@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Currency\Controllers\CurrencyController.cs" />
+    <Compile Include="LegalEntity\Controllers\LegalEntityController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -99,6 +99,7 @@
     <Compile Include="CurrencyRate\Models\CurrencyRateViewCustomizationModel.cs" />
     <Compile Include="Currency\Customizations\CurrencyViewSteps.cs" />
     <Compile Include="Currency\Mocks\CurrencyRetrieving\GetByIdSteps.cs" />
+    <Compile Include="Currency\Mocks\CurrencyRetrieving\GetDefaultSteps.cs" />
     <Compile Include="Currency\Mocks\CurrencyRetrieving\GetSteps.cs" />
     <Compile Include="EmployeeRole\Mocks\EmployeeRoleRetrieving\GetByEmployeeSteps.cs" />
     <Compile Include="EmployeeRole\Models\EmployeeRoleViewCustomizationModel.cs" />

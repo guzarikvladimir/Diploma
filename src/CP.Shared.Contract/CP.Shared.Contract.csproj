@@ -69,6 +69,10 @@
     <Compile Include="EmployeeRole\Services\IEmployeeRoleRetrievingService.cs" />
     <Compile Include="EmployeeStatus\Models\EmployeeStatusView.cs" />
     <Compile Include="EmployeeStatus\Services\IEmployeeStatusRetrievingService.cs" />
+    <Compile Include="EmployeeToLegalEntity\Models\EmployeeToLegalEntityModel.cs" />
+    <Compile Include="EmployeeToLegalEntity\Models\EmployeeToLegalEntityView.cs" />
+    <Compile Include="EmployeeToLegalEntity\Services\IEmployeeToLegalEntityModifyingService.cs" />
+    <Compile Include="EmployeeToLegalEntity\Services\IEmployeeToLegalEntityRetrievingService.cs" />
     <Compile Include="Employee\Models\EmployeeView.cs" />
     <Compile Include="Employee\Services\IEmployeeRetrievingService.cs" />
     <Compile Include="JobFunctionPosition\Models\JobFunctionPositionView.cs" />
@@ -77,6 +81,10 @@
     <Compile Include="JobFunctionTitile\Services\IJobFunctionTitleRetrievingService.cs" />
     <Compile Include="JobFunction\Models\JobFunctionView.cs" />
     <Compile Include="JobFunction\Services\IJobFunctionRetrievingService.cs" />
+    <Compile Include="LegalEntity\Models\LegalEnityModel.cs" />
+    <Compile Include="LegalEntity\Models\LegalEntityView.cs" />
+    <Compile Include="LegalEntity\Services\ILegalEntityModifyingService.cs" />
+    <Compile Include="LegalEntity\Services\ILegalEntityRetrievingService.cs" />
     <Compile Include="Location\Models\LocationView.cs" />
     <Compile Include="Location\Services\ILocationRetrievingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

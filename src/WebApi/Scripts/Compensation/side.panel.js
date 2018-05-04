@@ -3,6 +3,7 @@
 var coside = (function () {
     var model = {
         employeeCompensations: ko.observable(),
+        employeeLegalEntities: ko.observableArray(),
         isOpened: ko.observable(false),
         show: show,
         hide: hide
@@ -13,14 +14,27 @@ var coside = (function () {
             obj = model.employeeCompensations();
         }
 
-        request.sendAjax('GET', "/api/Compensations/SidePanel/" + obj.Employee.Id)
+        request.sendAjax('GET', '/api/LegalEntity/' + obj.Employee.Id)
             .then((data) => {
-                model.employeeCompensations(data);
-            }, (error) => alert.error(error))
+                co.fillWithData(data, model.employeeLegalEntities);
+
+                return request.sendAjax('GET', '/api/Compensations/SidePanel/' + obj.Employee.Id);
+            })
+            .then((data) => model.employeeCompensations(data))
             .then(() => {
                 model.isOpened(true);
                 document.getElementById("sidenav").style.display = "block";
-            });
+            })
+            .catch((error) => alert.error(error));
+
+        //request.sendAjax('GET', '/api/Compensations/SidePanel/' + obj.Employee.Id)
+        //    .then((data) => {
+        //        model.employeeCompensations(data);
+        //    }, (error) => alert.error(error))
+        //    .then(() => {
+        //        model.isOpened(true);
+        //        document.getElementById("sidenav").style.display = "block";
+        //    });
     }
 
     function hide() {
@@ -30,6 +44,7 @@ var coside = (function () {
 
     return {
         employeeCompensations: model.employeeCompensations,
+        employeeLegalEntities: model.employeeLegalEntities,
         isOpened: model.isOpened,
         show: model.show,
         hide: model.hide

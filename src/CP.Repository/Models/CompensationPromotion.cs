@@ -14,6 +14,8 @@ namespace CP.Repository.Models
 
         public Guid EmployeeId { get; set; }
 
+        public Guid LegalEntityId { get; set; }
+
         public CompensationPromotionType PromotionType { get; set; }
 
         public CompensationPromotionStatus PromotionStatus { get; set; }

@@ -64,10 +64,9 @@ namespace CP.Compensation.Workflow.Services
         private T CreateInternal<T>(T model)
             where T: CompensationPromotionModel
         {
-            Guid userId = UserService.Current.GetUserId();
             model.Id = Guid.NewGuid();
             model.CreatedDate = DateTime.Now;
-            model.CreatedBy = EmployeeRetrievingService.GetById(userId);
+            model.CreatedById = UserService.Current.GetUserId();
             model.PromotionStatus = CompensationPromotionStatus.Approved;
 
             CompensationPromotionModifyingService.Add(model);

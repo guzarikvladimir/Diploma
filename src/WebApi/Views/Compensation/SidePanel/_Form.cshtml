@@ -2,6 +2,10 @@
     <select data-bind="options: co.promotionTypes,
                 value: cosideform.promotionType,
                 event: { change: cosideform.triggerIsSalary }"></select>
+    <select data-bind="options: coside.employeeLegalEntities,
+                optionsText: 'Name',
+                optionsValue: $data,
+                value: cosideform.legalEntity"></select>
     <input data-bind="value: cosideform.value" />
     <select data-bind="options: co.currencies,
             optionsText: 'Name',

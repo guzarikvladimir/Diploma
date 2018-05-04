@@ -85,6 +85,15 @@ namespace CP.Repository.Services
             };
             db.Users.Add(user);
 
+            Guid legalEntityId = Guid.NewGuid();
+            var legalEntity = new LegalEntity()
+            {
+                Id = legalEntityId,
+                Name = "LE BLR",
+                IsActive = true
+            };
+            db.LegalEntities.Add(legalEntity);
+
             Guid employeeRoleId = Guid.NewGuid();
             var employee = new Employee()
             {
@@ -96,6 +105,15 @@ namespace CP.Repository.Services
                 JobFunctionId = jobFunctionId
             };
             db.Employees.Add(employee);
+
+            var employeeToLe = new EmployeeToLegalEntity()
+            {
+                Id = Guid.NewGuid(),
+                LegalEntityId = legalEntityId,
+                EmployeeId = userId,
+                IsPrimary = true
+            };
+            db.EmployeeToLegalEntities.Add(employeeToLe);
 
             var employeeRole = new EmployeeRole()
             {

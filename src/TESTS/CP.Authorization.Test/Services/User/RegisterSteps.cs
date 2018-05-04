@@ -28,7 +28,7 @@ namespace CP.Authorization.Test.Services.User
         {
             RegisterView model = table.CreateInstance<RegisterView>();
             RegisterView view = Fixture.Create<RegisterView>();
-            view.Name = model.Name;
+            view.Email = model.Email;
         }
 
         [When(@"Register is requested")]

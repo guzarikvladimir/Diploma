@@ -66,7 +66,7 @@ namespace CP.Authorization.Controllers
 
                     return Login(new LoginView()
                     {
-                        Name = model.Name,
+                        Email = model.Email,
                         Password = model.Password
                     });
                 }

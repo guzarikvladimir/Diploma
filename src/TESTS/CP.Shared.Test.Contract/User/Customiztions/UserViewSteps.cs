@@ -24,7 +24,7 @@ namespace CP.Shared.Test.Contract.User.Customiztions
             foreach (UserViewCustomizationModel model in table.CreateSet<UserViewCustomizationModel>())
             {
                 UserView user = Fixture.Create<UserView>();
-                user.Id = Fixture.Create<List<EmployeeView>>().Single(e => e.Name == model.Name).Id;
+                user.Id = Fixture.Create<List<EmployeeView>>().Single(e => e.Email == model.Email).Id;
                 user.Password = model.Password;
                 list.Add(user);
             }

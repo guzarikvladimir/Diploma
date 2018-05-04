@@ -68,6 +68,8 @@ namespace CP.Shared.Test.Compensation.CompensationCalculation
 #line 2
 #line 3
  testRunner.Given("Requestor is going to calculate compensations", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 4
+ testRunner.And("Request time is configured to be 2018-05-02", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name"});
@@ -77,7 +79,7 @@ namespace CP.Shared.Test.Compensation.CompensationCalculation
                         "EUR"});
             table1.AddRow(new string[] {
                         "BYR"});
-#line 4
+#line 5
  testRunner.And("Currencies are customized to have properties", ((string)(null)), table1, "And ");
 #line hidden
         }
@@ -87,7 +89,7 @@ namespace CP.Shared.Test.Compensation.CompensationCalculation
         public virtual void AllUSDCompensations()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All USD compensations", ((string[])(null)));
-#line 10
+#line 11
 this.ScenarioSetup(scenarioInfo);
 #line 2
 this.FeatureBackground();
@@ -106,7 +108,7 @@ this.FeatureBackground();
                         "Salary",
                         "2018-05-02",
                         "Monthly"});
-#line 11
+#line 12
  testRunner.Given("Salaries are customized to have properties", ((string)(null)), table2, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -121,7 +123,7 @@ this.FeatureBackground();
                         "USD",
                         "Bonus",
                         "2018-04-02"});
-#line 14
+#line 15
  testRunner.And("Bonuses are customized to have properties", ((string)(null)), table3, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -134,13 +136,13 @@ this.FeatureBackground();
                         "1.0",
                         "Daily",
                         "2018-05-02"});
-#line 17
+#line 18
  testRunner.And("CurrencyRates are customized to have properties", ((string)(null)), table4, "And ");
-#line 20
- testRunner.When("Calculate compensations is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
- testRunner.Then("Total value should be 1500", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("Calculate compensations is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
+ testRunner.Then("Total value should be 1500", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 23
  testRunner.And("Result currency should be USD", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -151,7 +153,7 @@ this.FeatureBackground();
         public virtual void MultipleCurrencies()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple currencies", ((string[])(null)));
-#line 24
+#line 25
 this.ScenarioSetup(scenarioInfo);
 #line 2
 this.FeatureBackground();
@@ -184,7 +186,7 @@ this.FeatureBackground();
                         "Salary",
                         "2018-03-02",
                         "Annual"});
-#line 25
+#line 26
  testRunner.Given("Salaries are customized to have properties", ((string)(null)), table5, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -199,7 +201,7 @@ this.FeatureBackground();
                         "USD",
                         "Bonus",
                         "2018-04-02"});
-#line 30
+#line 31
  testRunner.And("Bonuses are customized to have properties", ((string)(null)), table6, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -222,13 +224,13 @@ this.FeatureBackground();
                         "1.25",
                         "Daily",
                         "2018-05-02"});
-#line 33
+#line 34
  testRunner.And("CurrencyRates are customized to have properties", ((string)(null)), table7, "And ");
-#line 38
- testRunner.When("Calculate compensations is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 39
- testRunner.Then("Total value should be 1630", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("Calculate compensations is requested", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 40
+ testRunner.Then("Total value should be 1630", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 41
  testRunner.And("Result currency should be USD", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

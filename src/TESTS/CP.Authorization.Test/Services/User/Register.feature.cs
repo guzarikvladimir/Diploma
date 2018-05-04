@@ -84,14 +84,14 @@ this.ScenarioSetup(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "Email"});
             table1.AddRow(new string[] {
                         "User_1"});
 #line 7
  testRunner.Given("Requestor is configured to have properties", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "Email"});
             table2.AddRow(new string[] {
                         "User_1"});
 #line 10

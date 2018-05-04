@@ -99,6 +99,7 @@ namespace CP.Repository.Services
             {
                 Id = userId,
                 Name = "Ivan",
+                Email = "test",
                 LocationId = locationId,
                 StatusId = employeeStatusId,
                 EmployeeStatus = employeeStatus,

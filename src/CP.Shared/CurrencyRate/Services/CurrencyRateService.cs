@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CP.Platform.Helpers;
+using CP.Platform.RequestTime.Contract;
 using CP.Repository.Models;
 using CP.Shared.Contract.CurrencyRate.Models;
 using CP.Shared.Contract.CurrencyRate.Services;
@@ -11,8 +12,15 @@ namespace CP.Shared.CurrencyRate.Services
 {
     public class CurrencyRateService : ICurrencyRateService
     {
+        #region Injects
+
         [Inject]
         ICurrencyRateRetrievingService CurrencyRateRetrievingService { get; set; }
+
+        [Inject]
+        IRequestTimeService RequestTimeService { get; set; }
+
+        #endregion
 
         public CurrencyRateView Get(Guid currencyId, DateTime? date = null)
         {
@@ -23,7 +31,7 @@ namespace CP.Shared.CurrencyRate.Services
                 ? currencyRates.Where(cr => cr.Type == CurrencyRateType.Monthly)
                     .FirstOrDefault(cr => cr.Date <= date.Value.ToUpperDate())
                 : currencyRates.Where(cr => cr.Type == CurrencyRateType.Daily)
-                    .FirstOrDefault(cr => cr.Date <= DateTime.Now);
+                    .FirstOrDefault(cr => cr.Date <= RequestTimeService.Time);
 
             return currencyRate;
         }

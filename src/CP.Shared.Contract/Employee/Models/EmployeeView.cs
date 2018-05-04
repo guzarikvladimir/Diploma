@@ -12,6 +12,8 @@ namespace CP.Shared.Contract.Employee.Models
 
         public string Name { get; set; }
 
+        public string Email { get; set; }
+
         public EmployeeStatusView EmployeeStatus { get; set; }
 
         public LocationView Location { get; set; }

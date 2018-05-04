@@ -105,10 +105,17 @@
     <Compile Include="Core\Services\EntityStepsBase.cs" />
     <Compile Include="Core\Services\StepsBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestTime\Mocks\RequestTime\TimeSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CP.Platform\CP.Platform.csproj">
+      <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
+      <Name>CP.Platform</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

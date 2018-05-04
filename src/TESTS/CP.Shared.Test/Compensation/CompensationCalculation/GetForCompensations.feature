@@ -1,6 +1,7 @@
 ﻿Feature: CompensationCalculationService. GetForCompensations
 Background: 
 	Given Requestor is going to calculate compensations
+	And Request time is configured to be 2018-05-02
 	And Currencies are customized to have properties
 	| Name |
 	| USD  |

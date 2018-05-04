@@ -5,7 +5,7 @@ namespace CP.Authorization.Contract.Models
     public class LoginView
     {
         [Required]
-        public string Name { get; set; }
+        public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

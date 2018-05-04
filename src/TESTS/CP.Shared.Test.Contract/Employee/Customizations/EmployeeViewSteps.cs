@@ -20,7 +20,7 @@ namespace CP.Shared.Test.Contract.Employee.Customizations
             foreach (EmployeeView model in table.CreateSet<EmployeeView>())
             {
                 EmployeeView employee = Fixture.Create<EmployeeView>();
-                employee.Name = model.Name;
+                employee.Email = model.Email;
                 list.Add(employee);
             }
         }

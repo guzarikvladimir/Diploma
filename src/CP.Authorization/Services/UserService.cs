@@ -39,16 +39,16 @@ namespace CP.Authorization.Services
 
         public ClaimsIdentity Login(LoginView model)
         {
-            EmployeeView employee = EmployeeRetrievingService.Get().FirstOrDefault(e => e.Name == model.Name);
+            EmployeeView employee = EmployeeRetrievingService.Get().FirstOrDefault(e => e.Email == model.Email);
             if (employee == null)
             {
-                throw new ArgumentNullException($"User with name {model.Name} is not an employee.");
+                throw new ArgumentNullException($"User with email {model.Email} is not an employee.");
             }
 
             UserView user = UserRetrievingService.GetById(employee.Id);
             if (user == null)
             {
-                throw new ArgumentNullException($"User with name {model.Name} is not registed.");
+                throw new ArgumentNullException($"User with email {model.Email} is not registed.");
             }
 
             if (user.Password != model.Password)
@@ -73,7 +73,7 @@ namespace CP.Authorization.Services
 
         public void Register(RegisterView view)
         {
-            EmployeeView employee = EmployeeRetrievingService.Get().FirstOrDefault(e => e.Name == view.Name);
+            EmployeeView employee = EmployeeRetrievingService.Get().FirstOrDefault(e => e.Email == view.Email);
             if (employee == null)
             {
                 throw new ArgumentException("You don't have permissions to register, because you are not an employee.");
@@ -82,7 +82,7 @@ namespace CP.Authorization.Services
             UserView user = UserRetrievingService.GetById(employee.Id);
             if (user != null)
             {
-                throw new ArgumentException($"User with name {employee.Name} already registered.");
+                throw new ArgumentException($"User with email {employee.Email} already registered.");
             }
 
             UserModel model = ModelMapper.Map(view);

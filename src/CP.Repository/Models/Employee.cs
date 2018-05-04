@@ -11,6 +11,8 @@ namespace CP.Repository.Models
 
         public string Name { get; set; }
 
+        public string Email { get; set; }
+
         public Guid StatusId { get; set; }
 
         public Guid LocationId { get; set; }

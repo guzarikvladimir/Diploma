@@ -82,14 +82,14 @@ this.ScenarioSetup(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "Email"});
             table1.AddRow(new string[] {
                         "User_1"});
 #line 6
  testRunner.Given("Employees are configured to have properties", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
+                        "Email",
                         "Password"});
             table2.AddRow(new string[] {
                         "User_1",
@@ -98,7 +98,7 @@ this.FeatureBackground();
  testRunner.And("Users are configured to have properties", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
+                        "Email",
                         "Password"});
             table3.AddRow(new string[] {
                         "User_1",
@@ -122,20 +122,20 @@ this.ScenarioSetup(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "Email"});
             table4.AddRow(new string[] {
                         "User_1"});
 #line 18
  testRunner.Given("Employees are configured to have properties", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
+                        "Email",
                         "Password"});
 #line 21
  testRunner.And("Users are configured to have properties", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name",
+                        "Email",
                         "Password"});
             table6.AddRow(new string[] {
                         "User_1",

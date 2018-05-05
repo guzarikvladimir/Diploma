@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using CP.Compensation.Workflow.Contract;
 using CP.Platform.Db.Contract;
-using CP.Platform.Identity.Contract;
-using CP.Platform.Identity.Helpers;
 using CP.Repository.Models;
 using CP.Shared.Contract.Bonus.Models;
 using CP.Shared.Contract.Bonus.Services;
@@ -19,9 +18,6 @@ namespace CP.Compensation.Workflow.Services
         #region Injects
 
         [Inject]
-        IUserService UserService { get; set; }
-
-        [Inject]
         ICompensationPromotionModifyingService CompensationPromotionModifyingService { get; set; }
 
         [Inject]
@@ -33,8 +29,14 @@ namespace CP.Compensation.Workflow.Services
         [Inject]
         IDbFactory DbFactory { get; set; }
 
+        [Inject]
+        List<ICompensationPromotionWorkflowStep> CompensationPromotionWorkflowSteps { get; set; }
+
+        [Inject]
+        List<ICompensationPromotionWorkflowValidator> CompensationPromotionWorkflowValidators { get; set; }
+
         #endregion
-        
+
         public void Create(SalaryPromotionModel model)
         {
             using (var scope = DbFactory.Create())
@@ -60,10 +62,15 @@ namespace CP.Compensation.Workflow.Services
         private T CreateInternal<T>(T model)
             where T: CompensationPromotionModel
         {
-            model.Id = Guid.NewGuid();
-            model.CreatedDate = DateTime.Now;
-            model.CreatedById = UserService.Current.GetUserId();
-            model.PromotionStatus = CompensationPromotionStatus.Approved;
+            foreach (ICompensationPromotionWorkflowValidator validator in CompensationPromotionWorkflowValidators)
+            {
+                validator.Validate(model);
+            }
+
+            foreach (ICompensationPromotionWorkflowStep step in CompensationPromotionWorkflowSteps)
+            {
+                step.Update(model);
+            }
 
             CompensationPromotionModifyingService.Add(model);
 

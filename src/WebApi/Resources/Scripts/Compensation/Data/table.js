@@ -23,7 +23,7 @@ var cotable = (function () {
         var result = `<td class="column100">${item.Employee.Name}</td>`;
         result = appendWithJobFunction(result, item.Employee.JobFunction);
         result = appendWithCompensations(result, item);
-        result += `<td class="column100">${co.parseValueWithCurrency(item.Total)}</td>`;
+        result = appendWithTotal(result, item);
 
         return result;
     }
@@ -55,6 +55,19 @@ var cotable = (function () {
 
             result += '</td>';
         }
+
+        return result;
+    }
+
+    function appendWithTotal(result, item) {
+        result += '<td class="column100">';
+        if (item.Total !== null) {
+            result += co.parseValueWithCurrency(item.Total);
+        } else {
+            result += '--';
+        }
+        
+        result += '</td>';
 
         return result;
     }

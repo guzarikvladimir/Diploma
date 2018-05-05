@@ -185,11 +185,13 @@
     <Content Include="Resources\Content\Common\nav.css" />
     <Content Include="Resources\Content\Common\controls.css" />
     <Content Include="Resources\Content\Compensation\side-panel-form.css" />
+    <Content Include="Resources\Content\Compensation\side-panel-header.css" />
     <Content Include="Resources\Content\Compensation\side-panel-list.css" />
     <Content Include="Resources\Content\Common\alert.css" />
     <Content Include="Resources\Content\Compensation\side-panel.css" />
     <Content Include="Resources\Content\Compensation\compensation-table.css" />
     <Content Include="Resources\Content\Common\util.css" />
+    <Content Include="Resources\Images\analyst-placeholder-avatar.png" />
     <Content Include="Resources\Images\start-bg.jpg" />
     <Content Include="Resources\Content\Start\start.css" />
     <Content Include="Resources\fonts\font-awesome-4.7.0\css\font-awesome.css" />
@@ -266,6 +268,7 @@
     <Content Include="Resources\fonts\OpenSans\OpenSans-SemiBold.ttf" />
     <Content Include="Resources\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
+    <Content Include="Resources\Scripts\Compensation\Data\side.panel.header.js" />
     <Content Include="Resources\Scripts\Compensation\Data\table.js" />
     <Content Include="Resources\Scripts\Compensation\Data\side.panel.form.js" />
     <Content Include="Resources\Scripts\Compensation\Data\side.panel.list.js" />

@@ -8,7 +8,6 @@ namespace WebApi
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include("~/Resources/vendor/jquery/jquery-3.2.1.min.js"));
-            //C:\Users\Sacris\Desktop\Diploma\src\WebApi\Resources\vendor\jquery\jquery-3.2.1.min.js
 
             bundles.Add(new ScriptBundle("~/bundles/knockout")
                 .Include("~/Resources/Scripts/Knockout/knockout-{version}.js",
@@ -45,12 +44,14 @@ namespace WebApi
                     "~/Resources/Scripts/Compensation/Data/table.js",
                     "~/Resources/Scripts/Compensation/Data/side.panel.js",
                     "~/Resources/Scripts/Compensation/Data/side.panel.list.js",
-                    "~/Resources/Scripts/Compensation/Data/side.panel.form.js"));
+                    "~/Resources/Scripts/Compensation/Data/side.panel.form.js",
+                    "~/Resources/Scripts/Compensation/Data/side.panel.header.js"));
 
             bundles.Add(new StyleBundle("~/Content/css/side")
                 .Include("~/Resources/Content/Compensation/side-panel.css",
                     "~/Resources/Content/Compensation/side-panel-list.css",
-                    "~/Resources/Content/Compensation/side-panel-form.css"));
+                    "~/Resources/Content/Compensation/side-panel-form.css",
+                    "~/Resources/Content/Compensation/side-panel-header.css"));
         }
     }
 }

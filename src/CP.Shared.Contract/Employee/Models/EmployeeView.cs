@@ -18,6 +18,6 @@ namespace CP.Shared.Contract.Employee.Models
 
         public LocationView Location { get; set; }
 
-        public JobFunctionView JobFunctionView { get; set; }
+        public JobFunctionView JobFunction { get; set; }
     }
 }

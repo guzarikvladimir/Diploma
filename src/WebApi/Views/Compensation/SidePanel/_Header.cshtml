@@ -1,2 +1,13 @@
-﻿<a data-bind="click: { single: coside.hide }" href="javascript:void(0)" class="closebtn">&times;</a>
-<p data-bind="text: coside.employeeCompensations().Employee.Name"></p>
+﻿<div class="side-header">
+    <a data-bind="click: { single: coside.hide }" href="javascript:void(0)" class="closebtn">&times;</a>
+    <div class="info">
+        <img src="~/Resources/Images/analyst-placeholder-avatar.png" />
+    </div>
+    <div class="info">
+        <p data-bind="text: cosidehead.employeeName()"></p>
+        <div class="small">
+            <p data-bind="text: cosidehead.employeeJobFunction()"></p>
+            <p data-bind="text: cosidehead.employeeLocation()"></p>
+        </div>
+    </div>
+</div>

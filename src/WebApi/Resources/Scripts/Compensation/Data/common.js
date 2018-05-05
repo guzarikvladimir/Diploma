@@ -1,6 +1,6 @@
 ﻿"use strict";
 
-var co = (function() {
+var co = (function () {
     var model = {
         currencies: ko.observableArray(),
         promotionTypes: ko.observableArray(["Salary", "Bonus"])

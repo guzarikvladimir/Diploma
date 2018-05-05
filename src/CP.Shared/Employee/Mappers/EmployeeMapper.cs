@@ -29,7 +29,7 @@ namespace CP.Shared.Employee.Mappers
             config.CreateMap<EmployeeEntity, EmployeeView>()
                 .ForMember(dst => dst.EmployeeStatus, cfg => cfg.Ignore())
                 .ForMember(dst => dst.Location, cfg => cfg.Ignore())
-                .ForMember(dst => dst.JobFunctionView, cfg => cfg.Ignore());
+                .ForMember(dst => dst.JobFunction, cfg => cfg.Ignore());
         }
 
         public EmployeeView Map(EmployeeEntity model)
@@ -37,7 +37,7 @@ namespace CP.Shared.Employee.Mappers
             EmployeeView view =  Mapper.Map<EmployeeView>(model);
             view.EmployeeStatus = EmployeeStatusRetrievingService.GetById(model.StatusId);
             view.Location = LocationRetrievingService.GetById(model.LocationId);
-            view.JobFunctionView = JobFunctionRetrievingService.GetById(model.JobFunctionId);
+            view.JobFunction = JobFunctionRetrievingService.GetById(model.JobFunctionId);
 
             return view;
         }

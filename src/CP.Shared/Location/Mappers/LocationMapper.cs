@@ -20,7 +20,7 @@ namespace CP.Shared.Location.Mappers
         public LocationView Map(LocationEntity model)
         {
             LocationView view = Mapper.Map<LocationView>(model);
-            view.Country = CountryRetrievingService.GetById(model.Id);
+            view.Country = CountryRetrievingService.GetById(model.CountryId);
 
             return view;
         }

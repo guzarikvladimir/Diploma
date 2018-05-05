@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using CP.Compensation.Contract.Models;
-using CP.Compensation.Contract.Services;
+using CP.Compensation.SidePanel.Contract;
+using CP.Compensation.SidePanel.Models;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
 using CP.Shared.Contract.Employee.Models;

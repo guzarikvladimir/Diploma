@@ -28,7 +28,7 @@ var cosidelist = (function() {
     function rejectCompensation(item) {
         let action = co.promotionTypes()[item.PromotionType];
 
-        request.sendAjax('GET', `/api/Compensations/${action}/Reject/${item.Id}`)
+        request.sendAjax('POST', `/api/Compensations/${action}/Reject/${item.Id}`)
             .then(() => {
                 alert.show(action + ' successfully rejected.');
                 cotable.getCompensations();

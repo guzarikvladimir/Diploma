@@ -3,7 +3,7 @@ using CP.Repository.Models;
 using CP.Shared.Contract.Bonus.Models;
 using CP.Shared.Contract.Salary.Models;
 
-namespace CP.Compensation.Contract.Services
+namespace CP.Compensation.Workflow.Contract
 {
     public interface ICompensationWorkflowService
     {

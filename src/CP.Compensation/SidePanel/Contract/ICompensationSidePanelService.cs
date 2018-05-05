@@ -1,7 +1,7 @@
 ﻿using System;
-using CP.Compensation.Contract.Models;
+using CP.Compensation.SidePanel.Models;
 
-namespace CP.Compensation.Contract.Services
+namespace CP.Compensation.SidePanel.Contract
 {
     public interface ICompensationSidePanelService
     {

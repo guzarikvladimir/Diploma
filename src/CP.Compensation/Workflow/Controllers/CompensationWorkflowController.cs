@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Http;
-using CP.Compensation.Contract.Services;
+using CP.Compensation.Workflow.Contract;
 using CP.Repository.Models;
 using CP.Shared.Contract.Bonus.Models;
 using CP.Shared.Contract.Salary.Models;
@@ -29,14 +29,14 @@ namespace CP.Compensation.Workflow.Controllers
         }
 
         [Route("Salary/Reject/{promotionId}")]
-        [HttpGet]
+        [HttpPost]
         public void RejectSalary(Guid promotionId)
         {
             CompensationWorkflowService.Delete(promotionId, CompensationPromotionType.Salary);
         }
 
         [Route("Bonus/Reject/{promotionId}")]
-        [HttpGet]
+        [HttpPost]
         public void RejectBonus(Guid promotionId)
         {
             CompensationWorkflowService.Delete(promotionId, CompensationPromotionType.Bonus);

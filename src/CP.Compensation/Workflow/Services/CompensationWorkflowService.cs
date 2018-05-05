@@ -1,5 +1,5 @@
 ﻿using System;
-using CP.Compensation.Contract.Services;
+using CP.Compensation.Workflow.Contract;
 using CP.Platform.Db.Contract;
 using CP.Platform.Identity.Contract;
 using CP.Platform.Identity.Helpers;

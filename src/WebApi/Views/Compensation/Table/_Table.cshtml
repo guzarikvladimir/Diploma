@@ -5,7 +5,8 @@
                 <table data-vertable="ver7">
                     <thead>
                         <tr class="row100 head">
-                            <th class="column100 column1">Employee name</th>
+                            <th class="column100">Employee name</th>
+                            <th class="column100">Job Function</th>
                             <th class="column100">January</th>
                             <th class="column100">February</th>
                             <th class="column100">March</th>
@@ -22,22 +23,7 @@
                         </tr>
                     </thead>
                     <tbody data-bind="foreach: cotable.compensations">
-                    <tr data-bind="click: { double: coside.show }" class="row100">
-                        <td data-bind="text: Employee.Name" class="column100 column1"></td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                        <td class="column100">--</td>
-                    </tr>
+                        <tr data-bind="html: cotable.buildRow($data), click: { double: coside.show }" class="row100"></tr>
                     </tbody>
                 </table>
             </div>

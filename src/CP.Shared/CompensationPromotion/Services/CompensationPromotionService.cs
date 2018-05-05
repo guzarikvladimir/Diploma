@@ -5,6 +5,7 @@ using CP.Repository.Models;
 using CP.Shared.Contract.Bonus.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
+using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Salary.Services;
 using Ninject;
 
@@ -41,6 +42,17 @@ namespace CP.Shared.CompensationPromotion.Services
                 .OrderByDescending(c => c.ApplyDate)
                 .ThenBy(c => c.CreatedDate)
                 .ToList();
+        }
+
+        public List<CompensationPromotionView> Get(List<EmployeeView> employees, bool onlyApproved = false)
+        {
+            var list = new List<CompensationPromotionView>();
+            foreach (EmployeeView employee in employees)
+            {
+                list.AddRange(Get(employee.Id, onlyApproved));
+            }
+
+            return list;
         }
     }
 }

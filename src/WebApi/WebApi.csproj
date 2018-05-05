@@ -362,10 +362,6 @@
       <Project>{d1597422-b4af-432b-a699-32fd73c27610}</Project>
       <Name>CP.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CP.Compensation.Contract\CP.Compensation.Contract.csproj">
-      <Project>{0fd7003c-c7ed-45f6-8676-9895ccef1cac}</Project>
-      <Name>CP.Compensation.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CP.Compensation\CP.Compensation.csproj">
       <Project>{9642df21-8e60-419d-9ddd-9f30a36c3418}</Project>
       <Name>CP.Compensation</Name>

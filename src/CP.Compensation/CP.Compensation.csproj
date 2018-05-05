@@ -97,11 +97,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SidePanel\Contract\ICompensationSidePanelService.cs" />
     <Compile Include="SidePanel\Controllers\ComppensationSidePanelController.cs" />
+    <Compile Include="SidePanel\Models\CompensationSidePanelView.cs" />
     <Compile Include="SidePanel\SidePanelModule.cs" />
+    <Compile Include="Table\Contract\ICompensationTableSerivce.cs" />
     <Compile Include="Table\Controllers\CompensationController.cs" />
     <Compile Include="Table\Controllers\CompensationTableController.cs" />
+    <Compile Include="Table\Models\CompensationTableParameters.cs" />
+    <Compile Include="Table\Models\CompensationTableView.cs" />
     <Compile Include="Table\TableModule.cs" />
+    <Compile Include="Workflow\Contract\ICompensationWorkflowService.cs" />
     <Compile Include="Workflow\Controllers\CompensationWorkflowController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Table\Services\CompensationTableSerivce.cs" />
@@ -114,10 +120,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CP.Compensation.Contract\CP.Compensation.Contract.csproj">
-      <Project>{0FD7003C-C7ED-45F6-8676-9895CCEF1CAC}</Project>
-      <Name>CP.Compensation.Contract</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
       <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
       <Name>CP.Platform</Name>

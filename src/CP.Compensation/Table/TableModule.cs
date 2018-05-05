@@ -1,4 +1,4 @@
-﻿using CP.Compensation.Contract.Services;
+﻿using CP.Compensation.Table.Contract;
 using CP.Compensation.Table.Services;
 using CP.Platform.DependencyResolvers.Services;
 using Ninject;

@@ -49,6 +49,7 @@
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionModifyingService.cs" />
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionRetrievingService.cs" />
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionService.cs" />
+    <Compile Include="Compensation\Models\CompensationsByEmployee.cs" />
     <Compile Include="Compensation\Models\CompensationsByPeriodView.cs" />
     <Compile Include="Compensation\Models\ValueWithCurrency.cs" />
     <Compile Include="Compensation\Services\ICompensationCalculationService.cs" />
@@ -75,6 +76,9 @@
     <Compile Include="EmployeeToLegalEntity\Services\IEmployeeToLegalEntityRetrievingService.cs" />
     <Compile Include="Employee\Models\EmployeeView.cs" />
     <Compile Include="Employee\Services\IEmployeeRetrievingService.cs" />
+    <Compile Include="Employee\Services\IEmployeeSerice.cs" />
+    <Compile Include="Filters\Model\CollectionViewParameters.cs" />
+    <Compile Include="Filters\Model\FilterParameters.cs" />
     <Compile Include="JobFunctionPosition\Models\JobFunctionPositionView.cs" />
     <Compile Include="JobFunctionPosition\Services\IJobFunctionPositionRetrievingService.cs" />
     <Compile Include="JobFunctionTitile\Models\JobFunctionTitleView.cs" />

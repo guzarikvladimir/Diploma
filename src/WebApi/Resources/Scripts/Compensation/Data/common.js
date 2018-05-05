@@ -23,9 +23,14 @@ var co = (function () {
         }
     }
 
+    function parseValueWithCurrency(obj) {
+        return `${obj.Value.toFixed(2)} ${obj.Currency.Name}`;
+    }
+
     return {
         currencies: model.currencies,
         promotionTypes: model.promotionTypes,
+        parseValueWithCurrency: parseValueWithCurrency,
         fillWithData: fillWithData
     }
 })();

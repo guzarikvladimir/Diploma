@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Http;
-using CP.Compensation.Contract.Models;
-using CP.Compensation.Contract.Services;
+using CP.Compensation.SidePanel.Contract;
+using CP.Compensation.SidePanel.Models;
 using Ninject;
 
 namespace CP.Compensation.SidePanel.Controllers

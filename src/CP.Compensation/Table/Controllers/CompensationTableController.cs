@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using CP.Compensation.Contract.Models;
-using CP.Compensation.Contract.Services;
+using CP.Compensation.Table.Contract;
+using CP.Compensation.Table.Models;
 using Ninject;
 
 namespace CP.Compensation.Table.Controllers
@@ -13,9 +13,14 @@ namespace CP.Compensation.Table.Controllers
         ICompensationTableSerivce CompensationTableSerivce { get; set; }
 
         [Route("Table")]
-        public IEnumerable<CompensationTableView> Get()
+        public CompensationTableView Get([FromUri] CompensationTableParameters parameters)
         {
-            return CompensationTableSerivce.Get();
+            if (parameters == null)
+            {
+                parameters = new CompensationTableParameters();
+            }
+
+            return CompensationTableSerivce.Get(parameters);
         }
     }
 }

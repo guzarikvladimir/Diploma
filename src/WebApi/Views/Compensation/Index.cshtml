@@ -1,21 +1,19 @@
-﻿@{
+﻿@using System.Web.Optimization
+@{
     ViewBag.Title = "Compensations";
 }
-
-<link href="~/Content/Compensation/compensation.css" rel="stylesheet">
-<link href="~/Content/Compensation/side-panel.css" rel="stylesheet">
-<link href="~/Content/Compensation/side-panel-list.css" rel="stylesheet">
-<link href="~/Content/Compensation/side-panel-form.css" rel="stylesheet">
-<script src="~/Scripts/Compensation/common.js"></script>
-<script src="~/Scripts/Compensation/table.js"></script>
-<script src="~/Scripts/Compensation/side.panel.js"></script>
-<script src="~/Scripts/Compensation/side.panel.list.js"></script>
-<script src="~/Scripts/Compensation/side.panel.form.js"></script>
+@section styles
+{
+    @Styles.Render("~/Content/css/table")
+    @Styles.Render("~/Content/css/side")
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/compensation-table")
+    @Scripts.Render("~/bundles/compensation-table-data")
+}
 
 <div>
-    @Html.ActionLink("Logout", "Logout", "Account")
-    <h2>Compensations</h2>
-
     @Html.Partial("Table/_Table")
     @Html.Partial("SidePanel/_SidePanel")
 </div>

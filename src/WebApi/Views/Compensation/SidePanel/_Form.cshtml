@@ -1,21 +1,80 @@
-﻿<form data-bind="submit: cosideform.submitHandler">
-    <select data-bind="options: co.promotionTypes,
-                value: cosideform.promotionType,
-                event: { change: cosideform.triggerIsSalary }"></select>
-    <select data-bind="options: coside.employeeLegalEntities,
-                optionsText: 'Name',
-                optionsValue: $data,
-                value: cosideform.legalEntity"></select>
-    <input data-bind="value: cosideform.value" />
-    <select data-bind="options: co.currencies,
-            optionsText: 'Name',
-            optionsValue: $data,
-            value: cosideform.currency"></select>
-    <div data-bind="if: cosideform.isSalary">
-        <select data-bind="options: co.salaryTypes,
-                value: cosideform.salaryType"></select>
-    </div>
-    <input data-bind="value: cosideform.applyDate" type="date" />
-    <textarea data-bind="value: cosideform.comment"></textarea>
-    <button type="submit">Add Compensation</button>
-</form>
+﻿<div class="container">
+    <form data-bind="submit: cosideform.submitHandler">
+        <div class="row">
+            <h4>Add compensation</h4>
+            <div class="input-group">
+                <div class="col-half">
+                    <div class="col-third">
+                        <label>Type</label>
+                    </div>
+                    <div class="col-third-rest">
+                        <select data-bind="options: co.promotionTypes,
+                            value: cosideform.promotionType,
+                            event: { change: cosideform.triggerIsSalary }"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="col-half">
+                    <div class="col-third">
+                        <label>Legal Entity</label>
+                    </div>
+                    <div class="col-third-rest">
+                        <select data-bind="options: coside.employeeLegalEntities,
+                            optionsText: 'Name',
+                            optionsValue: $data,
+                            value: cosideform.legalEntity"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="col-half">
+                    <div class="col-third">
+                        <label>Value</label>
+                    </div>
+                    <div class="col-third-rest">
+                        <div class="col-half">
+                            <input data-bind="value: cosideform.value" type="text" />
+                        </div>
+                        <div class="col-half">
+                            <select data-bind="options: co.currencies,
+                                optionsText: 'Name',
+                                optionsValue: $data,
+                                value: cosideform.currency"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="col-half">
+                    <div class="col-third">
+                        <label>Apply Date</label>
+                    </div>
+                    <div class="col-third-rest">
+                        <input data-bind="value: cosideform.applyDate" type="date" />
+                    </div>
+                </div>
+                <div data-bind="if: cosideform.isSalary" class="col-half">
+                    <div class="input-group no-margin">
+                        <input type="radio" name="compensation-type" value="Monthly" data-bind="checked: cosideform.salaryType" id="monthly-type" />
+                        <label for="monthly-type">Monthly</label>
+                        <input type="radio" name="compensation-type" value="Annual" data-bind="checked: cosideform.salaryType" id="annual-type" />
+                        <label for="annual-type">Annual</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="col-half-third">
+                        <label>Comment</label>
+                </div>
+                <div class="col-half-third-rest">
+                    <textarea data-bind="value: cosideform.comment"></textarea>
+                </div>
+
+            </div>
+            <div class="right">
+                <button type="submit">Approve</button>
+            </div>
+        </div>
+    </form>
+</div>

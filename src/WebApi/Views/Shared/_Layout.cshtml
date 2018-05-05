@@ -4,13 +4,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title</title>
+    @Styles.Render("/Content/css")
+    @RenderSection("styles", false)
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/knockout")
-    @RenderSection("Scripts", required: false)
+    @RenderSection("scripts", false)
 </head>
 <body>
+    <div id='cssmenu'>
+        <ul>
+            <li><a href='/'><span>Compensation</span></a></li>
+            <li class='last'><a href='#'><span>Administration</span></a></li>
+            <li class='align-right'><a href='/Account/Logout'><span>Logout</span></a></li>
+        </ul>
+    </div>
+
     @RenderBody()
 </body>
 </html>

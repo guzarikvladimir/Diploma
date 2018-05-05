@@ -1,47 +1,25 @@
 ﻿@model CP.Authorization.Contract.Models.RegisterView
-
 @{
+    Layout = "~/Views/Shared/_Start.cshtml";
     ViewBag.Title = "Register";
 }
 
-<h2>Register</h2>
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Register", "Account", null, FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>RegisterView</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
+    <div>
+        @Html.ValidationSummary(true, "", new { @class = "error-message" })
     </div>
+
+    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "error-message" })
+    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { placeholder = "example@dp.com" } })
+
+    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "error-message" })
+    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { placeholder = "Input password" } })
+
+    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "error-message" })
+    @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { placeholder = "Confirm password" } })
+    <button type="submit">Register</button>
+    <p class="message">Already registered? @Html.ActionLink("Sign In", "Login")</p>
 }

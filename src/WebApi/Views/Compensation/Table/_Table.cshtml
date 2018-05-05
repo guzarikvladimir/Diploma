@@ -1,38 +1,46 @@
-﻿<table class="table table-hover table-bordered">
-    <thead>
-    <tr>
-        <th>Employee name</th>
-        <th>January</th>
-        <th>February</th>
-        <th>March</th>
-        <th>April</th>
-        <th>May</th>
-        <th>June</th>
-        <th>July</th>
-        <th>August</th>
-        <th>September</th>
-        <th>October</th>
-        <th>November</th>
-        <th>Decemper</th>
-        <th>Total</th>
-    </tr>
-    </thead>
-    <tbody data-bind="foreach: cotable.compensations">
-    <tr data-bind="click: { double: coside.show }">
-        <td data-bind="text: Employee.Name"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    </tbody>
-</table>
+﻿<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100 ver7 m-b-110">
+                <table data-vertable="ver7">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1">Employee name</th>
+                            <th class="column100">January</th>
+                            <th class="column100">February</th>
+                            <th class="column100">March</th>
+                            <th class="column100">April</th>
+                            <th class="column100">May</th>
+                            <th class="column100">June</th>
+                            <th class="column100">July</th>
+                            <th class="column100">August</th>
+                            <th class="column100">September</th>
+                            <th class="column100">October</th>
+                            <th class="column100">November</th>
+                            <th class="column100">Decemper</th>
+                            <th class="column100">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="foreach: cotable.compensations">
+                    <tr data-bind="click: { double: coside.show }" class="row100">
+                        <td data-bind="text: Employee.Name" class="column100 column1"></td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                        <td class="column100">--</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

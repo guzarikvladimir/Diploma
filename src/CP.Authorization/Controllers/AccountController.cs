@@ -42,7 +42,8 @@ namespace CP.Authorization.Controllers
                 }
                 catch (Exception e)
                 {
-                    ModelState.AddModelError("", e.Message);
+                    //ParamName
+                    ModelState.AddModelError("", GetErrorMessage(e));
                 }
             }
 
@@ -72,7 +73,7 @@ namespace CP.Authorization.Controllers
                 }
                 catch (Exception e)
                 {
-                    ModelState.AddModelError("", e.Message);
+                    ModelState.AddModelError("", GetErrorMessage(e));
                 }
             }
 
@@ -84,6 +85,11 @@ namespace CP.Authorization.Controllers
             AuthenticationManager.SignOut();
 
             return RedirectToAction("Login");
+        }
+
+        private string GetErrorMessage(Exception e)
+        {
+            return e.GetType().GetProperty("ParamName").GetValue(e, null).ToString();
         }
     }
 }

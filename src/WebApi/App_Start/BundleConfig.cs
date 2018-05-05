@@ -21,7 +21,8 @@ namespace WebApi
                     "~/Resources/vendor/bootstrap/css/bootstrap.min.css",
                     "~/Resources/Content/Common/alert.css",
                     "~/Resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
-                    "~/Resources/Content/Common/nav.css"));
+                    "~/Resources/Content/Common/nav.css",
+                    "~/Resources/Content/w3.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/start")
                 .Include("~/Resources/Content/Start/start-fonts.css",
@@ -32,7 +33,8 @@ namespace WebApi
                     "~/Resources/vendor/select2/select2.min.css",
                     "~/Resources/vendor/perfect-scrollbar/perfect-scrollbar.css",
                     "~/Resources/Content/Common/util.css",
-                    "~/Resources/Content/Compensation/compensation-table.css"));
+                    "~/Resources/Content/Compensation/compensation-table.css",
+                    "~/Resources/Content/Compensation/filter-panel.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/compensation-table")
                 .Include("~/Resources/vendor/bootstrap/js/popper.js",

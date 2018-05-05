@@ -15,7 +15,8 @@ var alert = (function () {
 
     function trigger(name) {
         $('.tn-box').removeClass('tn-box-active');
-        $('.tn-box').removeClass(name);
+        $('.tn-box').removeClass('tn-box-color-success');
+        $('.tn-box').removeClass('tn-box-color-error');
         setTimeout(() => {
             $('.tn-box').addClass(name);
             $('.tn-box').addClass('tn-box-active');

@@ -49,5 +49,16 @@ namespace CP.Shared.Core.Services
                 scope.SaveChanges();
             }
         }
+
+        public void Delete(Guid id)
+        {
+            using (var scope = DbFactory.Create())
+            {
+                TEntity entity = scope.Set<TEntity>().Single(e => e.Id == id);
+                scope.Set<TEntity>().Remove(entity);
+
+                scope.SaveChanges();
+            }
+        }
     }
 }

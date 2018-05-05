@@ -184,6 +184,7 @@
     <Content Include="Resources\Content\bootstrap.min.css" />
     <Content Include="Resources\Content\Common\nav.css" />
     <Content Include="Resources\Content\Common\controls.css" />
+    <Content Include="Resources\Content\Common\filter-panel.css" />
     <Content Include="Resources\Content\Compensation\side-panel-form.css" />
     <Content Include="Resources\Content\Compensation\side-panel-header.css" />
     <Content Include="Resources\Content\Compensation\side-panel-list.css" />
@@ -191,6 +192,7 @@
     <Content Include="Resources\Content\Compensation\side-panel.css" />
     <Content Include="Resources\Content\Compensation\compensation-table.css" />
     <Content Include="Resources\Content\Common\util.css" />
+    <Content Include="Resources\Content\w3.css" />
     <Content Include="Resources\Images\analyst-placeholder-avatar.png" />
     <Content Include="Resources\Images\start-bg.jpg" />
     <Content Include="Resources\Content\Start\start.css" />
@@ -336,6 +338,7 @@
     <Content Include="Resources\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Resources\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Resources\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Views\Compensation\Table\_Filters.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

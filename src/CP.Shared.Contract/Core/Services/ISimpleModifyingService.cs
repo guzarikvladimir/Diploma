@@ -9,5 +9,7 @@ namespace CP.Shared.Contract.Core.Services
         void Add(TModel model);
 
         void Update(TModel model);
+
+        void Delete(Guid id);
     }
 }

@@ -8,7 +8,6 @@ using CP.Shared.Contract.Bonus.Models;
 using CP.Shared.Contract.Bonus.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
-using CP.Shared.Contract.Employee.Services;
 using CP.Shared.Contract.Salary.Models;
 using CP.Shared.Contract.Salary.Services;
 using Ninject;
@@ -18,9 +17,6 @@ namespace CP.Compensation.Workflow.Services
     public class CompensationWorkflowService : ICompensationWorkflowService
     {
         #region Injects
-
-        [Inject]
-        IEmployeeRetrievingService EmployeeRetrievingService { get; set; }
 
         [Inject]
         IUserService UserService { get; set; }
@@ -72,6 +68,21 @@ namespace CP.Compensation.Workflow.Services
             CompensationPromotionModifyingService.Add(model);
 
             return model;
+        }
+
+        public void Delete(Guid promotionId, CompensationPromotionType promotionType)
+        {
+            if (promotionType == CompensationPromotionType.Salary)
+            {
+                SalaryPromotionModifyingService.Delete(promotionId);
+            }
+
+            if (promotionType == CompensationPromotionType.Bonus)
+            {
+                BonusPromotionModifyingService.Delete(promotionId);
+            }
+
+            CompensationPromotionModifyingService.Delete(promotionId);
         }
     }
 }

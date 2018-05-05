@@ -297,6 +297,10 @@ select {
     padding-top: 15px;
 }
 
+.col-half-third label {
+    padding-top: 15px;
+}
+
 .right {
     float: right;
     display: inline-block;

@@ -3,7 +3,6 @@
 #cssmenu {
     background: #f96e5b;
     width: auto;
-    margin: 0 0 20px 0;
 }
 
     #cssmenu ul {
@@ -139,4 +138,10 @@
         #cssmenu ul li a:before {
             display: none;
         }
+}
+#cssmenu img {
+    border-radius: 50%;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
 }

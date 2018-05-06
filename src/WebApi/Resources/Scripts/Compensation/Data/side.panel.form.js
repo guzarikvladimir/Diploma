@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿; var cosideform = (function () {
+    "use strict";
 
-var cosideform = (function () {
     var model = {
         value: ko.observable(),
         currency: ko.observable(),
@@ -9,12 +9,12 @@ var cosideform = (function () {
         comment: ko.observable(),
         salaryType: ko.observable(),
         legalEntity: ko.observable(),
-        submitHandler: function() {
+        submitHandler: function () {
             var data = getData();
             var action = model.isSalary() ? "Salary" : "Bonus";
 
             request.sendAjax('POST', '/api/Compensations/' + action + '/Create', data)
-                .then(() => {   
+                .then(() => {
                     alert.show(action + ' successfully created.');
                     cotable.getCompensations();
                     clearData();
@@ -22,7 +22,7 @@ var cosideform = (function () {
                 }, (error) => alert.error(error));
         },
         isSalary: ko.observable(true),
-        triggerIsSalary: function() {
+        triggerIsSalary: function () {
             if (model.promotionType() === co.promotionTypes()[0]) {
                 model.isSalary(true);
             } else {

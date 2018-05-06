@@ -79,6 +79,7 @@
     <Compile Include="Employee\Services\IEmployeeSerice.cs" />
     <Compile Include="Filters\Model\CollectionViewParameters.cs" />
     <Compile Include="Filters\Model\FilterParameters.cs" />
+    <Compile Include="Filters\Services\ICompensationPromotionFilterService.cs" />
     <Compile Include="JobFunctionPosition\Models\JobFunctionPositionView.cs" />
     <Compile Include="JobFunctionPosition\Services\IJobFunctionPositionRetrievingService.cs" />
     <Compile Include="JobFunctionTitile\Models\JobFunctionTitleView.cs" />

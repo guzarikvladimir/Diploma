@@ -184,7 +184,7 @@
     <Content Include="Resources\Content\bootstrap.min.css" />
     <Content Include="Resources\Content\Common\nav.css" />
     <Content Include="Resources\Content\Common\controls.css" />
-    <Content Include="Resources\Content\Common\filter-panel.css" />
+    <Content Include="Resources\Content\Common\table-filters.css" />
     <Content Include="Resources\Content\Compensation\side-panel-form.css" />
     <Content Include="Resources\Content\Compensation\side-panel-header.css" />
     <Content Include="Resources\Content\Compensation\side-panel-list.css" />
@@ -271,6 +271,7 @@
     <Content Include="Resources\fonts\OpenSans\OpenSans-SemiBoldItalic.ttf" />
     <None Include="Properties\PublishProfiles\Diploma.pubxml" />
     <Content Include="Resources\Scripts\Compensation\Data\side.panel.header.js" />
+    <Content Include="Resources\Scripts\Compensation\Data\table.filters.js" />
     <Content Include="Resources\Scripts\Compensation\Data\table.js" />
     <Content Include="Resources\Scripts\Compensation\Data\side.panel.form.js" />
     <Content Include="Resources\Scripts\Compensation\Data\side.panel.list.js" />

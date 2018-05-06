@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿; var coside = (function () {
+    "use strict";
 
-var coside = (function () {
     var model = {
         employeeCompensations: ko.observable(),
         employeeLegalEntities: ko.observableArray(),

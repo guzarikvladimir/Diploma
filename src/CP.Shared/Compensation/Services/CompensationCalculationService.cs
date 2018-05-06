@@ -24,14 +24,14 @@ namespace CP.Shared.Compensation.Services
 
         #endregion
 
-        public ValueWithCurrency Get(List<CompensationPromotionView> compensations, DateTime? date = null)
+        public ValueWithCurrency Get(List<CompensationPromotionView> compensations, Guid? currencyId, DateTime? date = null)
         {
             if (!compensations.Any())
             {
                 return null;
             }
 
-            CurrencyView currency = CurrencyResolverService.GetResultCurrency(compensations);
+            CurrencyView currency = CurrencyResolverService.GetResultCurrency(compensations, currencyId);
             decimal total = 0;
             foreach (CompensationPromotionView compensationPromotion in compensations)
             {

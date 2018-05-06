@@ -37,12 +37,12 @@ textarea {
     transition: all 0.35s ease-in-out;
 }
 
-    input:focus {
+    input :focus {
         outline: 0;
         border-color: #64ac15;
     }
 
-        input:focus + .input-icon i {
+        input :focus + .input-icon i {
             color: #7ed321;
         }
 

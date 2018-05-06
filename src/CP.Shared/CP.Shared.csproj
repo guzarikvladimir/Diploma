@@ -109,6 +109,8 @@
     <Compile Include="Employee\Mappers\EmployeeMapper.cs" />
     <Compile Include="Employee\Services\EmployeeRetrievingService.cs" />
     <Compile Include="Employee\Services\EmployeeSerice.cs" />
+    <Compile Include="Filters\FiltersModule.cs" />
+    <Compile Include="Filters\Services\CompensationPromotionFilterService.cs" />
     <Compile Include="JobFunctionPosition\JobFunctionPositionModule.cs" />
     <Compile Include="JobFunctionPosition\Mappers\JobFunctionPositionMapper.cs" />
     <Compile Include="JobFunctionPosition\Services\JobFunctionPositionRetrievingService.cs" />
@@ -156,9 +158,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Filters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿; var cosidelist = (function () {
+    "use strict";
 
-var cosidelist = (function() {
     var model = {
         getListItemPreview: getListItemPreview,
         rejectCompensation: rejectCompensation,

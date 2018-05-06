@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿; var request = (function () {
+    "use strict";
 
-var request = (function() {
     function sendAjax(httpMethod, url, data, options) {
         return new Promise(function (resolve, reject) {
             $.ajax({
@@ -15,6 +15,6 @@ var request = (function() {
     };
 
     return {
-        sendAjax : sendAjax
+        sendAjax: sendAjax
     }
 })();

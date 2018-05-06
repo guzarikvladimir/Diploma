@@ -34,7 +34,7 @@ namespace WebApi
                     "~/Resources/vendor/perfect-scrollbar/perfect-scrollbar.css",
                     "~/Resources/Content/Common/util.css",
                     "~/Resources/Content/Compensation/compensation-table.css",
-                    "~/Resources/Content/Compensation/filter-panel.css"));
+                    "~/Resources/Content/Common/table-filters.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/compensation-table")
                 .Include("~/Resources/vendor/bootstrap/js/popper.js",
@@ -44,6 +44,7 @@ namespace WebApi
             bundles.Add(new ScriptBundle("~/bundles/compensation-table-data")
                 .Include("~/Resources/Scripts/Compensation/Data/common.js",
                     "~/Resources/Scripts/Compensation/Data/table.js",
+                    "~/Resources/Scripts/Compensation/Data/table.filters.js",
                     "~/Resources/Scripts/Compensation/Data/side.panel.js",
                     "~/Resources/Scripts/Compensation/Data/side.panel.list.js",
                     "~/Resources/Scripts/Compensation/Data/side.panel.form.js",

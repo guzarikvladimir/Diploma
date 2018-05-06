@@ -54,7 +54,7 @@ namespace CP.Shared.Test.Compensation.CompensationCalculation
             compensations.AddRange(salaries);
             compensations.AddRange(bonuses);
 
-            Result = Kernel.Get<ICompensationCalculationService>().Get(compensations);
+            Result = Kernel.Get<ICompensationCalculationService>().Get(compensations, null);
         }
 
         [Then(@"Total value should be (.*)")]

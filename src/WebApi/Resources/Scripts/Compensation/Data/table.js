@@ -1,6 +1,6 @@
-﻿"use strict";
+﻿; var cotable = (function () {
+    "use strict";
 
-var cotable = (function () {
     var model = {
         compensations: ko.observableArray(),
         total: ko.observable()
@@ -12,7 +12,13 @@ var cotable = (function () {
     });
 
     function getCompensations() {
-        request.sendAjax('GET', "/api/Compensations/Table")
+        var requestStr = "/api/Compensations/Table";
+        var params = filters.get();
+        if (params !== undefined) {
+            requestStr += `?${params}`;
+        }
+
+        request.sendAjax('GET', requestStr)
             .then((data) => {
                 co.fillWithData(data.CompensationsByEmployees, model.compensations);
                 model.total(data.Total);
@@ -39,7 +45,7 @@ var cotable = (function () {
         return result;
     }
 
-    function appendWithCompensations (result, item) {
+    function appendWithCompensations(result, item) {
         var periods = new Array(12);
         item.CompensationsByPeriods.forEach(function (item) {
             var date = new Date(item.Period);
@@ -66,7 +72,7 @@ var cotable = (function () {
         } else {
             result += '--';
         }
-        
+
         result += '</td>';
 
         return result;

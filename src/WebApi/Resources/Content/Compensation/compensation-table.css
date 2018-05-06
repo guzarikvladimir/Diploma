@@ -56,20 +56,11 @@ ul, li {
 
 
 /* ------------------------------------ */
-input {
-    display: block;
-    outline: none;
-    border: none !important;
-}
 
 textarea {
     display: block;
     outline: none;
 }
-
-    textarea:focus, input:focus {
-        border-color: transparent !important;
-    }
 
 /* ------------------------------------ */
 
@@ -83,6 +74,7 @@ iframe {
 [ Table ]*/
 
 .limiter {
+    width: 100%;
     margin: 0 auto;
 }
 

@@ -1,3 +1,14 @@
-﻿<div class="filter-panel">
-
+﻿<div class="table-filters">
+    <div class="input-group">
+        <div class="col-half-third">
+            <input data-bind="value: filters.year, event : { change: cotable.getCompensations }" type="number" />
+        </div>
+        <div class="col-half-third">
+            <select data-bind="options: filters.currencies,
+                optionsText: 'Name',
+                optionsValue: $data,
+                value: filters.currency,
+                event : { change: cotable.getCompensations }"></select>
+        </div>
+    </div>
 </div>

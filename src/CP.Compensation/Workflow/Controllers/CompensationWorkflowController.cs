@@ -28,18 +28,18 @@ namespace CP.Compensation.Workflow.Controllers
             CompensationWorkflowService.Create(model);
         }
 
-        [Route("Salary/Reject/{promotionId}")]
+        [Route("Salary/Reject")]
         [HttpPost]
-        public void RejectSalary(Guid promotionId)
+        public void RejectSalary([FromBody] SalaryPromotionModel model)
         {
-            CompensationWorkflowService.Delete(promotionId, CompensationPromotionType.Salary);
+            CompensationWorkflowService.Reject(model);
         }
 
-        [Route("Bonus/Reject/{promotionId}")]
+        [Route("Bonus/Reject")]
         [HttpPost]
-        public void RejectBonus(Guid promotionId)
+        public void RejectBonus([FromBody] BonusPromotionModel model)
         {
-            CompensationWorkflowService.Delete(promotionId, CompensationPromotionType.Bonus);
+            CompensationWorkflowService.Reject(model);
         }
     }
 }

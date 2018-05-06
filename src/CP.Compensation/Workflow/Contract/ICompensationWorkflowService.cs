@@ -1,6 +1,5 @@
-﻿using System;
-using CP.Repository.Models;
-using CP.Shared.Contract.Bonus.Models;
+﻿using CP.Shared.Contract.Bonus.Models;
+using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Salary.Models;
 
 namespace CP.Compensation.Workflow.Contract
@@ -11,7 +10,7 @@ namespace CP.Compensation.Workflow.Contract
 
         void Create(BonusPromotionModel model);
 
-        void Delete(Guid promotionId, CompensationPromotionType promotionType);
+        void Reject(CompensationPromotionModel model);
 
     }
 }

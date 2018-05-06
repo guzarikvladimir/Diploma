@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using CP.Platform.Mappers.Contract;
+using CP.Shared.Contract.Currency.Services;
 using CP.Shared.Contract.LegalEntity.Models;
+using Ninject;
 using LegalEntityEntity = CP.Repository.Models.LegalEntity;
 
 namespace CP.Shared.LegalEntity.Mappers
@@ -9,6 +11,9 @@ namespace CP.Shared.LegalEntity.Mappers
         IEntityMapper<LegalEntityEntity, LegalEntityView>,
         IEntityModifyingMapper<LegalEnityModel, LegalEntityEntity>
     {
+        [Inject]
+        ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
+
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<LegalEntityEntity, LegalEntityView>();
@@ -17,7 +22,10 @@ namespace CP.Shared.LegalEntity.Mappers
 
         public LegalEntityView Map(LegalEntityEntity model)
         {
-            return Mapper.Map<LegalEntityView>(model);
+            LegalEntityView view = Mapper.Map<LegalEntityView>(model);
+            view.Currency = CurrencyRetrievingService.GetById(model.CurrencyId);
+
+            return view;
         }
 
         public void Map(LegalEnityModel viewModel, LegalEntityEntity entityModel)

@@ -85,48 +85,6 @@ namespace CP.Repository.Services
             };
             db.Users.Add(user);
 
-            Guid legalEntityId = Guid.NewGuid();
-            var legalEntity = new LegalEntity()
-            {
-                Id = legalEntityId,
-                Name = "LE BLR",
-                IsActive = true
-            };
-            db.LegalEntities.Add(legalEntity);
-
-            Guid employeeRoleId = Guid.NewGuid();
-            var employee = new Employee()
-            {
-                Id = userId,
-                Name = "Ivan",
-                Email = "test",
-                LocationId = locationId,
-                StatusId = employeeStatusId,
-                EmployeeStatus = employeeStatus,
-                JobFunctionId = jobFunctionId
-            };
-            db.Employees.Add(employee);
-
-            var employeeToLe = new EmployeeToLegalEntity()
-            {
-                Id = Guid.NewGuid(),
-                LegalEntityId = legalEntityId,
-                EmployeeId = userId,
-                IsPrimary = true
-            };
-            db.EmployeeToLegalEntities.Add(employeeToLe);
-
-            var employeeRole = new EmployeeRole()
-            {
-                Id = employeeRoleId,
-                EmployeeId = userId,
-                RoleId = roleId
-            };
-            db.EmployeeRoles.Add(employeeRole);
-        }
-
-        private void AddCurrencies(ApplicationContext db)
-        {
             Guid usdId = Guid.NewGuid();
             Guid eurId = Guid.NewGuid();
             Guid byrId = Guid.NewGuid();
@@ -190,6 +148,70 @@ namespace CP.Repository.Services
                     Type = CurrencyRateType.Daily
                 }
             });
+
+            Guid legalEntityId = Guid.NewGuid();
+            var legalEntity = new LegalEntity()
+            {
+                Id = legalEntityId,
+                Name = "LE BLR",
+                CurrencyId = byrId,
+                IsActive = true
+            };
+            db.LegalEntities.Add(legalEntity);
+
+            Guid legalEntityId2 = Guid.NewGuid();
+            var legalEntity2 = new LegalEntity()
+            {
+                Id = legalEntityId2,
+                Name = "LE USA",
+                CurrencyId = usdId,
+                IsActive = true
+            };
+            db.LegalEntities.Add(legalEntity2);
+
+            Guid employeeRoleId = Guid.NewGuid();
+            var employee = new Employee()
+            {
+                Id = userId,
+                Name = "Ivan",
+                Email = "test",
+                LocationId = locationId,
+                StatusId = employeeStatusId,
+                EmployeeStatus = employeeStatus,
+                JobFunctionId = jobFunctionId
+            };
+            db.Employees.Add(employee);
+
+            var employeeToLe = new EmployeeToLegalEntity()
+            {
+                Id = Guid.NewGuid(),
+                LegalEntityId = legalEntityId,
+                EmployeeId = userId,
+                IsPrimary = true
+            };
+            db.EmployeeToLegalEntities.Add(employeeToLe);
+
+            var employeeToLe2 = new EmployeeToLegalEntity()
+            {
+                Id = Guid.NewGuid(),
+                LegalEntityId = legalEntityId2,
+                EmployeeId = userId,
+                IsPrimary = false
+            };
+            db.EmployeeToLegalEntities.Add(employeeToLe2);
+
+            var employeeRole = new EmployeeRole()
+            {
+                Id = employeeRoleId,
+                EmployeeId = userId,
+                RoleId = roleId
+            };
+            db.EmployeeRoles.Add(employeeRole);
+        }
+
+        private void AddCurrencies(ApplicationContext db)
+        {
+            
         }
     }
 }

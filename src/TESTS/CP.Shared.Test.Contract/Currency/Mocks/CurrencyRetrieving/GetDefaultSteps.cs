@@ -18,9 +18,9 @@ namespace CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving
 
         public GetDefaultSteps(BaseTestData data) : base(data)
         {
-            data.Mock<ICurrencyRetrievingService>()
-                .Setup(service => service.GetDefault())
-                .Returns(MockFunction.FunctionInvoker);
+            //data.Mock<ICurrencyRetrievingService>()
+            //    .Setup(service => service.GetDefault())
+            //    .Returns(MockFunction.FunctionInvoker);
         }
 
         [Given(Default)]

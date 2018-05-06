@@ -9,6 +9,8 @@ namespace CP.Repository.Models
 
         public string Name { get; set; }
 
+        public Guid CurrencyId { get; set; }
+
         public bool IsActive { get; set; }
     }
 }

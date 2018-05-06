@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web.Http;
+﻿using System.Web.Http;
 using CP.Compensation.Table.Contract;
 using CP.Compensation.Table.Models;
 using Ninject;

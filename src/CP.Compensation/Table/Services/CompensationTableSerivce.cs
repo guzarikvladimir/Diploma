@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CP.Compensation.Table.Contract;
 using CP.Compensation.Table.Models;
@@ -7,9 +8,9 @@ using CP.Shared.Contract.Compensation.Models;
 using CP.Shared.Contract.Compensation.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
+using CP.Shared.Contract.Currency.Services;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
-using CP.Shared.Contract.Filters.Services;
 using Ninject;
 
 namespace CP.Compensation.Table.Services
@@ -28,7 +29,7 @@ namespace CP.Compensation.Table.Services
         ICompensationCalculationService CompensationCalculationService { get; set; }
 
         [Inject]
-        ICompensationPromotionFilterService CompensationPromotionFilterService { get; set; }
+        ICurrencyConverterService CurrencyConverterService { get; set; }
 
         #endregion
 
@@ -36,15 +37,10 @@ namespace CP.Compensation.Table.Services
         {
             List<EmployeeView> employees = EmployeeService.Get(parameters);
             var view = new CompensationTableView();
-            //Func<CompensationPromotionView, bool> filters = CompensationPromotionFilterService.Get(parameters);
             foreach (EmployeeView employee in employees)
             {
                 view.CompensationsByEmployees.Add(GetByEmployee(employee, parameters));
             }
-
-            List<CompensationPromotionView> allCompensations = CompensationPromotionService
-                .Get(employees, onlyApproved: true);
-            view.Total = CompensationCalculationService.Get(allCompensations, parameters.CurrencyId);
 
             return view;
         }
@@ -59,7 +55,8 @@ namespace CP.Compensation.Table.Services
                 {
                     Period = compensationsByPeriod.Key,
                     CompensationPromotions = compensationsByPeriod,
-                    Total = CompensationCalculationService.Get(compensationsByPeriod.ToList(), parameters.CurrencyId)
+                    Total = CompensationCalculationService
+                        .Get(compensationsByPeriod.ToList(), employee.Id, parameters.CurrencyId)
                 })
                 .ToList();
 
@@ -67,8 +64,19 @@ namespace CP.Compensation.Table.Services
             {
                 Employee = employee,
                 CompensationsByPeriods = compensationsByPeriods,
-                Total = CompensationCalculationService.Get(compensations, parameters.CurrencyId)
+                Total = GetEmployeeTotal(compensationsByPeriods, parameters.CurrencyId)
             };
+        }
+
+        private ValueWithCurrency GetEmployeeTotal(List<CompensationsByPeriodView> compensationsByPeriods, Guid? currencyId)
+        {
+            ValueWithCurrency result = null;
+            foreach (CompensationsByPeriodView compensationsByPeriod in compensationsByPeriods)
+            {
+                result = CurrencyConverterService.Add(result, compensationsByPeriod.Total, currencyId);
+            }
+
+            return result;
         }
     }
 }

@@ -24,13 +24,18 @@ namespace CP.Shared.EmployeeToLegalEntity.Mappers
 
         public static void Register(IMapperConfigurationExpression config)
         {
-            config.CreateMap<EmployeeToLegalEntityEntity, EmployeeToLegalEntityView>();
+            config.CreateMap<EmployeeToLegalEntityEntity, EmployeeToLegalEntityView>()
+                .ForMember(dst => dst.Employee, cfg => cfg.AllowNull())
+                .ForMember(dst => dst.LegalEntity, cfg => cfg.AllowNull());
             config.CreateMap<EmployeeToLegalEntityModel, EmployeeToLegalEntityEntity>();
         }
 
         public EmployeeToLegalEntityView Map(EmployeeToLegalEntityEntity model)
         {
-            EmployeeToLegalEntityView view = Mapper.Map<EmployeeToLegalEntityView>(model);
+            //EmployeeToLegalEntityView view = Mapper.Map<EmployeeToLegalEntityView>(model);
+            EmployeeToLegalEntityView view = new EmployeeToLegalEntityView();
+            view.Id = model.Id;
+            view.IsPrimary = model.IsPrimary;
             view.Employee = EmployeeRetrievingService.GetById(model.EmployeeId);
             view.LegalEntity = LegalEntityRetrievingService.GetById(model.LegalEntityId);
 

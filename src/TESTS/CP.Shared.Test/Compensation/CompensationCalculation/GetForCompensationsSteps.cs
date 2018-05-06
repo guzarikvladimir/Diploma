@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AutoFixture;
 using CP.Platform.Test.Core.Models;
 using CP.Platform.Test.Core.Services;
@@ -54,7 +55,7 @@ namespace CP.Shared.Test.Compensation.CompensationCalculation
             compensations.AddRange(salaries);
             compensations.AddRange(bonuses);
 
-            Result = Kernel.Get<ICompensationCalculationService>().Get(compensations, null);
+            Result = Kernel.Get<ICompensationCalculationService>().Get(compensations, Guid.Empty, null);
         }
 
         [Then(@"Total value should be (.*)")]

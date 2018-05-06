@@ -110,6 +110,10 @@
     <Compile Include="Migrations\201805041824086_AddEmailToEmployee.Designer.cs">
       <DependentUpon>201805041824086_AddEmailToEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805061525195_AddCurrencyToLegalEntity.cs" />
+    <Compile Include="Migrations\201805061525195_AddCurrencyToLegalEntity.Designer.cs">
+      <DependentUpon>201805061525195_AddCurrencyToLegalEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BonusPromotion.cs" />
     <Compile Include="Models\CompensationPromotion.cs" />
@@ -185,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805041824086_AddEmailToEmployee.resx">
       <DependentUpon>201805041824086_AddEmailToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805061525195_AddCurrencyToLegalEntity.resx">
+      <DependentUpon>201805061525195_AddCurrencyToLegalEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

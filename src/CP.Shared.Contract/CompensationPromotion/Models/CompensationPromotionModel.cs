@@ -1,8 +1,6 @@
 ﻿using System;
 using CP.Repository.Models;
 using CP.Shared.Contract.Core.Models;
-using CP.Shared.Contract.Currency.Models;
-using CP.Shared.Contract.Employee.Models;
 
 namespace CP.Shared.Contract.CompensationPromotion.Models
 {

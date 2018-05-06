@@ -7,6 +7,7 @@ namespace CP.Shared.Contract.Compensation.Services
 {
     public interface ICompensationCalculationService
     {
-        ValueWithCurrency Get(List<CompensationPromotionView> compensations, Guid? currencyId, DateTime? date = null);
+        ValueWithCurrency Get(List<CompensationPromotionView> compensations, Guid employeeId, Guid? currencyId,
+            DateTime? date = null);
     }
 }

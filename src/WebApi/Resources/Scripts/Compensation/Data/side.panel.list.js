@@ -4,7 +4,7 @@
     var model = {
         getListItemPreview: getListItemPreview,
         rejectCompensation: rejectCompensation,
-        isApproved: function (item) {
+        isApproved: function(item) {
             return item.PromotionStatus === 0;
         }
     }
@@ -22,18 +22,31 @@
             }
         }
 
+        if (promotionType === 'Salary') {
+            result += ` ${item.LegalEntity.Name}`;
+        }
+
         return result;
     }
 
     function rejectCompensation(item) {
         let action = co.promotionTypes()[item.PromotionType];
 
-        request.sendAjax('POST', `/api/Compensations/${action}/Reject/${item.Id}`)
+        request.sendAjax('POST', `/api/Compensations/${action}/Reject`, getData(item))
             .then(() => {
                 alert.show(action + ' successfully rejected.');
                 cotable.getCompensations();
                 coside.show();
             }, (error) => alert.error(error));
+    }
+
+    function getData(item) {
+        item.CurrencyId = item.Currency.Id;
+        item.CreatedById = item.CreatedBy.Id;
+        item.EmployeeId = item.Employee.Id;
+        item.LegalEntityId = item.LegalEntity.Id;
+
+        return item;
     }
 
     return {

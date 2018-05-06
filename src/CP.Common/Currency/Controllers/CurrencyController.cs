@@ -9,11 +9,11 @@ namespace CP.Common.Currency.Controllers
     public class CurrencyController : ApiController
     {
         [Inject]
-        ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
+        ICurrencyService CurrencyService { get; set; }
 
         public IEnumerable<CurrencyView> Get()
         {
-            return CurrencyRetrievingService.GetOrdered();
+            return CurrencyService.GetOrdered();
         }
     }
 }

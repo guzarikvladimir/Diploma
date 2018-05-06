@@ -17,6 +17,7 @@ namespace CP.Shared.Bonus
         {
             kernel.Bind<IBonusPromotionRetrievingService>().To<BonusPromotionRetrievingService>().InRequestScope();
             kernel.Bind<IBonusPromotionModifyingService>().To<BonusPromotionModifyingService>().InRequestScope();
+            kernel.Bind<IBonusPromotionSerivce>().To<BonusPromotionSerivce>().InRequestScope();
 
             kernel.Bind<IEntityModifyingMapper<BonusPromotionModel, BonusPromotion>,
                     IEntityMapper<BonusPromotion, BonusPromotionView>>()

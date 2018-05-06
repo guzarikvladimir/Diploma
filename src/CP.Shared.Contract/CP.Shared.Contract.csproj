@@ -44,6 +44,7 @@
     <Compile Include="Bonus\Models\BonusPromotionView.cs" />
     <Compile Include="Bonus\Services\IBonusPromotionModifyingService.cs" />
     <Compile Include="Bonus\Services\IBonusPromotionRetrievingService.cs" />
+    <Compile Include="Bonus\Services\IBonusPromotionSerivce.cs" />
     <Compile Include="CompensationPromotion\Models\CompensationPromotionModel.cs" />
     <Compile Include="CompensationPromotion\Models\CompensationPromotionView.cs" />
     <Compile Include="CompensationPromotion\Services\ICompensationPromotionModifyingService.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Currency\Services\ICurrencyConverterService.cs" />
     <Compile Include="Currency\Services\ICurrencyResolverService.cs" />
     <Compile Include="Currency\Services\ICurrencyRetrievingService.cs" />
+    <Compile Include="Currency\Services\ICurrencyService.cs" />
     <Compile Include="EmployeeRole\Models\EmployeeRoleView.cs" />
     <Compile Include="EmployeeRole\Services\IEmployeeRoleRetrievingService.cs" />
     <Compile Include="EmployeeStatus\Models\EmployeeStatusView.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Salary\Models\SalaryPromotionView.cs" />
     <Compile Include="Salary\Services\ISalaryPromotionModifyingService.cs" />
     <Compile Include="Salary\Services\ISalaryPromotionRetrievingService.cs" />
+    <Compile Include="Salary\Services\ISalaryPromotionService.cs" />
     <Compile Include="User\Models\UserModel.cs" />
     <Compile Include="User\Models\UserView.cs" />
     <Compile Include="User\Services\IUserModifyingService.cs" />

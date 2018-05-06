@@ -1,6 +1,7 @@
 ﻿<div data-bind="foreach: coside.employeeCompensations().CompensationPromotions" class="side-panel-list">
     <div class="side-panel-item">
         <p data-bind="text: cosidelist.getListItemPreview($data)"></p>
-        <a data-bind="click: { single: cosidelist.rejectCompensation }" href="javascript:void(0)">&times;</a>
+        <a data-bind="click: { single: cosidelist.rejectCompensation },
+           visible: cosidelist.isApproved($data)" href="javascript:void(0)">&times;</a>
     </div>
 </div>

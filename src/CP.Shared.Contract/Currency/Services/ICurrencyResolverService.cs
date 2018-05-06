@@ -7,6 +7,7 @@ namespace CP.Shared.Contract.Currency.Services
 {
     public interface ICurrencyResolverService
     {
-        CurrencyView GetResultCurrency(List<CompensationPromotionView> compensations, Guid? currencyId);
+        CurrencyView GetResultCurrency(List<CompensationPromotionView> compensations, Guid employeeId,
+            Guid? currencyId);
     }
 }

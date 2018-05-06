@@ -77,19 +77,10 @@ namespace CP.Compensation.Workflow.Services
             return model;
         }
 
-        public void Delete(Guid promotionId, CompensationPromotionType promotionType)
+        public void Reject(CompensationPromotionModel model)
         {
-            if (promotionType == CompensationPromotionType.Salary)
-            {
-                SalaryPromotionModifyingService.Delete(promotionId);
-            }
-
-            if (promotionType == CompensationPromotionType.Bonus)
-            {
-                BonusPromotionModifyingService.Delete(promotionId);
-            }
-
-            CompensationPromotionModifyingService.Delete(promotionId);
+            model.PromotionStatus = CompensationPromotionStatus.Rejected;
+            CompensationPromotionModifyingService.Update(model);
         }
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Bonus\Mappers\BonusPromotionMapper.cs" />
     <Compile Include="Bonus\Services\BonusPromotionModifyingService.cs" />
     <Compile Include="Bonus\Services\BonusPromotionRetrievingService.cs" />
+    <Compile Include="Bonus\Services\BonusPromotionSerivce.cs" />
     <Compile Include="CompensationPromotion\CompensationPromotionModule.cs" />
     <Compile Include="CompensationPromotion\Mappers\CompensationPromotionMapper.cs" />
     <Compile Include="CompensationPromotion\Services\CompensationPromotionModifyingService.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Currency\Services\CurrencyConverterService.cs" />
     <Compile Include="Currency\Services\CurrencyResolverService.cs" />
     <Compile Include="Currency\Services\CurrencyRetrievingService.cs" />
+    <Compile Include="Currency\Services\CurrencyService.cs" />
     <Compile Include="EmployeeRole\EmployeeRoleModule.cs" />
     <Compile Include="EmployeeRole\Mappers\EmployeeRoleMapper.cs" />
     <Compile Include="EmployeeRole\Services\EmployeeRoleRetrievingService.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="Salary\SalaryModule.cs" />
     <Compile Include="Salary\Services\SalaryPromotionModifyingService.cs" />
     <Compile Include="Salary\Services\SalaryPromotionRetrievingService.cs" />
+    <Compile Include="Salary\Services\SalaryPromotionService.cs" />
     <Compile Include="User\Mappers\UserMapper.cs" />
     <Compile Include="User\Services\UserModifyingService.cs" />
     <Compile Include="User\Services\UserRetrievingService.cs" />

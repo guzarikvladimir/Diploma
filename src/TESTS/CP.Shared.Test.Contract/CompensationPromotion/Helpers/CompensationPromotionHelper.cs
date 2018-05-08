@@ -7,6 +7,7 @@ using CP.Repository.Models;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Employee.Models;
+using CP.Shared.Contract.LegalEntity.Models;
 using CP.Shared.Test.Contract.CompensationPromotion.Models;
 
 namespace CP.Shared.Test.Contract.CompensationPromotion.Helpers
@@ -27,11 +28,22 @@ namespace CP.Shared.Test.Contract.CompensationPromotion.Helpers
                 compensation.Employee = fixture.Create<List<EmployeeView>>()
                     .First(e => e.Name == model.Employee);
             }
-            
+
+            if (!model.LegalEntity.IsNullOrEmpty())
+            {
+                compensation.LegalEntity = fixture.Create<List<LegalEntityView>>()
+                    .First(le => le.Name == model.LegalEntity);
+            }
+
             if (!model.PromotionStatus.IsNullOrEmpty())
             {
                 compensation.PromotionStatus =
-                    HelperService.ParseEnum<CompensationPromotionStatus>(model.PromotionType);
+                    HelperService.ParseEnum<CompensationPromotionStatus>(model.PromotionStatus);
+            }
+
+            if (!model.CreatedDate.IsNullOrEmpty())
+            {
+                compensation.CreatedDate = HelperService.ParseDate(model.CreatedDate);
             }
 
             return new CompensationpromotionViewTestModel()
@@ -51,6 +63,8 @@ namespace CP.Shared.Test.Contract.CompensationPromotion.Helpers
             model.PromotionType = compensation.PromotionType;
             model.PromotionStatus = compensation.PromotionStatus;
             model.ApplyDate = compensation.ApplyDate;
+            model.CreatedDate = compensation.CreatedDate;
+            model.LegalEntity = compensation.LegalEntity;
 
             return model;
         }

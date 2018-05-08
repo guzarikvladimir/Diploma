@@ -17,6 +17,11 @@ namespace CP.Platform.Test.Core.Helpers
             return DateTime.Parse(value, new CultureInfo("en-US"), DateTimeStyles.None);
         }
 
+        public static Period.Models.Period ParsePeriod(string value)
+        {
+            return Period.Models.Period.Parse(value);
+        }
+
         public static decimal? ParseNullableDecimal(string value)
         {
             return !IsNull(value) ? decimal.Parse(value) : (decimal?)null;

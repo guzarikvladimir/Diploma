@@ -14,7 +14,7 @@ namespace CP.Shared.EmployeeToLegalEntity.Services
     {
         public IEnumerable<EmployeeToLegalEntityView> Get(Guid employeeId, bool isActive = true)
         {
-            return Get().Where(el => el.Employee.Id == employeeId);
+            return Get().Where(el => el.Employee.Id == employeeId && el.LegalEntity.IsActive);
         }
     }
 }

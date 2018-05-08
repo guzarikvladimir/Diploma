@@ -10,10 +10,14 @@
 
         public string Employee { get; set; }
 
+        public string LegalEntity { get; set; }
+
         public string PromotionType { get; set; }
 
         public string PromotionStatus { get; set; }
 
         public string ApplyDate { get; set; }
+
+        public string CreatedDate { get; set; }
     }
 }

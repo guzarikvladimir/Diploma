@@ -69,6 +69,15 @@ namespace CP.Authorization.Test.Services.User
 #line 3
  testRunner.Given("Requestor is going to be loginned", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Email"});
+            table1.AddRow(new string[] {
+                        "Employee_1",
+                        "User_1"});
+#line 4
+ testRunner.And("Employees are configured to have properties", ((string)(null)), table1, "And ");
+#line hidden
         }
         
         [NUnit.Framework.TestAttribute()]
@@ -76,17 +85,10 @@ namespace CP.Authorization.Test.Services.User
         public virtual void UserIsRegistered()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("User is registered", ((string[])(null)));
-#line 5
+#line 8
 this.ScenarioSetup(scenarioInfo);
 #line 2
 this.FeatureBackground();
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email"});
-            table1.AddRow(new string[] {
-                        "User_1"});
-#line 6
- testRunner.Given("Employees are configured to have properties", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
@@ -95,7 +97,7 @@ this.FeatureBackground();
                         "User_1",
                         "123456"});
 #line 9
- testRunner.And("Users are configured to have properties", ((string)(null)), table2, "And ");
+ testRunner.Given("Users are configured to have properties", ((string)(null)), table2, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
@@ -122,27 +124,20 @@ this.ScenarioSetup(scenarioInfo);
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email"});
-            table4.AddRow(new string[] {
-                        "User_1"});
+                        "Email",
+                        "Password"});
 #line 18
- testRunner.Given("Employees are configured to have properties", ((string)(null)), table4, "Given ");
+ testRunner.Given("Users are configured to have properties", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-#line 21
- testRunner.And("Users are configured to have properties", ((string)(null)), table5, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password"});
-            table6.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "User_1",
                         "123456"});
+#line 20
+ testRunner.When("Login is requested with properties", ((string)(null)), table5, "When ");
 #line 23
- testRunner.When("Login is requested with properties", ((string)(null)), table6, "When ");
-#line 26
  testRunner.Then("User is not loginned with message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

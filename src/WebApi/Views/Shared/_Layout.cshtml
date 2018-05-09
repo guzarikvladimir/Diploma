@@ -15,12 +15,18 @@
     <div id='cssmenu'>
         <ul>
             <li><a href='/'><span>Compensation</span></a></li>
-            <li class='last'><a href='#'><span>Administration</span></a></li>
+            <li class='last'><a href='/Import/Index'><span>Administration</span></a></li>
             <img src="~/Resources/Images/analyst-placeholder-avatar.png" class="align-right" />
             <li class='align-right'><a href='/Account/Logout'><span>Logout</span></a></li>
         </ul>
     </div>
 
     @RenderBody()
+
+    <!-- ko with: alert -->
+    <div class="tn-box tn-box-hoverpause">
+        <p data-bind="text: alert.message"></p>
+    </div>
+    <!-- /ko -->
 </body>
 </html>

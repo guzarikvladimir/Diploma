@@ -192,6 +192,7 @@
     <Content Include="Resources\Content\Compensation\side-panel.css" />
     <Content Include="Resources\Content\Compensation\compensation-table.css" />
     <Content Include="Resources\Content\Common\util.css" />
+    <Content Include="Resources\Content\Import\import.css" />
     <Content Include="Resources\Content\w3.css" />
     <Content Include="Resources\Images\analyst-placeholder-avatar.png" />
     <Content Include="Resources\Images\start-bg.jpg" />
@@ -281,6 +282,7 @@
     <Content Include="Resources\Scripts\Helpers\guid.js" />
     <Content Include="Resources\Scripts\Helpers\request.js" />
     <Content Include="Resources\Scripts\Helpers\dblclick-helper.js" />
+    <Content Include="Resources\Scripts\Import\import.js" />
     <Content Include="Resources\Scripts\Knockout\knockout-3.0.0.debug.js" />
     <Content Include="Resources\Scripts\Knockout\knockout-3.0.0.js" />
     <Content Include="Resources\Scripts\Compensation\compensation-table.js" />
@@ -340,6 +342,7 @@
     <Content Include="Resources\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Resources\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Views\Compensation\Table\_Filters.cshtml" />
+    <Content Include="Views\Import\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -366,6 +369,10 @@
     <ProjectReference Include="..\CP.Compensation\CP.Compensation.csproj">
       <Project>{9642df21-8e60-419d-9ddd-9f30a36c3418}</Project>
       <Name>CP.Compensation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.ImportExport\CP.ImportExport.csproj">
+      <Project>{6ca4614d-fd81-4506-86cb-55a1ebd33d1c}</Project>
+      <Name>CP.ImportExport</Name>
     </ProjectReference>
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
       <Project>{2e345f9f-5f60-4f6a-b3fa-872f1e05784c}</Project>

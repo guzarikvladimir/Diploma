@@ -17,6 +17,7 @@ namespace CP.Shared.Currency
             kernel.Bind<ICurrencyRetrievingService>().To<CurrencyRetrievingService>().InRequestScope();
             kernel.Bind<ICurrencyService>().To<CurrencyService>().InRequestScope();
             kernel.Bind<ICurrencyResolverService>().To<CurrencyResolverService>().InRequestScope();
+            kernel.Bind<ICurrencyModifyingService>().To<CurrencyModifyingService>().InRequestScope();
             kernel.Bind<ICurrencyConverterService>().To<CurrencyConverterService>().InRequestScope();
 
             kernel.Bind<IEntityMapper<Repository.Models.Currency, CurrencyView>>()

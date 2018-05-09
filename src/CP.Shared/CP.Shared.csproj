@@ -94,6 +94,7 @@
     <Compile Include="Currency\CurrenyModule.cs" />
     <Compile Include="Currency\Mappers\CurrencyMapper.cs" />
     <Compile Include="Currency\Services\CurrencyConverterService.cs" />
+    <Compile Include="Currency\Services\CurrencyModifyingService.cs" />
     <Compile Include="Currency\Services\CurrencyResolverService.cs" />
     <Compile Include="Currency\Services\CurrencyRetrievingService.cs" />
     <Compile Include="Currency\Services\CurrencyService.cs" />

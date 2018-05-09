@@ -1,0 +1,6 @@
+﻿.import-container {
+    margin: 20px;
+}
+.import-container input,button,select {
+    width: 250px;
+}

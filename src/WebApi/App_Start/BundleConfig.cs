@@ -55,6 +55,12 @@ namespace WebApi
                     "~/Resources/Content/Compensation/side-panel-list.css",
                     "~/Resources/Content/Compensation/side-panel-form.css",
                     "~/Resources/Content/Compensation/side-panel-header.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/import")
+                .Include("~/Resources/Scripts/Import/import.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css/import")
+                .Include("~/Resources/Content/Import/import.css"));
         }
     }
 }

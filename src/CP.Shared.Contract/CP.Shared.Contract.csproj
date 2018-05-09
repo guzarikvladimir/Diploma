@@ -63,8 +63,10 @@
     <Compile Include="CurrencyRate\Models\CurrencyRateView.cs" />
     <Compile Include="CurrencyRate\Services\ICurrencyRateRetrievingService.cs" />
     <Compile Include="CurrencyRate\Services\ICurrencyRateService.cs" />
+    <Compile Include="Currency\Models\CurrencyModel.cs" />
     <Compile Include="Currency\Models\CurrencyView.cs" />
     <Compile Include="Currency\Services\ICurrencyConverterService.cs" />
+    <Compile Include="Currency\Services\ICurrencyModifyingService.cs" />
     <Compile Include="Currency\Services\ICurrencyResolverService.cs" />
     <Compile Include="Currency\Services\ICurrencyRetrievingService.cs" />
     <Compile Include="Currency\Services\ICurrencyService.cs" />

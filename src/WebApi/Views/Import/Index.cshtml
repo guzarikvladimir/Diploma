@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Compensations";
+}
+@section styles
+{
+    @Styles.Render("~/Content/css/import")
+}
+@section scripts
+{
+    @Scripts.Render("~/bundles/import")
+}
+
+<div class="import-container">
+    <div class="input-group">
+        <select data-bind="options: imp.options,
+                optionsText: 'name',
+                optionsValue: 'value',
+                value: imp.selectedOption"></select>
+    </div>
+    <div class="input-group">
+        <dic class="col-half">
+            <input data-bind="event: { change: () => file = $element.files[0] }" type="file" id="import-file" />
+        </dic>
+    </div>
+    <div class="input-group">
+        <dic class="col-half">
+            <button data-bind="click: { single: imp.upload }">Import</button>
+        </dic>
+    </div>
+</div>

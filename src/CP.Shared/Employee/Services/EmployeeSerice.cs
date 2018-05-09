@@ -2,6 +2,7 @@
 using System.Linq;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
+using CP.Shared.Contract.Filters.Helpers;
 using CP.Shared.Contract.Filters.Model;
 using Ninject;
 
@@ -14,7 +15,7 @@ namespace CP.Shared.Employee.Services
 
         public List<EmployeeView> Get(CollectionViewParameters parameters)
         {
-            int page = parameters.Page ?? 1;
+            int page = parameters.Page.ToDefaultPage();
 
             return EmployeeRetrievingService.Get()
                 .Skip(page - 1)

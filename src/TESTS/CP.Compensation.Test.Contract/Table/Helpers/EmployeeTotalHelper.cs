@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoFixture;
 using CP.Compensation.Test.Contract.Table.Models;
+using CP.Platform.Test.Core.Helpers;
 using CP.Shared.Contract.Compensation.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Employee.Models;
@@ -14,9 +15,12 @@ namespace CP.Compensation.Test.Contract.Table.Helpers
         {
             EmployeeTotalTestModel testModel = new EmployeeTotalTestModel();
             testModel.Employee = fixture.Create<List<EmployeeView>>().First(e => e.Name == model.Employee);
-            var value = decimal.Parse(model.Total);
-            var currency = fixture.Create<List<CurrencyView>>().First(c => c.Name == model.Currency);
-            testModel.Total = new ValueWithCurrency(value, currency);
+            if (!HelperService.IsNull(model.Total))
+            {
+                var value = decimal.Parse(model.Total);
+                var currency = fixture.Create<List<CurrencyView>>().First(c => c.Name == model.Currency);
+                testModel.Total = new ValueWithCurrency(value, currency);
+            }
 
             return testModel;
         }

@@ -104,6 +104,11 @@ namespace CP.Compensation.Test.Table.CompensationTable
                         "1.25",
                         "Daily",
                         "2018-05-02"});
+            table2.AddRow(new string[] {
+                        "RUR",
+                        "60",
+                        "Daily",
+                        "2018-05-02"});
 #line 11
  testRunner.And("CurrencyRates are customized to have properties", ((string)(null)), table2, "And ");
 #line hidden
@@ -123,15 +128,29 @@ namespace CP.Compensation.Test.Table.CompensationTable
                         "LE RU",
                         "RUR",
                         "false"});
-#line 16
+#line 17
  testRunner.And("LegalEntities are customized to have properties", ((string)(null)), table3, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name"});
             table4.AddRow(new string[] {
                         "Employee_1"});
-#line 21
+#line 22
  testRunner.And("Employees are configured to have properties", ((string)(null)), table4, "And ");
+#line hidden
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Approved compensations of different salary types")]
+        [NUnit.Framework.TestCaseAttribute("Monthly", "1200", "1500", null)]
+        [NUnit.Framework.TestCaseAttribute("Annual", "100", "400", null)]
+        public virtual void ApprovedCompensationsOfDifferentSalaryTypes(string salaryType, string periodTotal, string employeeTotal, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Approved compensations of different salary types", exampleTags);
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Employee",
@@ -141,20 +160,8 @@ namespace CP.Compensation.Test.Table.CompensationTable
                         "Employee_1",
                         "LE USA",
                         "true"});
-#line 24
- testRunner.And("Employees are customized to have legal entities", ((string)(null)), table5, "And ");
-#line hidden
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("All USD compensations")]
-        public virtual void AllUSDCompensations()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("All USD compensations", ((string[])(null)));
-#line 28
-this.ScenarioSetup(scenarioInfo);
-#line 2
-this.FeatureBackground();
+#line 27
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table5, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
@@ -176,10 +183,10 @@ this.FeatureBackground();
                         "Employee_1",
                         "LE USA",
                         "2018-05-02",
-                        "Monthly",
+                        string.Format("{0}", salaryType),
                         "2018-05-02"});
-#line 29
- testRunner.Given("Salaries are customized to have properties", ((string)(null)), table6, "Given ");
+#line 30
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table6, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
@@ -199,9 +206,9 @@ this.FeatureBackground();
                         "Employee_1",
                         "LE USA",
                         "2018-04-02"});
-#line 32
+#line 33
  testRunner.And("Bonuses are customized to have properties", ((string)(null)), table7, "And ");
-#line 35
+#line 36
  testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -212,17 +219,17 @@ this.FeatureBackground();
                         "Currency"});
             table8.AddRow(new string[] {
                         "Employee_1",
-                        "2018-05-01",
+                        "2018-05",
                         "Salary_1",
-                        "1200",
+                        string.Format("{0}", periodTotal),
                         "USD"});
             table8.AddRow(new string[] {
                         "Employee_1",
-                        "2018-04-01",
+                        "2018-04",
                         "Bonus_1",
                         "300",
                         "USD"});
-#line 36
+#line 37
  testRunner.Then("Employees compensations should be", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,25 +238,36 @@ this.FeatureBackground();
                         "Currency"});
             table9.AddRow(new string[] {
                         "Employee_1",
-                        "1500",
+                        string.Format("{0}", employeeTotal),
                         "USD"});
-#line 40
- testRunner.And("Employees totals should be", ((string)(null)), table9, "And ");
+#line 41
+ testRunner.And("Employee year totals should be", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Multiple currencies")]
-        public virtual void MultipleCurrencies()
+        [NUnit.Framework.DescriptionAttribute("Rejected compensations")]
+        public virtual void RejectedCompensations()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple currencies", ((string[])(null)));
-#line 44
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rejected compensations", ((string[])(null)));
+#line 50
 this.ScenarioSetup(scenarioInfo);
 #line 2
 this.FeatureBackground();
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table10.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 51
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table10, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Value",
                         "Currency",
@@ -260,7 +278,114 @@ this.FeatureBackground();
                         "ApplyDate",
                         "SalaryType",
                         "CreatedDate"});
-            table10.AddRow(new string[] {
+            table11.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Rejected",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02",
+                        "Monthly",
+                        "2018-05-02"});
+#line 54
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table11, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+            table12.AddRow(new string[] {
+                        "Bonus_1",
+                        "300",
+                        "USD",
+                        "Bonus",
+                        "Rejected",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+#line 57
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table12, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table13.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 60
+ testRunner.And("Employees are customized to have legal entities", ((string)(null)), table13, "And ");
+#line 63
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table14.AddRow(new string[] {
+                        "Employee_1",
+                        "NULL",
+                        "NULL",
+                        "NULL"});
+#line 64
+ testRunner.Then("Employees compensations should be", ((string)(null)), table14, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table15.AddRow(new string[] {
+                        "Employee_1",
+                        "NULL",
+                        "NULL"});
+#line 67
+ testRunner.And("Employee year totals should be", ((string)(null)), table15, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only salaries")]
+        public virtual void OnlySalaries()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only salaries", ((string[])(null)));
+#line 71
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table16.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 72
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table16, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table17.AddRow(new string[] {
                         "Salary_1",
                         "100",
                         "USD",
@@ -271,32 +396,10 @@ this.FeatureBackground();
                         "2018-05-02",
                         "Monthly",
                         "2018-05-02"});
-            table10.AddRow(new string[] {
-                        "Salary_2",
-                        "100",
-                        "BYR",
-                        "Salary",
-                        "Approved",
-                        "Employee_1",
-                        "LE USA",
-                        "2018-04-02",
-                        "Annual",
-                        "2018-04-02"});
-            table10.AddRow(new string[] {
-                        "Salary_3",
-                        "100",
-                        "EUR",
-                        "Salary",
-                        "Approved",
-                        "Employee_1",
-                        "LE USA",
-                        "2018-03-02",
-                        "Annual",
-                        "2018-03-02"});
-#line 45
- testRunner.Given("Salaries are customized to have properties", ((string)(null)), table10, "Given ");
+#line 75
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table17, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Name",
                         "Value",
                         "Currency",
@@ -305,7 +408,85 @@ this.FeatureBackground();
                         "Employee",
                         "LegalEntity",
                         "ApplyDate"});
-            table11.AddRow(new string[] {
+#line 78
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table18, "And ");
+#line 80
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table19.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Salary_1",
+                        "1200",
+                        "USD"});
+#line 81
+ testRunner.Then("Employees compensations should be", ((string)(null)), table19, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table20.AddRow(new string[] {
+                        "Employee_1",
+                        "1200",
+                        "USD"});
+#line 84
+ testRunner.And("Employee year totals should be", ((string)(null)), table20, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Only bonuses")]
+        public virtual void OnlyBonuses()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Only bonuses", ((string[])(null)));
+#line 88
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table21.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 89
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table21, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+#line 92
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table22, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+            table23.AddRow(new string[] {
                         "Bonus_1",
                         "300",
                         "USD",
@@ -314,53 +495,1050 @@ this.FeatureBackground();
                         "Employee_1",
                         "LE USA",
                         "2018-04-02"});
-#line 50
- testRunner.And("Bonuses are customized to have properties", ((string)(null)), table11, "And ");
+#line 94
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table23, "And ");
+#line 97
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Currency"});
-            table12.AddRow(new string[] {
-                        "USD"});
-#line 53
- testRunner.When("Compensation table is requested with parameters", ((string)(null)), table12, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Employee",
                         "Period",
                         "Compensations",
                         "Total",
                         "Currency"});
-            table13.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "Employee_1",
-                        "2018-03-01",
-                        "Salary_3",
-                        "80",
+                        "2018-04",
+                        "Bonus_1",
+                        "300",
                         "USD"});
-            table13.AddRow(new string[] {
-                        "Employee_1",
-                        "2018-04-01",
-                        "Salary_2,Bonus_1",
-                        "350",
-                        "USD"});
-            table13.AddRow(new string[] {
-                        "Employee_1",
-                        "2018-05-01",
-                        "Salary_1",
-                        "1200",
-                        "USD"});
-#line 56
- testRunner.Then("Employees compensations should be", ((string)(null)), table13, "Then ");
+#line 98
+ testRunner.Then("Employees compensations should be", ((string)(null)), table24, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Employee",
                         "Total",
                         "Currency"});
-            table14.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Employee_1",
-                        "1630",
+                        "300",
                         "USD"});
-#line 61
- testRunner.And("Employees totals should be", ((string)(null)), table14, "And ");
+#line 101
+ testRunner.And("Employee year totals should be", ((string)(null)), table25, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Different periods")]
+        public virtual void DifferentPeriods()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Different periods", ((string[])(null)));
+#line 105
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table26.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 106
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table26, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table27.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-03-02",
+                        "Annual",
+                        "2018-03-02"});
+#line 109
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table27, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+            table28.AddRow(new string[] {
+                        "Bonus_1",
+                        "200",
+                        "USD",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+            table28.AddRow(new string[] {
+                        "Bonus_2",
+                        "300",
+                        "USD",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02"});
+#line 112
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table28, "And ");
+#line 116
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table29.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-03",
+                        "Salary_1",
+                        "100",
+                        "USD"});
+            table29.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-04",
+                        "Bonus_1",
+                        "200",
+                        "USD"});
+            table29.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Bonus_2",
+                        "300",
+                        "USD"});
+#line 117
+ testRunner.Then("Employees compensations should be", ((string)(null)), table29, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table30.AddRow(new string[] {
+                        "Employee_1",
+                        "600",
+                        "USD"});
+#line 122
+ testRunner.And("Employee year totals should be", ((string)(null)), table30, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Future period")]
+        public virtual void FuturePeriod()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Future period", ((string[])(null)));
+#line 126
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table31.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 127
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table31, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table32.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-03-02",
+                        "Annual",
+                        "2018-07-02"});
+#line 130
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table32, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+#line 133
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table33, "And ");
+#line 135
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table34.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-03",
+                        "Salary_1",
+                        "100",
+                        "USD"});
+#line 136
+ testRunner.Then("Employees compensations should be", ((string)(null)), table34, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table35.AddRow(new string[] {
+                        "Employee_1",
+                        "100",
+                        "USD"});
+#line 139
+ testRunner.And("Employee year totals should be", ((string)(null)), table35, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Next year compensations")]
+        [NUnit.Framework.TestCaseAttribute("NULL", "100", null)]
+        [NUnit.Framework.TestCaseAttribute("2019", "200", null)]
+        public virtual void NextYearCompensations(string year, string yearTotal, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Next year compensations", exampleTags);
+#line 143
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table36.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 144
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table36, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table37.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-03-02",
+                        "Annual",
+                        "2018-03-02"});
+            table37.AddRow(new string[] {
+                        "Salary_2",
+                        "200",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2019-04-02",
+                        "Annual",
+                        "2018-04-02"});
+#line 147
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table37, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+#line 151
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table38, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Year"});
+            table39.AddRow(new string[] {
+                        string.Format("{0}", year)});
+#line 153
+ testRunner.When("Compensation table is requested with parameters", ((string)(null)), table39, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table40.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-03",
+                        "Salary_1",
+                        "100",
+                        "USD"});
+            table40.AddRow(new string[] {
+                        "Employee_1",
+                        "2019-04",
+                        "Salary_2",
+                        "200",
+                        "USD"});
+#line 156
+ testRunner.Then("Employees compensations should be", ((string)(null)), table40, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table41.AddRow(new string[] {
+                        "Employee_1",
+                        string.Format("{0}", yearTotal),
+                        "USD"});
+#line 160
+ testRunner.And("Employee year totals should be", ((string)(null)), table41, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Different currencies for period - resolve with primary legal entity")]
+        public virtual void DifferentCurrenciesForPeriod_ResolveWithPrimaryLegalEntity()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Different currencies for period - resolve with primary legal entity", ((string[])(null)));
+#line 169
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table42.AddRow(new string[] {
+                        "Employee_1",
+                        "LE BLR",
+                        "true"});
+#line 170
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table42, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+#line 173
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table43, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+            table44.AddRow(new string[] {
+                        "Bonus_1",
+                        "100",
+                        "BYR",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+            table44.AddRow(new string[] {
+                        "Bonus_2",
+                        "200",
+                        "EUR",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+            table44.AddRow(new string[] {
+                        "Bonus_3",
+                        "300",
+                        "USD",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+#line 175
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table44, "And ");
+#line 180
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table45.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-04",
+                        "Bonus_1,Bonus_2,Bonus_3",
+                        "1020",
+                        "BYR"});
+#line 181
+ testRunner.Then("Employees compensations should be", ((string)(null)), table45, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table46.AddRow(new string[] {
+                        "Employee_1",
+                        "1020",
+                        "BYR"});
+#line 184
+ testRunner.And("Employee year totals should be", ((string)(null)), table46, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Different currencies for period - resolve with defalut currency")]
+        public virtual void DifferentCurrenciesForPeriod_ResolveWithDefalutCurrency()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Different currencies for period - resolve with defalut currency", ((string[])(null)));
+#line 188
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table47.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "false"});
+#line 189
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table47, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+#line 192
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table48, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+            table49.AddRow(new string[] {
+                        "Bonus_1",
+                        "100",
+                        "BYR",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-03-02"});
+            table49.AddRow(new string[] {
+                        "Bonus_2",
+                        "200",
+                        "USD",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+            table49.AddRow(new string[] {
+                        "Bonus_3",
+                        "300",
+                        "EUR",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02"});
+#line 194
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table49, "And ");
+#line 199
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table50.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-03",
+                        "Bonus_1",
+                        "100",
+                        "BYR"});
+            table50.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-04",
+                        "Bonus_2",
+                        "200",
+                        "USD"});
+            table50.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Bonus_3",
+                        "300",
+                        "EUR"});
+#line 200
+ testRunner.Then("Employees compensations should be", ((string)(null)), table50, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table51.AddRow(new string[] {
+                        "Employee_1",
+                        "490",
+                        "USD"});
+#line 205
+ testRunner.And("Employee year totals should be", ((string)(null)), table51, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Different currencies for period - resolve with requested currency")]
+        public virtual void DifferentCurrenciesForPeriod_ResolveWithRequestedCurrency()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Different currencies for period - resolve with requested currency", ((string[])(null)));
+#line 209
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table52.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "false"});
+#line 210
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table52, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+#line 213
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table53, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+            table54.AddRow(new string[] {
+                        "Bonus_1",
+                        "100",
+                        "BYR",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-03-02"});
+            table54.AddRow(new string[] {
+                        "Bonus_2",
+                        "200",
+                        "USD",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02"});
+            table54.AddRow(new string[] {
+                        "Bonus_3",
+                        "300",
+                        "EUR",
+                        "Bonus",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02"});
+#line 215
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table54, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Currency"});
+            table55.AddRow(new string[] {
+                        "EUR"});
+#line 220
+ testRunner.When("Compensation table is requested with parameters", ((string)(null)), table55, "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table56.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-03",
+                        "Bonus_1",
+                        "62.5",
+                        "EUR"});
+            table56.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-04",
+                        "Bonus_2",
+                        "250",
+                        "EUR"});
+            table56.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Bonus_3",
+                        "300",
+                        "EUR"});
+#line 223
+ testRunner.Then("Employees compensations should be", ((string)(null)), table56, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table57.AddRow(new string[] {
+                        "Employee_1",
+                        "612.5",
+                        "EUR"});
+#line 228
+ testRunner.And("Employee year totals should be", ((string)(null)), table57, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Multiple salaries in defferent periods - one legal entity")]
+        public virtual void MultipleSalariesInDefferentPeriods_OneLegalEntity()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple salaries in defferent periods - one legal entity", ((string[])(null)));
+#line 232
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table58.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 233
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table58, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table59.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-03-02",
+                        "Annual",
+                        "2018-03-02"});
+            table59.AddRow(new string[] {
+                        "Salary_2",
+                        "200",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-04-02",
+                        "Annual",
+                        "2018-04-02"});
+            table59.AddRow(new string[] {
+                        "Salary_3",
+                        "300",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-05-02"});
+#line 236
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table59, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+#line 241
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table60, "And ");
+#line 243
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table61.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-03",
+                        "Salary_1",
+                        "100",
+                        "USD"});
+            table61.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-04",
+                        "Salary_2",
+                        "200",
+                        "USD"});
+            table61.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Salary_3",
+                        "300",
+                        "USD"});
+#line 244
+ testRunner.Then("Employees compensations should be", ((string)(null)), table61, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table62.AddRow(new string[] {
+                        "Employee_1",
+                        "300",
+                        "USD"});
+#line 249
+ testRunner.And("Employee year totals should be", ((string)(null)), table62, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Multiple salaries in one period - one legal entity")]
+        public virtual void MultipleSalariesInOnePeriod_OneLegalEntity()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple salaries in one period - one legal entity", ((string[])(null)));
+#line 253
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table63.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+#line 254
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table63, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table64.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-04-01"});
+            table64.AddRow(new string[] {
+                        "Salary_2",
+                        "200",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-04-02"});
+            table64.AddRow(new string[] {
+                        "Salary_3",
+                        "300",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-04-03"});
+#line 257
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table64, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table65 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+#line 262
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table65, "And ");
+#line 264
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table66 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table66.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Salary_1,Salary_2,Salary_3",
+                        "300",
+                        "USD"});
+#line 265
+ testRunner.Then("Employees compensations should be", ((string)(null)), table66, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table67 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table67.AddRow(new string[] {
+                        "Employee_1",
+                        "300",
+                        "USD"});
+#line 268
+ testRunner.And("Employee year totals should be", ((string)(null)), table67, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Multiple salaries in one period - multiple legal entities")]
+        public virtual void MultipleSalariesInOnePeriod_MultipleLegalEntities()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiple salaries in one period - multiple legal entities", ((string[])(null)));
+#line 272
+this.ScenarioSetup(scenarioInfo);
+#line 2
+this.FeatureBackground();
+#line hidden
+            TechTalk.SpecFlow.Table table68 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "LegalEntity",
+                        "IsPrimary"});
+            table68.AddRow(new string[] {
+                        "Employee_1",
+                        "LE USA",
+                        "true"});
+            table68.AddRow(new string[] {
+                        "Employee_1",
+                        "LE BLR",
+                        "false"});
+#line 273
+ testRunner.Given("Employees are customized to have legal entities", ((string)(null)), table68, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table69 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate",
+                        "SalaryType",
+                        "CreatedDate"});
+            table69.AddRow(new string[] {
+                        "Salary_1",
+                        "100",
+                        "USD",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE USA",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-04-01"});
+            table69.AddRow(new string[] {
+                        "Salary_2",
+                        "200",
+                        "BYR",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE BLR",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-04-02"});
+            table69.AddRow(new string[] {
+                        "Salary_3",
+                        "300",
+                        "BYR",
+                        "Salary",
+                        "Approved",
+                        "Employee_1",
+                        "LE BLR",
+                        "2018-05-02",
+                        "Annual",
+                        "2018-04-03"});
+#line 277
+ testRunner.And("Salaries are customized to have properties", ((string)(null)), table69, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table70 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Name",
+                        "Value",
+                        "Currency",
+                        "PromotionType",
+                        "PromotionStatus",
+                        "Employee",
+                        "LegalEntity",
+                        "ApplyDate"});
+#line 282
+ testRunner.And("Bonuses are customized to have properties", ((string)(null)), table70, "And ");
+#line 284
+ testRunner.When("Compensation table is requested without parameters", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table71 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Period",
+                        "Compensations",
+                        "Total",
+                        "Currency"});
+            table71.AddRow(new string[] {
+                        "Employee_1",
+                        "2018-05",
+                        "Salary_1,Salary_2,Salary_3",
+                        "250",
+                        "USD"});
+#line 285
+ testRunner.Then("Employees compensations should be", ((string)(null)), table71, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table72 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Employee",
+                        "Total",
+                        "Currency"});
+            table72.AddRow(new string[] {
+                        "Employee_1",
+                        "250",
+                        "USD"});
+#line 288
+ testRunner.And("Employee year totals should be", ((string)(null)), table72, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

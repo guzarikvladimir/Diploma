@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoFixture;
 using Castle.Core.Internal;
+using CP.Platform.Test.Core.Helpers;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Filters.Model;
 using CP.Shared.Test.Contract.Filters.Models;
@@ -15,22 +16,22 @@ namespace CP.Shared.Test.Contract.Filters.Helpers
         {
             T parameters = new T();
 
-            if (!model.Page.IsNullOrEmpty())
+            if (!HelperService.IsNull(model.Page))
             {
                 parameters.Page = int.Parse(model.Page);
             }
 
-            if (!model.PageCount.IsNullOrEmpty())
+            if (!HelperService.IsNull(model.PageCount))
             {
                 parameters.PageCount = int.Parse(model.PageCount);
             }
 
-            if (!model.Year.IsNullOrEmpty())
+            if (!HelperService.IsNull(model.Year))
             {
                 parameters.Year = int.Parse(model.Year);
             }
 
-            if (!model.Currency.IsNullOrEmpty())
+            if (!HelperService.IsNull(model.Currency))
             {
                 parameters.CurrencyId = fixture.Create<List<CurrencyView>>()
                     .First(c => c.Name == model.Currency).Id;

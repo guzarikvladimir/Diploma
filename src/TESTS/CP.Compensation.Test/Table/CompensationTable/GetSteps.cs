@@ -99,29 +99,33 @@ namespace CP.Compensation.Test.Table.CompensationTable
                 foreach (CompensationTableViewTestModel expectedCompensationByPeriod in expectedEmployeeCompensations)
                 {
                     var actualCompensationsByPeriod = actualEmployeeCompensations.CompensationsByPeriods
-                        .First(cp => cp.Period.ToPeriod() == expectedCompensationByPeriod.Period);
-                    Assert.AreEqual(expectedCompensationByPeriod.Compensations.Count, 
-                        actualCompensationsByPeriod.CompensationPromotions.Count(), 
+                        .FirstOrDefault(cp => cp.Period.ToPeriod() == expectedCompensationByPeriod.Period);
+                    int actualCount = actualCompensationsByPeriod?.CompensationPromotions?.Count() ?? 0;
+                    Assert.AreEqual(expectedCompensationByPeriod.Compensations.Count, actualCount, 
                         $"Invalid compensations count for period {expectedCompensationByPeriod.Period}");
-                    Assert.AreEqual(expectedCompensationByPeriod.Total.Currency.Name,
-                        actualCompensationsByPeriod.Total.Currency.Name, 
+                    Assert.AreEqual(expectedCompensationByPeriod.Total?.Currency?.Name,
+                        actualCompensationsByPeriod?.Total?.Currency?.Name, 
                         $"Invalid total currency for period {expectedCompensationByPeriod.Period}");
-                    Assert.AreEqual(expectedCompensationByPeriod.Total.Value,
-                        actualCompensationsByPeriod.Total.Value,
+                    Assert.AreEqual(expectedCompensationByPeriod.Total?.Value,
+                        actualCompensationsByPeriod?.Total?.Value,
                         $"Invalid total value for period {expectedCompensationByPeriod.Period}");
                 }
             }
         }
 
-        [Then(@"Employees totals should be")]
-        public void ThenEmployeesTotalShouldBe(TechTalk.SpecFlow.Table table)
+        [Then(@"Employee year totals should be")]
+        public void ThenEmployeeYearTotalShouldBe(TechTalk.SpecFlow.Table table)
         {
             List<EmployeeTotalTestModel> expectedModels = GetExpectedTotalModels(table);
+
             foreach (EmployeeTotalTestModel expected in expectedModels)
             {
-                var actual = Result.CompensationsByEmployees.First(m => m.Employee.Id == expected.Employee.Id);
-                Assert.AreEqual(expected.Total.Currency.Name, actual.Total.Currency.Name, "Invalid employee total currency");
-                Assert.AreEqual(expected.Total.Value, actual.Total.Value, "Invalid employee total value");
+                var actual = Result.CompensationsByEmployees
+                    .FirstOrDefault(m => m.Employee.Id == expected.Employee.Id);
+                Assert.AreEqual(expected.Total?.Currency?.Name, actual?.Total?.Currency?.Name, 
+                    "Invalid employee total currency");
+                Assert.AreEqual(expected.Total?.Value, actual?.Total?.Value, 
+                    "Invalid employee total value");
             }
         }
 

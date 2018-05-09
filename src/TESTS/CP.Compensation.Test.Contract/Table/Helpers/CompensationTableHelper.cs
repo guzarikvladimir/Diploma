@@ -18,7 +18,10 @@ namespace CP.Compensation.Test.Contract.Table.Helpers
         {
             CompensationTableViewTestModel testModel = new CompensationTableViewTestModel();
             testModel.Employee = fixture.Create<List<EmployeeView>>().First(e => e.Name == model.Employee);
-            testModel.Period = HelperService.ParsePeriod(model.Period);
+            if (!HelperService.IsNull(model.Period))
+            {
+                testModel.Period = HelperService.ParsePeriod(model.Period);
+            }
             if (!HelperService.IsNull(model.Compensations))
             {
                 foreach (string compensationName in HelperService.GetCommaSeparatedValues(model.Compensations))
@@ -28,10 +31,12 @@ namespace CP.Compensation.Test.Contract.Table.Helpers
                     testModel.Compensations.Add(compensation);
                 }
             }
-
-            var value = decimal.Parse(model.Total);
-            var currency = fixture.Create<List<CurrencyView>>().First(c => c.Name == model.Currency);
-            testModel.Total = new ValueWithCurrency(value, currency);
+            if (!HelperService.IsNull(model.Total))
+            {
+                var value = decimal.Parse(model.Total);
+                var currency = fixture.Create<List<CurrencyView>>().First(c => c.Name == model.Currency);
+                testModel.Total = new ValueWithCurrency(value, currency);
+            }
 
             return testModel;
         }

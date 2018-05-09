@@ -8,9 +8,9 @@ using CP.Shared.Contract.Compensation.Models;
 using CP.Shared.Contract.Compensation.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.CompensationPromotion.Services;
-using CP.Shared.Contract.Currency.Services;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
+using CP.Shared.Contract.Filters.Helpers;
 using Ninject;
 
 namespace CP.Compensation.Table.Services
@@ -27,9 +27,6 @@ namespace CP.Compensation.Table.Services
 
         [Inject]
         ICompensationCalculationService CompensationCalculationService { get; set; }
-
-        [Inject]
-        ICurrencyConverterService CurrencyConverterService { get; set; }
 
         #endregion
 
@@ -64,17 +61,18 @@ namespace CP.Compensation.Table.Services
             {
                 Employee = employee,
                 CompensationsByPeriods = compensationsByPeriods,
-                Total = GetEmployeeTotal(compensationsByPeriods, parameters.CurrencyId)
+                Total = GetEmployeeTotal(compensations, employee.Id, parameters)
             };
         }
 
-        private ValueWithCurrency GetEmployeeTotal(List<CompensationsByPeriodView> compensationsByPeriods, Guid? currencyId)
+        private ValueWithCurrency GetEmployeeTotal(List<CompensationPromotionView> compensations, Guid employeeId,
+            CompensationTableParameters parameters)
         {
-            ValueWithCurrency result = null;
-            foreach (CompensationsByPeriodView compensationsByPeriod in compensationsByPeriods)
-            {
-                result = CurrencyConverterService.Add(result, compensationsByPeriod.Total, currencyId);
-            }
+            var requestedYearCompensations = compensations
+                .Where(cp => cp.ApplyDate.Year == parameters.Year.ToDefaultYear())
+                .ToList();
+            var result = CompensationCalculationService.Get(requestedYearCompensations, employeeId,
+                parameters.CurrencyId);
 
             return result;
         }

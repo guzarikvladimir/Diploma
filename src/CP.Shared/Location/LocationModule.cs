@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CP.Platform.DependencyResolvers.Services;
 using CP.Platform.Mappers.Contract;
+using CP.Shared.Contract.Core.Services;
 using CP.Shared.Contract.Location.Models;
 using CP.Shared.Contract.Location.Services;
 using CP.Shared.Location.Mappers;
@@ -16,8 +17,14 @@ namespace CP.Shared.Location
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ILocationRetrievingService>().To<LocationRetrievingService>().InRequestScope();
+            kernel.Bind<ILocationModifyingService, ISimpleModifyingService<LocationModel>>()
+                .To<LocationModifyingService>()
+                .InRequestScope();
 
-            kernel.Bind<IEntityMapper<LocationEntity, LocationView>>().To<LocationMapper>().InRequestScope();
+            kernel.Bind<IEntityMapper<LocationEntity, LocationView>,
+                    IEntityModifyingMapper<LocationModel, LocationEntity>>()
+                .To<LocationMapper>()
+                .InRequestScope();
         }
 
         public override void RegisterMappers(IMapperConfigurationExpression config)

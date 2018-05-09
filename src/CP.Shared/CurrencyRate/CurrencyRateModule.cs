@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CP.Platform.DependencyResolvers.Services;
 using CP.Platform.Mappers.Contract;
+using CP.Shared.Contract.Core.Services;
 using CP.Shared.Contract.CurrencyRate.Models;
 using CP.Shared.Contract.CurrencyRate.Services;
 using CP.Shared.CurrencyRate.Mappers;
@@ -16,9 +17,13 @@ namespace CP.Shared.CurrencyRate
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICurrencyRateRetrievingService>().To<CurrencyRateRetrievingService>().InRequestScope();
+            kernel.Bind<ICurrencyRateModifyingService, ISimpleModifyingService<CurrencyRateModel>>()
+                .To<CurrencyRateModifyingService>()
+                .InRequestScope();
             kernel.Bind<ICurrencyRateService>().To<CurrencyRateService>().InRequestScope();
 
-            kernel.Bind<IEntityMapper<CurrencyRateEntity, CurrencyRateView>>()
+            kernel.Bind<IEntityMapper<CurrencyRateEntity, CurrencyRateView>,
+                    IEntityModifyingMapper<CurrencyRateModel, CurrencyRateEntity>>()
                 .To<CurrencyRateMapper>()
                 .InRequestScope();
         }

@@ -9,7 +9,9 @@ using EmployeeEntity = CP.Repository.Models.Employee;
 
 namespace CP.Shared.Employee.Mappers
 {
-    public class EmployeeMapper : IEntityMapper<EmployeeEntity, EmployeeView>
+    public class EmployeeMapper : 
+        IEntityMapper<EmployeeEntity, EmployeeView>,
+        IEntityModifyingMapper<EmployeeModel, EmployeeEntity>
     {
         #region Injects
 
@@ -30,6 +32,7 @@ namespace CP.Shared.Employee.Mappers
                 .ForMember(dst => dst.EmployeeStatus, cfg => cfg.Ignore())
                 .ForMember(dst => dst.Location, cfg => cfg.Ignore())
                 .ForMember(dst => dst.JobFunction, cfg => cfg.Ignore());
+            config.CreateMap<EmployeeModel, EmployeeEntity>();
         }
 
         public EmployeeView Map(EmployeeEntity model)
@@ -40,6 +43,16 @@ namespace CP.Shared.Employee.Mappers
             view.JobFunction = JobFunctionRetrievingService.GetById(model.JobFunctionId);
 
             return view;
+        }
+
+        public void Map(EmployeeModel viewModel, EmployeeEntity entityModel)
+        {
+            Mapper.Map(viewModel, entityModel);
+        }
+
+        public EmployeeEntity Map(EmployeeModel viewModel)
+        {
+            return Mapper.Map<EmployeeEntity>(viewModel);
         }
     }
 }

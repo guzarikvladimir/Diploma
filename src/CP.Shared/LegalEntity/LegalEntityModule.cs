@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CP.Platform.DependencyResolvers.Services;
 using CP.Platform.Mappers.Contract;
+using CP.Shared.Contract.Core.Services;
 using CP.Shared.Contract.LegalEntity.Models;
 using CP.Shared.Contract.LegalEntity.Services;
 using CP.Shared.LegalEntity.Mappers;
@@ -16,10 +17,12 @@ namespace CP.Shared.LegalEntity
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ILegalEntityRetrievingService>().To<LegalEntityRetrievingService>().InRequestScope();
-            kernel.Bind<ILegalEntityModifyingService>().To<LegalEntityModifyingService>().InRequestScope();
+            kernel.Bind<ILegalEntityModifyingService, ISimpleModifyingService<LegalEntityModel>>()
+                .To<LegalEntityModifyingService>()
+                .InRequestScope();
 
             kernel.Bind<IEntityMapper<LegalEntityEntity, LegalEntityView>,
-                    IEntityModifyingMapper<LegalEnityModel, LegalEntityEntity>>()
+                    IEntityModifyingMapper<LegalEntityModel, LegalEntityEntity>>()
                 .To<LegalEntityMapper>()
                 .InRequestScope();
         }

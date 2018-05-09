@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CP.Platform.DependencyResolvers.Services;
 using CP.Platform.Mappers.Contract;
+using CP.Shared.Contract.Core.Services;
 using CP.Shared.Contract.EmployeeStatus.Models;
 using CP.Shared.Contract.EmployeeStatus.Services;
 using CP.Shared.EmployeeStatus.Mappers;
@@ -16,8 +17,12 @@ namespace CP.Shared.EmployeeStatus
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IEmployeeStatusRetrievingService>().To<EmployeeStatusRetrievingService>().InRequestScope();
+            kernel.Bind<IEmployeeStatusModifyingService, ISimpleModifyingService<EmployeeStatusModel>>()
+                .To<EmployeeStatusModifyingService>()
+                .InRequestScope();
 
-            kernel.Bind<IEntityMapper<EmployeeStatusEntity, EmployeeStatusView>>()
+            kernel.Bind<IEntityMapper<EmployeeStatusEntity, EmployeeStatusView>,
+                    IEntityModifyingMapper<EmployeeStatusModel, EmployeeStatusEntity>>()
                 .To<EmployeeStatusMapper>()
                 .InRequestScope();
         }

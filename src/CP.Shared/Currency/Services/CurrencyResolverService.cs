@@ -4,8 +4,8 @@ using System.Linq;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Currency.Services;
-using CP.Shared.Contract.EmployeeToLegalEntity.Models;
-using CP.Shared.Contract.EmployeeToLegalEntity.Services;
+using CP.Shared.Contract.EmployeeLegalEntity.Models;
+using CP.Shared.Contract.EmployeeLegalEntity.Services;
 using CP.Shared.Contract.LegalEntity.Models;
 using Ninject;
 
@@ -22,7 +22,7 @@ namespace CP.Shared.Currency.Services
         ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
 
         [Inject]
-        IEmployeeToLegalEntityRetrievingService EmployeeToLegalEntityRetrievingService { get; set; }
+        IEmployeeLegalEntityRetrievingService EmployeeLegalEntityRetrievingService { get; set; }
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace CP.Shared.Currency.Services
                 return groupedByCurrency.First().Key;
             }
 
-            IEnumerable<EmployeeToLegalEntityView> employeeLegalEntities = EmployeeToLegalEntityRetrievingService
+            IEnumerable<EmployeeLegalEntityView> employeeLegalEntities = EmployeeLegalEntityRetrievingService
                 .Get(employeeId);
             LegalEntityView legalEntity = employeeLegalEntities
                 .FirstOrDefault(el => el.IsPrimary && el.LegalEntity.IsActive)?.LegalEntity;

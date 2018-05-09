@@ -2,7 +2,7 @@
 
 namespace CP.ImportExport.Import.Currency.Contract
 {
-    public interface ICurrencyImportService : IImportBaseService
+    public interface ICurrencyImportService : IImportServiceBase
     {
     }
 }

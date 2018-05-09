@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CP.Platform.DependencyResolvers.Services;
 using CP.Platform.Mappers.Contract;
+using CP.Shared.Contract.Core.Services;
 using CP.Shared.Contract.JobFunctionTitile.Models;
 using CP.Shared.Contract.JobFunctionTitile.Services;
 using CP.Shared.JobFunctionTitle.Mappers;
@@ -16,8 +17,12 @@ namespace CP.Shared.JobFunctionTitle
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IJobFunctionTitleRetrievingService>().To<JobFunctionTitleRetrievingService>().InRequestScope();
+            kernel.Bind<IJobFunctionTitleModifyingService, ISimpleModifyingService<JobFunctionTitleModel>>()
+                .To<JobFunctionTitleModifyingService>()
+                .InRequestScope();
 
-            kernel.Bind<IEntityMapper<JobFunctionTitleEntity, JobFunctionTitleView>>()
+            kernel.Bind<IEntityMapper<JobFunctionTitleEntity, JobFunctionTitleView>,
+                    IEntityModifyingMapper<JobFunctionTitleModel, JobFunctionTitleEntity>>()
                 .To<JobFunctionTitleMapper>()
                 .InRequestScope();
         }

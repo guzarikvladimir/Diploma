@@ -37,10 +37,10 @@
     function appendWithJobFunction(result, jf) {
         result += '<td class="column100">';
         if (jf.JobFunctionTitle !== undefined) {
-            result += `${jf.JobFunctionTitle.Name} `;
+            result += `${jf.Title.Name} `;
         }
 
-        result += `${jf.JobFunctionPosition.Name}</td>`;
+        result += `${jf.Position.Name}</td>`;
 
         return result;
     }

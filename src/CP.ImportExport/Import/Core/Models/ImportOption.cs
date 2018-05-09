@@ -9,11 +9,8 @@
         CurrencyRate,
         LegalEntity,
         EmployeeLegalEntity,
-        Cuntry,
         Location,
         JobFunction,
-        JobFunctionPosition,
-        JobFunctionTitle,
-        User
+        EmployeeStatus
     }
 }

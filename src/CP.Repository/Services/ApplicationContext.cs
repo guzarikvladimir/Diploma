@@ -41,7 +41,7 @@ namespace CP.Repository.Services
 
         public DbSet<LegalEntity> LegalEntities { get; set; }
 
-        public DbSet<EmployeeToLegalEntity> EmployeeToLegalEntities { get; set; }
+        public DbSet<EmployeeLegalEntity> EmployeeToLegalEntities { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

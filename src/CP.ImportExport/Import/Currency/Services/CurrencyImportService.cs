@@ -10,18 +10,11 @@ using Ninject;
 namespace CP.ImportExport.Import.Currency.Services
 {
     public class CurrencyImportService : 
-        ImportBaseService<CurrencyImportModel, CurrencyModel>, 
+        ImportServiceBase<CurrencyImportModel, CurrencyModel>, 
         ICurrencyImportService
     {
-        #region Injects
-
-        [Inject]
-        ICurrencyModifyingService CurrencyModifyingService { get; set; }
-
         [Inject]
         ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
-
-        #endregion
 
         public override IEnumerable<CurrencyModel> Parse(List<CurrencyImportModel> importModels)
         {
@@ -44,7 +37,7 @@ namespace CP.ImportExport.Import.Currency.Services
                     continue;
                 }
 
-                CurrencyModifyingService.Add(model);
+                SimpleModifyingService.Add(model);
             }
         }
     }

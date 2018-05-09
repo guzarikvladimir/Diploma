@@ -9,7 +9,7 @@ namespace CP.Shared.LegalEntity.Mappers
 {
     public class LegalEntityMapper :
         IEntityMapper<LegalEntityEntity, LegalEntityView>,
-        IEntityModifyingMapper<LegalEnityModel, LegalEntityEntity>
+        IEntityModifyingMapper<LegalEntityModel, LegalEntityEntity>
     {
         [Inject]
         ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
@@ -17,7 +17,7 @@ namespace CP.Shared.LegalEntity.Mappers
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<LegalEntityEntity, LegalEntityView>();
-            config.CreateMap<LegalEnityModel, LegalEntityEntity>();
+            config.CreateMap<LegalEntityModel, LegalEntityEntity>();
         }
 
         public LegalEntityView Map(LegalEntityEntity model)
@@ -28,12 +28,12 @@ namespace CP.Shared.LegalEntity.Mappers
             return view;
         }
 
-        public void Map(LegalEnityModel viewModel, LegalEntityEntity entityModel)
+        public void Map(LegalEntityModel viewModel, LegalEntityEntity entityModel)
         {
             Mapper.Map(viewModel, entityModel);
         }
 
-        public LegalEntityEntity Map(LegalEnityModel viewModel)
+        public LegalEntityEntity Map(LegalEntityModel viewModel)
         {
             return Mapper.Map<LegalEntityEntity>(viewModel);
         }

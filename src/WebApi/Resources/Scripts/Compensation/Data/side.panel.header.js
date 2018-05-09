@@ -13,7 +13,7 @@
         employeeJobFunction: function () {
             var jf = coside.employeeCompensations().Employee.JobFunction;
 
-            return `${jf.JobFunctionTitle.Name} ${jf.JobFunctionPosition.Name}`;
+            return `${jf.Title.Name} ${jf.Position.Name}`;
         }
     }
 

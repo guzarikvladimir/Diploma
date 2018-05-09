@@ -7,7 +7,9 @@ using CurrencyRateEntity = CP.Repository.Models.CurrencyRate;
 
 namespace CP.Shared.CurrencyRate.Mappers
 {
-    public class CurrencyRateMapper : IEntityMapper<CurrencyRateEntity, CurrencyRateView>
+    public class CurrencyRateMapper : 
+        IEntityMapper<CurrencyRateEntity, CurrencyRateView>,
+        IEntityModifyingMapper<CurrencyRateModel, CurrencyRateEntity>
     {
         [Inject]
         ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
@@ -15,6 +17,7 @@ namespace CP.Shared.CurrencyRate.Mappers
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<CurrencyRateEntity, CurrencyRateView>();
+            config.CreateMap<CurrencyRateModel, CurrencyRateEntity>();
         }
 
         public CurrencyRateView Map(CurrencyRateEntity model)
@@ -23,6 +26,16 @@ namespace CP.Shared.CurrencyRate.Mappers
             view.Currency = CurrencyRetrievingService.GetById(model.CurrencyId);
 
             return view;
+        }
+
+        public void Map(CurrencyRateModel viewModel, CurrencyRateEntity entityModel)
+        {
+            Mapper.Map(viewModel, entityModel);
+        }
+
+        public CurrencyRateEntity Map(CurrencyRateModel viewModel)
+        {
+            return Mapper.Map<CurrencyRateEntity>(viewModel);
         }
     }
 }

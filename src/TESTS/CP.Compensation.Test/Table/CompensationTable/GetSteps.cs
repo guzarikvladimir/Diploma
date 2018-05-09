@@ -30,7 +30,7 @@ using TechTalk.SpecFlow.Assist;
 using GetEmployees = CP.Shared.Test.Contract.Employee.Mocks.EmployeeRetrieving.GetSteps;
 using GetSalaries = CP.Shared.Test.Contract.Salary.Mocks.SalaryPromotionRetrieving.GetSteps;
 using GetBonuses = CP.Shared.Test.Contract.Bonus.Mocks.BonusPromotionRetrieving.GetSteps;
-using GetEmployeeToLegalEntities = CP.Shared.Test.Contract.EmployeeToLegalEntity.Mocks.EmployeeToLeglEntityRetrieving.GetSteps;
+using GetEmployeeToLegalEntities = CP.Shared.Test.Contract.EmployeeLegalEntity.Mocks.EmployeeLegalEntityRetrieving.GetSteps;
 using GetCurrencies = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetSteps;
 using GetCurrencyById = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetByIdSteps;
 using GetCurrencyRates = CP.Shared.Test.Contract.CurrencyRate.Mocks.CurrencyRateRetrieving.GetSteps;

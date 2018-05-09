@@ -16,8 +16,12 @@ namespace CP.Shared.Country
         public override void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ICountryRetrievingService>().To<CountryRetrievingService>().InRequestScope();
+            kernel.Bind<ICountryModifyingService>().To<CountryModifyingService>().InRequestScope();
 
-            kernel.Bind<IEntityMapper<CountryEntity, CountryView>>().To<CountryMapper>().InRequestScope();
+            kernel.Bind<IEntityMapper<CountryEntity, CountryView>, 
+                    IEntityModifyingMapper<CountryModel, CountryEntity>>()
+                .To<CountryMapper>()
+                .InRequestScope();
         }
 
         public override void RegisterMappers(IMapperConfigurationExpression config)

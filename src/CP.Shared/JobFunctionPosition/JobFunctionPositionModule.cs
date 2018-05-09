@@ -18,8 +18,12 @@ namespace CP.Shared.JobFunctionPosition
             kernel.Bind<IJobFunctionPositionRetrievingService>()
                 .To<JobFunctionPositionRetrievingService>()
                 .InRequestScope();
+            kernel.Bind<IJobFunctionPositionModifyingService>()
+                .To<JobFunctionPositionModifyingService>()
+                .InRequestScope();
 
-            kernel.Bind<IEntityMapper<JobFunctionPositionEntity, JobFunctionPositionView>>()
+            kernel.Bind<IEntityMapper<JobFunctionPositionEntity, JobFunctionPositionView>,
+                    IEntityModifyingMapper<JobFunctionPositionModel, JobFunctionPositionEntity>>()
                 .To<JobFunctionPositionMapper>()
                 .InRequestScope();
         }

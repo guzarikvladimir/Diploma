@@ -9,8 +9,8 @@ namespace CP.Shared.Contract.JobFunction.Models
     {
         public Guid Id { get; set; }
 
-        public JobFunctionTitleView JobFunctionTitle { get; set; }
+        public JobFunctionTitleView Title { get; set; }
 
-        public JobFunctionPositionView JobFunctionPosition { get; set; }
+        public JobFunctionPositionView Position { get; set; }
     }
 }

@@ -114,13 +114,17 @@
     <Compile Include="Migrations\201805061525195_AddCurrencyToLegalEntity.Designer.cs">
       <DependentUpon>201805061525195_AddCurrencyToLegalEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805091947287_RenameEmployeeToLegalEntityTable.cs" />
+    <Compile Include="Migrations\201805091947287_RenameEmployeeToLegalEntityTable.Designer.cs">
+      <DependentUpon>201805091947287_RenameEmployeeToLegalEntityTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BonusPromotion.cs" />
     <Compile Include="Models\CompensationPromotion.cs" />
     <Compile Include="Models\CompensationPromotionStatus.cs" />
     <Compile Include="Models\CurrencyRate.cs" />
     <Compile Include="Models\CurrencyRateType.cs" />
-    <Compile Include="Models\EmployeeToLegalEntity.cs" />
+    <Compile Include="Models\EmployeeLegalEntity.cs" />
     <Compile Include="Models\LegalEntity.cs" />
     <Compile Include="Models\SalaryPromotion.cs" />
     <Compile Include="Models\CompensationPromotionType.cs" />
@@ -192,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805061525195_AddCurrencyToLegalEntity.resx">
       <DependentUpon>201805061525195_AddCurrencyToLegalEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805091947287_RenameEmployeeToLegalEntityTable.resx">
+      <DependentUpon>201805091947287_RenameEmployeeToLegalEntityTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

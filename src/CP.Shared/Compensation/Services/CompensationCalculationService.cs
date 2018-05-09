@@ -7,8 +7,8 @@ using CP.Shared.Contract.Compensation.Services;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Currency.Services;
-using CP.Shared.Contract.EmployeeToLegalEntity.Models;
-using CP.Shared.Contract.EmployeeToLegalEntity.Services;
+using CP.Shared.Contract.EmployeeLegalEntity.Models;
+using CP.Shared.Contract.EmployeeLegalEntity.Services;
 using CP.Shared.Contract.Salary.Models;
 using Ninject;
 
@@ -25,7 +25,7 @@ namespace CP.Shared.Compensation.Services
         ICurrencyConverterService CurrencyConverterService { get; set; }
 
         [Inject]
-        IEmployeeToLegalEntityRetrievingService EmployeeToLegalEntityRetrievingService { get; set; }
+        IEmployeeLegalEntityRetrievingService EmployeeLegalEntityRetrievingService { get; set; }
 
         #endregion
 
@@ -65,7 +65,7 @@ namespace CP.Shared.Compensation.Services
         {
             List<CompensationPromotionView> result = new List<CompensationPromotionView>(
                 compensations.Where(cp => cp.PromotionType == CompensationPromotionType.Bonus));
-            IEnumerable<EmployeeToLegalEntityView> legalEntities = EmployeeToLegalEntityRetrievingService.Get(employeeId);
+            IEnumerable<EmployeeLegalEntityView> legalEntities = EmployeeLegalEntityRetrievingService.Get(employeeId);
             foreach (Guid legalEntityId in legalEntities.Select(el => el.LegalEntity.Id))
             {
                 CompensationPromotionView activeSalary = compensations.FirstOrDefault(

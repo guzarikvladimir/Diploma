@@ -10,12 +10,9 @@
             { name: 'Currency Rates', value: 4 },
             { name: 'Legal Entities', value: 5 },
             { name: 'Employees Legal Entities', value: 6 },
-            { name: 'Countries', value: 7 },
-            { name: 'Locations', value: 8 },
-            { name: 'Job Functions', value: 9 },
-            { name: 'Job Function Positions', value: 10 },
-            { name: 'Job Function Titles', value: 11 },
-            { name: 'Users', value: 12 }
+            { name: 'Locations', value: 7 },
+            { name: 'Job Functions', value: 8 },
+            { name: 'Employee Statuses', value: 9 }
         ]),
         selectedOption: ko.observable(),
         file: ko.observable(),

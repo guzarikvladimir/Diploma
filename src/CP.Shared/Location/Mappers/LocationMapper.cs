@@ -7,7 +7,9 @@ using LocationEntity = CP.Repository.Models.Location;
 
 namespace CP.Shared.Location.Mappers
 {
-    public class LocationMapper : IEntityMapper<LocationEntity, LocationView>
+    public class LocationMapper : 
+        IEntityMapper<LocationEntity, LocationView>,
+        IEntityModifyingMapper<LocationModel, LocationEntity>
     {
         [Inject]
         ICountryRetrievingService CountryRetrievingService { get; set; }
@@ -15,6 +17,7 @@ namespace CP.Shared.Location.Mappers
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<LocationEntity, LocationView>();
+            config.CreateMap<LocationModel, LocationEntity>();
         }
 
         public LocationView Map(LocationEntity model)
@@ -23,6 +26,16 @@ namespace CP.Shared.Location.Mappers
             view.Country = CountryRetrievingService.GetById(model.CountryId);
 
             return view;
+        }
+
+        public void Map(LocationModel viewModel, LocationEntity entityModel)
+        {
+            Mapper.Map(viewModel, entityModel);
+        }
+
+        public LocationEntity Map(LocationModel viewModel)
+        {
+            return Mapper.Map<LocationEntity>(viewModel);
         }
     }
 }

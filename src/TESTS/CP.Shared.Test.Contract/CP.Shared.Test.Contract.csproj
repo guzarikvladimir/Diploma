@@ -103,10 +103,10 @@
     <Compile Include="Currency\Mocks\CurrencyRetrieving\GetSteps.cs" />
     <Compile Include="EmployeeRole\Mocks\EmployeeRoleRetrieving\GetByEmployeeSteps.cs" />
     <Compile Include="EmployeeRole\Models\EmployeeRoleViewCustomizationModel.cs" />
-    <Compile Include="EmployeeToLegalEntity\Customizations\EmployeeToLegalEntityViewSteps.cs" />
-    <Compile Include="EmployeeToLegalEntity\Helpers\EmployeeToLegalEntityHelper.cs" />
-    <Compile Include="EmployeeToLegalEntity\Mocks\EmployeeToLeglEntityRetrieving\GetSteps.cs" />
-    <Compile Include="EmployeeToLegalEntity\Models\EmployeeToLegalEntityViewCustomizationModel.cs" />
+    <Compile Include="EmployeeLegalEntity\Customizations\EmployeeLegalEntityViewSteps.cs" />
+    <Compile Include="EmployeeLegalEntity\Helpers\EmployeeLegalEntityHelper.cs" />
+    <Compile Include="EmployeeLegalEntity\Mocks\EmployeeLegalEntityRetrieving\GetSteps.cs" />
+    <Compile Include="EmployeeLegalEntity\Models\EmployeeLegalEntityViewCustomizationModel.cs" />
     <Compile Include="Employee\Customizations\EmployeeViewSteps.cs" />
     <Compile Include="Employee\Mocks\EmployeeRetrieving\GetSteps.cs" />
     <Compile Include="Filters\Helpers\CollectionViewParametersHelper.cs" />

@@ -12,6 +12,7 @@ namespace CP.Shared.Currency.Mappers
         public static void Register(IMapperConfigurationExpression config)
         {
             config.CreateMap<CurrencyEntity, CurrencyView>();
+            config.CreateMap<CurrencyModel, CurrencyEntity>();
         }
 
         public CurrencyView Map(CurrencyEntity model)

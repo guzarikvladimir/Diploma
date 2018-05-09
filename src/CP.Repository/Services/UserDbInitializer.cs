@@ -182,7 +182,7 @@ namespace CP.Repository.Services
             };
             db.Employees.Add(employee);
 
-            var employeeToLe = new EmployeeToLegalEntity()
+            var employeeToLe = new EmployeeLegalEntity()
             {
                 Id = Guid.NewGuid(),
                 LegalEntityId = legalEntityId,
@@ -191,7 +191,7 @@ namespace CP.Repository.Services
             };
             db.EmployeeToLegalEntities.Add(employeeToLe);
 
-            var employeeToLe2 = new EmployeeToLegalEntity()
+            var employeeToLe2 = new EmployeeLegalEntity()
             {
                 Id = Guid.NewGuid(),
                 LegalEntityId = legalEntityId2,

@@ -64,7 +64,7 @@ namespace CP.ImportExport.Import.Location.Services
 
         public void AddOrUpdateCountries(List<LocationImportModel> importModels)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 foreach (string country in importModels.Select(m => m.Country).Distinct())
                 {

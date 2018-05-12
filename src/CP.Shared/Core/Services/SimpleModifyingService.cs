@@ -11,7 +11,7 @@ namespace CP.Shared.Core.Services
 {
     public class SimpleModifyingService<TEntity, TModel> : ISimpleModifyingService<TModel>
         where TModel : class, IModelWithId<Guid?>
-        where TEntity : class, IEntityWithId<Guid>
+        where TEntity : class, IEntity<Guid>
     {
         #region Injects
 
@@ -19,7 +19,7 @@ namespace CP.Shared.Core.Services
         protected IEntityModifyingMapper<TModel, TEntity> ModifyingMapper { get; set; }
 
         [Inject]
-        protected IDbFactory DbFactory { get; set; }
+        protected IDbContextScopeFactory DbContextScopeFactory { get; set; }
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace CP.Shared.Core.Services
             }
 
             TEntity entity = ModifyingMapper.Map(model);
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 scope.Set<TEntity>().Add(entity);
 
@@ -41,7 +41,7 @@ namespace CP.Shared.Core.Services
 
         public void Update(TModel model)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 TEntity entity = scope.Set<TEntity>().Single(e => e.Id == model.Id);
                 ModifyingMapper.Map(model, entity);
@@ -52,7 +52,7 @@ namespace CP.Shared.Core.Services
 
         public void Delete(Guid id)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 TEntity entity = scope.Set<TEntity>().Single(e => e.Id == id);
                 scope.Set<TEntity>().Remove(entity);

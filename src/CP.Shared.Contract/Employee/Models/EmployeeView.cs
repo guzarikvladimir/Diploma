@@ -6,7 +6,7 @@ using CP.Shared.Contract.Location.Models;
 
 namespace CP.Shared.Contract.Employee.Models
 {
-    public class EmployeeView : IViewWithId<Guid>
+    public class EmployeeView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

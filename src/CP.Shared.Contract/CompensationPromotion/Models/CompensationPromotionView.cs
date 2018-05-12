@@ -7,7 +7,7 @@ using CP.Shared.Contract.LegalEntity.Models;
 
 namespace CP.Shared.Contract.CompensationPromotion.Models
 {
-    public class CompensationPromotionView : IViewWithId<Guid>
+    public class CompensationPromotionView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

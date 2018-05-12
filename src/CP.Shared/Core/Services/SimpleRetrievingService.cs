@@ -13,8 +13,8 @@ namespace CP.Shared.Core.Services
 {
     public class SimpleRetrievingService<TEntity, TView> :
         ISimpleRetrievingService<TView>
-        where TEntity : class, IEntityWithId<Guid>
-        where TView : class, IViewWithId<Guid>
+        where TEntity : class, IEntity<Guid>
+        where TView : class, IEntityView<Guid>
     {
         #region Injects
 
@@ -22,7 +22,7 @@ namespace CP.Shared.Core.Services
         protected IEntityMapper<TEntity, TView> Mapper { get; set; }
 
         [Inject]
-        protected IDbFactory DbFactory { get; set; }
+        protected IDbContextScopeFactory DbContextScopeFactory { get; set; }
 
         #endregion
 
@@ -40,7 +40,7 @@ namespace CP.Shared.Core.Services
         public virtual TView GetById(Guid id)
         {
             TEntity model;
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 model = scope.Set<TEntity>().FirstOrDefault(e => e.Id == id);
             }

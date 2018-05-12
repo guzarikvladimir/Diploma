@@ -55,7 +55,7 @@
     <Compile Include="Compensation\Models\ValueWithCurrency.cs" />
     <Compile Include="Compensation\Services\ICompensationCalculationService.cs" />
     <Compile Include="Core\Models\IModelWithId.cs" />
-    <Compile Include="Core\Models\IViewWithId.cs" />
+    <Compile Include="Core\Models\IEntityView.cs" />
     <Compile Include="Core\Services\ISimpleModifyingService.cs" />
     <Compile Include="Core\Services\ISimpleRetrievingService.cs" />
     <Compile Include="Country\Models\CountryModel.cs" />

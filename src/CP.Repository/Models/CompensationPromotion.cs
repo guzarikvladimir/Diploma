@@ -4,7 +4,7 @@ using CP.Repository.Contract;
 
 namespace CP.Repository.Models
 {
-    public class CompensationPromotion : IEntityWithId<Guid>
+    public class CompensationPromotion : IEntity<Guid>
     {
         public Guid Id { get; set; }
 

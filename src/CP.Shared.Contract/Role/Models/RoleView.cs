@@ -3,7 +3,7 @@ using CP.Shared.Contract.Core.Models;
 
 namespace CP.Shared.Contract.Role.Models
 {
-    public class RoleView : IViewWithId<Guid>
+    public class RoleView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

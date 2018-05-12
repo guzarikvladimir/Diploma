@@ -101,9 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Db\Contract\IDbFactory.cs" />
+    <Compile Include="Db\Contract\IDbContextScopeFactory.cs" />
     <Compile Include="Db\DbModel.cs" />
-    <Compile Include="Db\Services\DbFactory.cs" />
+    <Compile Include="Db\Services\DbContextScopeFactory.cs" />
     <Compile Include="DependencyResolvers\Contract\IServiceAccessor.cs" />
     <Compile Include="DependencyResolvers\DependencyResolversModule.cs" />
     <Compile Include="DependencyResolvers\Services\Module.cs" />

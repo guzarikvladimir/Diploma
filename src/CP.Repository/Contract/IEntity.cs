@@ -1,6 +1,6 @@
 ﻿namespace CP.Repository.Contract
 {
-    public interface IEntityWithId<TId>
+    public interface IEntity<TId>
     {
         TId Id { get; set; }
     }

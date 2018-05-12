@@ -5,7 +5,7 @@ using CP.Shared.Contract.JobFunctionTitile.Models;
 
 namespace CP.Shared.Contract.JobFunction.Models
 {
-    public class JobFunctionView : IViewWithId<Guid>
+    public class JobFunctionView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

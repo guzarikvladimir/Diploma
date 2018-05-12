@@ -5,7 +5,7 @@ using CP.Repository.Contract;
 
 namespace CP.Repository.Models
 {
-    public class Employee : IEntityWithId<Guid>
+    public class Employee : IEntity<Guid>
     {
         public Guid Id { get; set; }
 

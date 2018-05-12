@@ -4,7 +4,7 @@ using CP.Shared.Contract.Country.Models;
 
 namespace CP.Shared.Contract.Location.Models
 {
-    public class LocationView : IViewWithId<Guid>
+    public class LocationView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

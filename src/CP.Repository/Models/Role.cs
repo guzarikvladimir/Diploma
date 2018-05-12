@@ -3,7 +3,7 @@ using CP.Repository.Contract;
 
 namespace CP.Repository.Models
 {
-    public class Role : IEntityWithId<Guid>
+    public class Role : IEntity<Guid>
     {
         public Guid Id { get; set; }
 

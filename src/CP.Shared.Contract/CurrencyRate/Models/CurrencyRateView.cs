@@ -5,7 +5,7 @@ using CP.Shared.Contract.Currency.Models;
 
 namespace CP.Shared.Contract.CurrencyRate.Models
 {
-    public class CurrencyRateView : IViewWithId<Guid>
+    public class CurrencyRateView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

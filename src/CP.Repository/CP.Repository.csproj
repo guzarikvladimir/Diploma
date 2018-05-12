@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contract\IEntityWithId.cs" />
+    <Compile Include="Contract\IEntity.cs" />
     <Compile Include="Migrations\201804161911234_InitialCreate.cs" />
     <Compile Include="Migrations\201804161911234_InitialCreate.Designer.cs">
       <DependentUpon>201804161911234_InitialCreate.cs</DependentUpon>

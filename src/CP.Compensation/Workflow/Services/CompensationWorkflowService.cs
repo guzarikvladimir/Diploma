@@ -27,7 +27,7 @@ namespace CP.Compensation.Workflow.Services
         IBonusPromotionModifyingService BonusPromotionModifyingService { get; set; }
 
         [Inject]
-        IDbFactory DbFactory { get; set; }
+        IDbContextScopeFactory DbContextScopeFactory { get; set; }
 
         [Inject]
         List<ICompensationPromotionWorkflowStep> CompensationPromotionWorkflowSteps { get; set; }
@@ -39,7 +39,7 @@ namespace CP.Compensation.Workflow.Services
 
         public void Create(SalaryPromotionModel model)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 SalaryPromotionModel salary = CreateInternal(model);
                 SalaryPromotionModifyingService.Add(salary);
@@ -50,7 +50,7 @@ namespace CP.Compensation.Workflow.Services
 
         public void Create(BonusPromotionModel model)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 BonusPromotionModel bonus = CreateInternal(model);
                 BonusPromotionModifyingService.Add(bonus);

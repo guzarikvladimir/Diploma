@@ -23,7 +23,7 @@ namespace CP.ImportExport.Import.Core.Services
         protected ISimpleModifyingService<TEntityModel> SimpleModifyingService { get; set; }
 
         [Inject]
-        protected IDbFactory DbFactory { get; set; }
+        protected IDbContextScopeFactory DbContextScopeFactory { get; set; }
 
         #endregion
 
@@ -93,7 +93,7 @@ namespace CP.ImportExport.Import.Core.Services
 
         private void AddOrUpdateWrapper(List<TEntityModel> models)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 AddOrUpdate(models);
 

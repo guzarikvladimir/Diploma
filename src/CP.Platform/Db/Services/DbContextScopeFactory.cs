@@ -4,7 +4,7 @@ using CP.Repository.Services;
 
 namespace CP.Platform.Db.Services
 {
-    internal class DbFactory : IDbFactory
+    internal class DbContextScopeFactory : IDbContextScopeFactory
     {
         public DbContext Create()
         {

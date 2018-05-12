@@ -5,7 +5,7 @@ using CP.Shared.Contract.Role.Models;
 
 namespace CP.Shared.Contract.EmployeeRole.Models
 {
-    public class EmployeeRoleView : IViewWithId<Guid>
+    public class EmployeeRoleView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

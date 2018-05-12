@@ -10,7 +10,7 @@ namespace CP.Platform.Db
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IDbFactory>().To<DbFactory>().InRequestScope();
+            kernel.Bind<IDbContextScopeFactory>().To<DbContextScopeFactory>().InRequestScope();
         }
     }
 }

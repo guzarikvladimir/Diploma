@@ -2,7 +2,7 @@
 
 namespace CP.Platform.Db.Contract
 {
-    public interface IDbFactory
+    public interface IDbContextScopeFactory
     {
         DbContext Create();
     }

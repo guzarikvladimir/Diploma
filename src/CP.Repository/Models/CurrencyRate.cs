@@ -3,7 +3,7 @@ using CP.Repository.Contract;
 
 namespace CP.Repository.Models
 {
-    public class CurrencyRate : IEntityWithId<Guid>
+    public class CurrencyRate : IEntity<Guid>
     {
         public Guid Id { get; set; }
 

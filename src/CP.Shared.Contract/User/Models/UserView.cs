@@ -3,7 +3,7 @@ using CP.Shared.Contract.Core.Models;
 
 namespace CP.Shared.Contract.User.Models
 {
-    public class UserView : IViewWithId<Guid>
+    public class UserView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
         

@@ -3,7 +3,7 @@ using CP.Shared.Contract.Core.Models;
 
 namespace CP.Shared.Contract.JobFunctionTitile.Models
 {
-    public class JobFunctionTitleView : IViewWithId<Guid>
+    public class JobFunctionTitleView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

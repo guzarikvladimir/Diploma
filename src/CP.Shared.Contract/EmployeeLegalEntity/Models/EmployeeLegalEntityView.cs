@@ -5,7 +5,7 @@ using CP.Shared.Contract.LegalEntity.Models;
 
 namespace CP.Shared.Contract.EmployeeLegalEntity.Models
 {
-    public class EmployeeLegalEntityView : IViewWithId<Guid>
+    public class EmployeeLegalEntityView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

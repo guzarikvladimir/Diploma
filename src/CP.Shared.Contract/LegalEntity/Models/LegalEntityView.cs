@@ -4,7 +4,7 @@ using CP.Shared.Contract.Currency.Models;
 
 namespace CP.Shared.Contract.LegalEntity.Models
 {
-    public class LegalEntityView : IViewWithId<Guid>
+    public class LegalEntityView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

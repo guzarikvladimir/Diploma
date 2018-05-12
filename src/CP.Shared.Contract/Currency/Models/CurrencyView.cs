@@ -3,7 +3,7 @@ using CP.Shared.Contract.Core.Models;
 
 namespace CP.Shared.Contract.Currency.Models
 {
-    public class CurrencyView : IViewWithId<Guid>
+    public class CurrencyView : IEntityView<Guid>
     {
         public Guid Id { get; set; }
 

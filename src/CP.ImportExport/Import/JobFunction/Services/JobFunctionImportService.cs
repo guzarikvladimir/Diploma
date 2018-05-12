@@ -74,7 +74,7 @@ namespace CP.ImportExport.Import.JobFunction.Services
 
         private void AddOrUpdateTitle(List<JobFunctionImportModel> importModels)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 foreach (string title in importModels.Select(m => m.Title).Distinct())
                 {
@@ -93,7 +93,7 @@ namespace CP.ImportExport.Import.JobFunction.Services
 
         private void AddOrUpdatePosition(List<JobFunctionImportModel> importModels)
         {
-            using (var scope = DbFactory.Create())
+            using (var scope = DbContextScopeFactory.Create())
             {
                 foreach (string position in importModels.Select(m => m.Position).Distinct())
                 {

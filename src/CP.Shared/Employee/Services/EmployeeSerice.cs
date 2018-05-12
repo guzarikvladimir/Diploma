@@ -20,6 +20,7 @@ namespace CP.Shared.Employee.Services
             return EmployeeRetrievingService.Get()
                 .Skip(page - 1)
                 .Take(parameters.PageCount)
+                .OrderBy(e => e.Name)
                 .ToList();
         }
     }

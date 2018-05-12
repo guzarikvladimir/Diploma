@@ -101,7 +101,7 @@
     <Compile Include="Currency\Customizations\CurrencyViewSteps.cs" />
     <Compile Include="Currency\Mocks\CurrencyRetrieving\GetByIdSteps.cs" />
     <Compile Include="Currency\Mocks\CurrencyRetrieving\GetSteps.cs" />
-    <Compile Include="EmployeeRole\Mocks\EmployeeRoleRetrieving\GetByEmployeeSteps.cs" />
+    <Compile Include="EmployeeRole\Mocks\EmployeeRoleRetrieving\Get.cs" />
     <Compile Include="EmployeeRole\Models\EmployeeRoleViewCustomizationModel.cs" />
     <Compile Include="EmployeeLegalEntity\Customizations\EmployeeLegalEntityViewSteps.cs" />
     <Compile Include="EmployeeLegalEntity\Helpers\EmployeeLegalEntityHelper.cs" />

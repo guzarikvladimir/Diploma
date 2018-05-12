@@ -27,20 +27,15 @@
 
     function buildRow(item) {
         var result = `<td class="column100">${item.Employee.Name}</td>`;
-        result = appendWithJobFunction(result, item.Employee.JobFunction);
+        result = appendWithJobFunction(result, item.Employee);
         result = appendWithCompensations(result, item);
         result = appendWithTotal(result, item);
 
         return result;
     }
 
-    function appendWithJobFunction(result, jf) {
-        result += '<td class="column100">';
-        if (jf.JobFunctionTitle !== undefined) {
-            result += `${jf.Title.Name} `;
-        }
-
-        result += `${jf.Position.Name}</td>`;
+    function appendWithJobFunction(result, employee) {
+        result += `<td class="column100">${co.employeeJobFunction(employee)}</td>`;
 
         return result;
     }

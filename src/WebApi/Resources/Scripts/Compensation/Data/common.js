@@ -26,7 +26,7 @@
         if (donotClear !== true) {
             array.removeAll();
         }
-        
+
         for (var i = 0; i < data.length; i++) {
             array.push(data[i]);
         }
@@ -36,10 +36,22 @@
         return `${(+obj.Value.toFixed(2)).toLocaleString()} ${obj.Currency.Name}`;
     }
 
+    function employeeJobFunction(employee) {
+        var jf;
+        if (employee !== undefined && employee !== null) {
+            jf = employee.JobFunction;
+        } else {
+            jf = coside.employeeCompensations().Employee.JobFunction;
+        }
+
+        return `${jf.Title.Name} ${jf.Position.Name}`;
+    }
+
     return {
         currencies: model.currencies,
         promotionTypes: model.promotionTypes,
         parseValueWithCurrency: parseValueWithCurrency,
-        fillWithData: fillWithData
+        fillWithData: fillWithData,
+        employeeJobFunction: employeeJobFunction
     }
 })();

@@ -19,6 +19,7 @@ namespace CP.Compensation.Workflow.Services.Steps
             model.CreatedDate = DateTime.Now;
             model.CreatedById = UserService.Current.GetUserId();
             model.PromotionStatus = CompensationPromotionStatus.Approved;
+            model.Comment = CompensationPromotionStatus.Approved.ToString();
         }
     }
 }

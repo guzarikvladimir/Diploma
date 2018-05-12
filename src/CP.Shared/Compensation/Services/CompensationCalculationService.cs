@@ -29,8 +29,8 @@ namespace CP.Shared.Compensation.Services
 
         #endregion
 
-        public ValueWithCurrency Get(List<CompensationPromotionView> compensations, Guid employeeId, Guid? currencyId, 
-            DateTime? date = null)
+        public ValueWithCurrency Get(List<CompensationPromotionView> compensations, Guid employeeId, Guid? currencyId,
+            DateTime? date = null, bool isPeriod = false)
         {
             if (!compensations.Any())
             {
@@ -47,7 +47,7 @@ namespace CP.Shared.Compensation.Services
                 ValueWithCurrency value = CurrencyConverterService.Convert(compensationPromotion.Value, 
                     compensationPromotion.Currency.Id, currency.Id, date);
                 SalaryPromotionView salaryPromotion = compensationPromotion as SalaryPromotionView;
-                if (salaryPromotion != null && salaryPromotion.SalaryType == SalaryType.Monthly)
+                if (salaryPromotion != null && salaryPromotion.SalaryType == SalaryType.Monthly && !isPeriod)
                 {
                     total += value.Value * 12;
 

@@ -117,6 +117,7 @@
     <Compile Include="Workflow\Services\CompensationWorkflowService.cs" />
     <Compile Include="Workflow\Services\Validators\EmptyFieldsValidator.cs" />
     <Compile Include="Workflow\Services\Steps\UpdateWithDataWorkflowStep.cs" />
+    <Compile Include="Workflow\Services\Validators\PermissionsValidator.cs" />
     <Compile Include="Workflow\WorkflowModule.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CP.Core.Contract\CP.Core.Contract.csproj">
+      <Project>{AB4F7CCF-A393-4579-8052-556080F0768F}</Project>
+      <Name>CP.Core.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
       <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
       <Name>CP.Platform</Name>

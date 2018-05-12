@@ -142,7 +142,7 @@ namespace CP.Compensation.Test.Table.CompensationTable
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Approved compensations of different salary types")]
-        [NUnit.Framework.TestCaseAttribute("Monthly", "1200", "1500", null)]
+        [NUnit.Framework.TestCaseAttribute("Monthly", "100", "1500", null)]
         [NUnit.Framework.TestCaseAttribute("Annual", "100", "400", null)]
         public virtual void ApprovedCompensationsOfDifferentSalaryTypes(string salaryType, string periodTotal, string employeeTotal, string[] exampleTags)
         {
@@ -423,7 +423,7 @@ this.FeatureBackground();
                         "Employee_1",
                         "2018-05",
                         "Salary_1",
-                        "1200",
+                        "100",
                         "USD"});
 #line 81
  testRunner.Then("Employees compensations should be", ((string)(null)), table19, "Then ");

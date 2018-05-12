@@ -13,7 +13,7 @@
 }
 
 <div class="import-container">
-    @using (Html.BeginForm("Template", "Import", FormMethod.Get))
+    @using (Html.BeginForm("Template", "Import", FormMethod.Post))
     {
         <div class="input-group">
             @Html.DropDownList("importOption", ViewBag.ImportOptions as SelectList, new { id = "importSelect" })

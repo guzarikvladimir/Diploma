@@ -80,6 +80,7 @@ namespace CP.Compensation.Workflow.Services
         public void Reject(CompensationPromotionModel model)
         {
             model.PromotionStatus = CompensationPromotionStatus.Rejected;
+            model.Comment = CompensationPromotionStatus.Rejected.ToString();
             CompensationPromotionModifyingService.Update(model);
         }
     }

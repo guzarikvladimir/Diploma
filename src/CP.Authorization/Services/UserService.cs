@@ -8,8 +8,8 @@ using CP.Authorization.Contract.Services;
 using CP.Platform.Mappers.Contract;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
-using CP.Shared.Contract.EmployeeRole.Models;
 using CP.Shared.Contract.EmployeeRole.Services;
+using CP.Shared.Contract.Role.Models;
 using CP.Shared.Contract.User.Models;
 using CP.Shared.Contract.User.Services;
 using Ninject;
@@ -30,7 +30,7 @@ namespace CP.Authorization.Services
         IEmployeeRetrievingService EmployeeRetrievingService { get; set; }
 
         [Inject]
-        IEmployeeRoleRetrievingService EmployeeRoleRetrievingService { get; set; }
+        IEmployeeRoleService EmployeeRoleService { get; set; }
 
         [Inject]
         IEntityMapper<RegisterView, UserModel> ModelMapper { get; set; }
@@ -62,10 +62,10 @@ namespace CP.Authorization.Services
             claim.AddClaim(new Claim(ClaimsIdentity.DefaultNameClaimType, employee.Name, ClaimValueTypes.String));
             claim.AddClaim(new Claim("http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider", 
                 "OWIN Provider", ClaimValueTypes.String));
-            IEnumerable<EmployeeRoleView> employeeRoles = EmployeeRoleRetrievingService.GetByEmployee(employee.Id);
-            foreach (EmployeeRoleView employeeRole in employeeRoles)
+            List<RoleView> employeeRoles = EmployeeRoleService.Get(employee.Id);
+            foreach (RoleView role in employeeRoles)
             {
-                claim.AddClaim(new Claim(ClaimsIdentity.DefaultRoleClaimType, employeeRole.Role.Name, ClaimValueTypes.String));
+                claim.AddClaim(new Claim(ClaimsIdentity.DefaultRoleClaimType, role.Name, ClaimValueTypes.String));
             }
 
             return claim;

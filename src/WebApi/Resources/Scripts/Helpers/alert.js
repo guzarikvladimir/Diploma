@@ -2,16 +2,25 @@
 
 var alert = (function () {
     var model = {
-        message: ko.observable(),
-        show: function (mes) {
-            model.message(mes);
-            trigger('tn-box-color-success');
-        },
-        error: function (error) {
-            model.message(`An error has occured: ${error.statusText}`);
-            trigger('tn-box-color-error');
-        }
+        message: ko.observable()
     };
+
+    function show(mes) {
+        model.message(mes);
+        trigger('tn-box-color-success');
+    }
+
+    function error(error)
+    {
+        var mes;
+        if (error.responseText.indexOf('<') >= 0) {
+            mes = error.statusText;
+        } else {
+            mes = `${error.statusText}. ${error.responseText}`;
+        }
+        model.message(mes);
+        trigger('tn-box-color-error');
+    }
 
     function trigger(name) {
         $('.tn-box').removeClass('tn-box-active');
@@ -25,7 +34,7 @@ var alert = (function () {
 
     return {
         message: model.message,
-        show: model.show,
-        error: model.error
+        show: show,
+        error: error
     }
 })();

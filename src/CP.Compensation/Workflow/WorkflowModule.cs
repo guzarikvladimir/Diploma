@@ -17,6 +17,7 @@ namespace CP.Compensation.Workflow
             kernel.Bind<ICompensationPromotionWorkflowStep>().To<UpdateWithDataWorkflowStep>().InRequestScope();
 
             kernel.Bind<ICompensationPromotionWorkflowValidator>().To<EmptyFieldsValidator>().InRequestScope();
+            kernel.Bind<ICompensationPromotionWorkflowValidator>().To<PermissionsValidator>().InRequestScope();
         }
     }
 }

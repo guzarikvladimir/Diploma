@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using WebApi.Handlers;
 
 namespace WebApi
 {
@@ -6,6 +7,7 @@ namespace WebApi
     {
         public static void Register(HttpConfiguration config)
         {
+            GlobalConfiguration.Configuration.Filters.Add(new WebApiExceptionHandler());
             RegisterRoutes(config);
         }
 

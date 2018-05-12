@@ -44,7 +44,7 @@ Scenario Outline: Approved compensations of different salary types
 
 Examples: 
 	| SalaryType | PeriodTotal | EmployeeTotal |
-	| Monthly    | 1200        | 1500          |
+	| Monthly    | 100         | 1500          |
 	| Annual     | 100         | 400           |
 
 Scenario: Rejected compensations
@@ -80,7 +80,7 @@ Scenario: Only salaries
 	When Compensation table is requested without parameters
 	Then Employees compensations should be
 	| Employee   | Period  | Compensations | Total | Currency |
-	| Employee_1 | 2018-05 | Salary_1      | 1200  | USD      |
+	| Employee_1 | 2018-05 | Salary_1      | 100   | USD      |
 	And Employee year totals should be
 	| Employee   | Total | Currency |
 	| Employee_1 | 1200  | USD      |

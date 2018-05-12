@@ -14,7 +14,7 @@
             obj = model.employeeCompensations();
         }
 
-        request.sendAjax('GET', '/api/LegalEntity/' + obj.Employee.Id)
+        request.sendAjax('GET', '/api/LegalEntity?employeeId=' + obj.Employee.Id)
             .then((data) => {
                 co.fillWithData(data, model.employeeLegalEntities);
 

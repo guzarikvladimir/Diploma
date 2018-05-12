@@ -104,6 +104,7 @@
     <Compile Include="EmployeeRole\Mappers\EmployeeRoleMapper.cs" />
     <Compile Include="EmployeeRole\Services\EmployeeRoleModifyingService.cs" />
     <Compile Include="EmployeeRole\Services\EmployeeRoleRetrievingService.cs" />
+    <Compile Include="EmployeeRole\Services\EmployeeRoleService.cs" />
     <Compile Include="EmployeeStatus\EmployeeStatusModule.cs" />
     <Compile Include="EmployeeStatus\Mappers\EmployeeStatusMapper.cs" />
     <Compile Include="EmployeeStatus\Services\EmployeeStatusModifyingService.cs" />

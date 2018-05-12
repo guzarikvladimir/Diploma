@@ -10,6 +10,7 @@
     opacity: 0;
     z-index: 99999;
     display: none;
+    overflow: hidden;
 }
 
 .tn-box-color-error {

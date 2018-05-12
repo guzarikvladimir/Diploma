@@ -157,6 +157,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CP.Core.Contract\CP.Core.Contract.csproj">
+      <Project>{AB4F7CCF-A393-4579-8052-556080F0768F}</Project>
+      <Name>CP.Core.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
       <Project>{2e345f9f-5f60-4f6a-b3fa-872f1e05784c}</Project>
       <Name>CP.Platform</Name>
@@ -168,6 +172,10 @@
     <ProjectReference Include="..\CP.Shared.Contract\CP.Shared.Contract.csproj">
       <Project>{c862c837-f423-4e0c-b447-6d8601518582}</Project>
       <Name>CP.Shared.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.Shared\CP.Shared.csproj">
+      <Project>{F2F1978A-406E-43C4-BA79-F1F0BE68B424}</Project>
+      <Name>CP.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

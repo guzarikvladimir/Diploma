@@ -1,25 +1,18 @@
 ﻿; var cosidehead = (function () {
     "use strict";
 
-    var model = {
-        employeeName: function () {
-            return coside.employeeCompensations().Employee.Name;
-        },
-        employeeLocation: function () {
-            var location = coside.employeeCompensations().Employee.Location;
+    function employeeName() {
+        return coside.employeeCompensations().Employee.Name;
+    }
 
-            return `${location.Country.Name}, ${location.Name}`;
-        },
-        employeeJobFunction: function () {
-            var jf = coside.employeeCompensations().Employee.JobFunction;
+    function employeeLocation() {
+        var location = coside.employeeCompensations().Employee.Location;
 
-            return `${jf.Title.Name} ${jf.Position.Name}`;
-        }
+        return `${location.Country.Name}, ${location.Name}`;
     }
 
     return {
-        employeeName: model.employeeName,
-        employeeLocation: model.employeeLocation,
-        employeeJobFunction: model.employeeJobFunction
+        employeeName: employeeName,
+        employeeLocation: employeeLocation
     }
 })();

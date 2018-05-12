@@ -20,6 +20,7 @@ namespace CP.Shared.EmployeeRole
             kernel.Bind<IEmployeeRoleModifyingService, ISimpleModifyingService<EmployeeRoleModel>>()
                 .To<EmployeeRoleModifyingService>()
                 .InRequestScope();
+            kernel.Bind<IEmployeeRoleService>().To<EmployeeRoleService>().InRequestScope();
 
             kernel.Bind<IEntityMapper<EmployeeRoleEntity, EmployeeRoleView>,
                     IEntityModifyingMapper<EmployeeRoleModel, EmployeeRoleEntity>>()

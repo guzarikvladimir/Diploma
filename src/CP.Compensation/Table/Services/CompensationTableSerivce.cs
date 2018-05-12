@@ -53,7 +53,7 @@ namespace CP.Compensation.Table.Services
                     Period = compensationsByPeriod.Key,
                     CompensationPromotions = compensationsByPeriod,
                     Total = CompensationCalculationService
-                        .Get(compensationsByPeriod.ToList(), employee.Id, parameters.CurrencyId)
+                        .Get(compensationsByPeriod.ToList(), employee.Id, parameters.CurrencyId, isPeriod: true)
                 })
                 .ToList();
 

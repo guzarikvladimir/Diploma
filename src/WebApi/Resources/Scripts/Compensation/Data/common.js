@@ -8,6 +8,7 @@
 
     $(document).ready(function () {
         getCurrencies();
+        cotable.getCompensations();
     });
 
     function getCurrencies() {

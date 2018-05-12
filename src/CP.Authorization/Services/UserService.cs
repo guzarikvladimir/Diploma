@@ -42,13 +42,13 @@ namespace CP.Authorization.Services
             EmployeeView employee = EmployeeRetrievingService.Get().FirstOrDefault(e => e.Email == model.Email);
             if (employee == null)
             {
-                throw new ArgumentNullException($"User with email {model.Email} is not an employee.");
+                throw new ArgumentException($"User with email {model.Email} is not an employee.");
             }
 
             UserView user = UserRetrievingService.GetById(employee.Id);
             if (user == null)
             {
-                throw new ArgumentNullException($"User with email {model.Email} is not registed.");
+                throw new ArgumentException($"User with email {model.Email} is not registed.");
             }
 
             if (user.Password != model.Password)

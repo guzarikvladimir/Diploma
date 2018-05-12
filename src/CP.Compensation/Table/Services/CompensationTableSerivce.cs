@@ -11,6 +11,7 @@ using CP.Shared.Contract.CompensationPromotion.Services;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
 using CP.Shared.Contract.Filters.Helpers;
+using CP.Shared.Contract.Filters.Services;
 using Ninject;
 
 namespace CP.Compensation.Table.Services
@@ -28,24 +29,32 @@ namespace CP.Compensation.Table.Services
         [Inject]
         ICompensationCalculationService CompensationCalculationService { get; set; }
 
+        [Inject]
+        ICompensationPromotionFilterService CompensationPromotionFilterService { get; set; }
+
         #endregion
 
         public CompensationTableView Get(CompensationTableParameters parameters)
         {
             List<EmployeeView> employees = EmployeeService.Get(parameters);
+            Func<CompensationPromotionView, bool> compensationFilter =
+                CompensationPromotionFilterService.Get(parameters);
             var view = new CompensationTableView();
             foreach (EmployeeView employee in employees)
             {
-                view.CompensationsByEmployees.Add(GetByEmployee(employee, parameters));
+                view.CompensationsByEmployees.Add(GetByEmployee(employee, parameters, compensationFilter));
             }
 
             return view;
         }
 
-        private CompensationsByEmployee GetByEmployee(EmployeeView employee, CompensationTableParameters parameters)
+        private CompensationsByEmployee GetByEmployee(EmployeeView employee, CompensationTableParameters parameters,
+            Func<CompensationPromotionView, bool> compensationFilter)
         {
             List<CompensationPromotionView> compensations = CompensationPromotionService
-                .Get(employee.Id, onlyApproved: true);
+                .Get(employee.Id, onlyApproved: true)
+                .Where(compensationFilter)
+                .ToList();
             List<CompensationsByPeriodView> compensationsByPeriods = compensations
                 .GroupBy(cp => cp.ApplyDate.ToLowerDate())
                 .Select(compensationsByPeriod => new CompensationsByPeriodView()
@@ -61,20 +70,8 @@ namespace CP.Compensation.Table.Services
             {
                 Employee = employee,
                 CompensationsByPeriods = compensationsByPeriods,
-                Total = GetEmployeeTotal(compensations, employee.Id, parameters)
+                Total = CompensationCalculationService.Get(compensations, employee.Id, parameters.CurrencyId)
             };
-        }
-
-        private ValueWithCurrency GetEmployeeTotal(List<CompensationPromotionView> compensations, Guid employeeId,
-            CompensationTableParameters parameters)
-        {
-            var requestedYearCompensations = compensations
-                .Where(cp => cp.ApplyDate.Year == parameters.Year.ToDefaultYear())
-                .ToList();
-            var result = CompensationCalculationService.Get(requestedYearCompensations, employeeId,
-                parameters.CurrencyId);
-
-            return result;
         }
     }
 }

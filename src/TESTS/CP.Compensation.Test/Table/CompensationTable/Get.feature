@@ -154,17 +154,16 @@ Scenario Outline: Next year compensations
 	| Year   |
 	| <Year> |
 	Then Employees compensations should be
-	| Employee   | Period  | Compensations | Total | Currency |
-	| Employee_1 | 2018-03 | Salary_1      | 100   | USD      |
-	| Employee_1 | 2019-04 | Salary_2      | 200   | USD      |
+	| Employee   | Period   | Compensations   | Total   | Currency |
+	| Employee_1 | <Period> | <Compensations> | <Total> | USD      |
 	And Employee year totals should be
 	| Employee   | Total       | Currency |
 	| Employee_1 | <YearTotal> | USD      |
 
 Examples:
-	| Year | YearTotal |
-	| NULL | 100       |
-	| 2019 | 200       |
+	| Year | YearTotal | Period  | Compensations | Total |
+	| NULL | 100       | 2018-03 | Salary_1      | 100   |
+	| 2019 | 200       | 2019-04 | Salary_2      | 200   |
 
 Scenario: Different currencies for period - resolve with primary legal entity
 	Given Employees are customized to have legal entities

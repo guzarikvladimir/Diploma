@@ -36,6 +36,8 @@ using GetCurrencyById = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrievin
 using GetCurrencyRates = CP.Shared.Test.Contract.CurrencyRate.Mocks.CurrencyRateRetrieving.GetSteps;
 using CP.Platform.Helpers;
 using CP.Platform.Period.Helpers;
+using CP.Shared.Contract.Filters.Services;
+using CP.Shared.Filters.Services;
 
 namespace CP.Compensation.Test.Table.CompensationTable
 {
@@ -53,6 +55,7 @@ namespace CP.Compensation.Test.Table.CompensationTable
         {
             BindInSingletonScope<ICompensationTableSerivce, CompensationTableSerivce>();
             BindInSingletonScope<IEmployeeSerice, EmployeeSerice>();
+            BindInSingletonScope<ICompensationPromotionFilterService, CompensationPromotionFilterService>();
             BindInSingletonScope<ICompensationPromotionService, CompensationPromotionService>();
             BindInSingletonScope<ISalaryPromotionService, SalaryPromotionService>();
             BindInSingletonScope<IBonusPromotionSerivce, BonusPromotionSerivce>();

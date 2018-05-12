@@ -8,7 +8,6 @@
 
     $(document).ready(function () {
         ko.applyBindings(model);
-        getCompensations();
     });
 
     function getCompensations() {

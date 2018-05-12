@@ -29,14 +29,19 @@ namespace CP.ImportExport.Import.EmployeeRole.Services
 
         #endregion
 
+        public override string GetTemplateName()
+        {
+            return "EmployeeRoles";
+        }
+
         public override IEnumerable<EmployeeRoleModel> Parse(List<EmployeeRoleImportModel> importModels)
         {
             foreach (EmployeeRoleImportModel model in importModels)
             {
                 yield return new EmployeeRoleModel()
                 {
-                    Employee = EmployeeRetrievingService.Get().First(e => e.Email == model.Employee).Id,
-                    Role = RoleRetrievingService.Get().First(r => r.Name == model.Role).Id
+                    EmployeeId = EmployeeRetrievingService.Get().First(e => e.Email == model.Employee).Id,
+                    RoleId = RoleRetrievingService.Get().First(r => r.Name == model.Role).Id
                 };
             }
         }
@@ -46,7 +51,7 @@ namespace CP.ImportExport.Import.EmployeeRole.Services
             foreach (EmployeeRoleModel model in models)
             {
                 var existingModel = EmployeeRoleRetrievingService.Get()
-                    .FirstOrDefault(er => er.Employee.Id == model.Employee && er.Role.Id == model.Role);
+                    .FirstOrDefault(er => er.Employee.Id == model.EmployeeId && er.Role.Id == model.RoleId);
                 if (existingModel != null)
                 {
                     continue;

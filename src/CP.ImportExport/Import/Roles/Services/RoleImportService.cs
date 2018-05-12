@@ -16,6 +16,11 @@ namespace CP.ImportExport.Import.Roles.Services
         [Inject]
         IRoleRetrievingService RoleRetrievingService { get; set; }
 
+        public override string GetTemplateName()
+        {
+            return "Roles";
+        }
+
         public override IEnumerable<RoleModel> Parse(List<RoleImportModel> importModels)
         {
             foreach (RoleImportModel model in importModels)

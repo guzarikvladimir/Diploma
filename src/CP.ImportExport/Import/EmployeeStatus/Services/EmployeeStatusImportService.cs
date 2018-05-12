@@ -16,6 +16,11 @@ namespace CP.ImportExport.Import.EmployeeStatus.Services
         [Inject]
         IEmployeeStatusRetrievingService EmployeeStatusRetrievingService { get; set; }
 
+        public override string GetTemplateName()
+        {
+            return "EmployeeStatuses";
+        }
+
         public override IEnumerable<EmployeeStatusModel> Parse(List<EmployeeStatusImportModel> importModels)
         {
             foreach (EmployeeStatusImportModel model in importModels)

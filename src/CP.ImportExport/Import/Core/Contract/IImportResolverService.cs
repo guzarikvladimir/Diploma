@@ -6,5 +6,7 @@ namespace CP.ImportExport.Import.Core.Contract
     public interface IImportResolverService
     {
         void Resolve(ImportOption importOption, HttpPostedFileBase file);
+
+        TemplateModel GenerateTemplate(ImportOption importOption);
     }
 }

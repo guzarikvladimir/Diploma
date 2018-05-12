@@ -87,7 +87,36 @@ namespace CP.ImportExport.Import.Core.Services
                     EmployeeLegalEntityImportService.Upload(file);
                     break;
                 default:
-                    throw new NotImplementedException();
+                    throw new ArgumentOutOfRangeException(nameof(importOption), importOption, null);
+            }
+        }
+
+        public TemplateModel GenerateTemplate(ImportOption importOption)
+        {
+            switch (importOption)
+            {
+                case ImportOption.Employee:
+                    return EmployeeImportService.GenerateTemplate();
+                case ImportOption.Role:
+                    return RoleImportService.GenerateTemplate();
+                case ImportOption.EmployeeRole:
+                    return EmployeeRoleImportService.GenerateTemplate();
+                case ImportOption.Currency:
+                    return CurrencyImportService.GenerateTemplate();
+                case ImportOption.CurrencyRate:
+                    return CurrencyRateImportService.GenerateTemplate();
+                case ImportOption.LegalEntity:
+                    return LegalEntityImportService.GenerateTemplate();
+                case ImportOption.EmployeeLegalEntity:
+                    return EmployeeLegalEntityImportService.GenerateTemplate();
+                case ImportOption.Location:
+                    return LocationImportService.GenerateTemplate();
+                case ImportOption.JobFunction:
+                    return JobFunctionImportService.GenerateTemplate();
+                case ImportOption.EmployeeStatus:
+                    return EmployeeStatusImportService.GenerateTemplate();
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(importOption), importOption, null);
             }
         }
     }

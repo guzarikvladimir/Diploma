@@ -37,6 +37,11 @@ namespace CP.ImportExport.Import.JobFunction.Services
 
         #endregion
 
+        public override string GetTemplateName()
+        {
+            return "JobFunctions";
+        }
+
         public override IEnumerable<JobFunctionModel> Parse(List<JobFunctionImportModel> importModels)
         {
             AddOrUpdateTitle(importModels);

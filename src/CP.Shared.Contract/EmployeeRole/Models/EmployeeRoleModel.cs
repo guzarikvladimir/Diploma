@@ -7,8 +7,8 @@ namespace CP.Shared.Contract.EmployeeRole.Models
     {
         public Guid? Id { get; set; }
 
-        public Guid Employee { get; set; }
+        public Guid EmployeeId { get; set; }
 
-        public Guid Role { get; set; }
+        public Guid RoleId { get; set; }
     }
 }

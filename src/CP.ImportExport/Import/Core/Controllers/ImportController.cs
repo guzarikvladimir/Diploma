@@ -1,7 +1,10 @@
-﻿using System.Web;
+﻿using System;
+using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using CP.ImportExport.Import.Core.Contract;
 using CP.ImportExport.Import.Core.Models;
+using CP.Platform.Helpers;
 using Ninject;
 
 namespace CP.ImportExport.Import.Core.Controllers
@@ -12,12 +15,20 @@ namespace CP.ImportExport.Import.Core.Controllers
         [Inject]
         IImportResolverService ImportResolverService { get; set; }
 
+        [Route("")]
         public ActionResult Index()
         {
+            var enumData = from ImportOption e in Enum.GetValues(typeof(ImportOption))
+                           select new
+                           {
+                               Id = (int)e,
+                               Name = e.GetDisplayValue()
+                           };
+            ViewBag.ImportOptions = new SelectList(enumData, "Id", "Name");
+
             return View();
         }
-
-        [Route("Upload")]
+        
         [HttpPost]
         public void Upload(ImportOption importOption)
         {
@@ -26,6 +37,14 @@ namespace CP.ImportExport.Import.Core.Controllers
             {
                 ImportResolverService.Resolve(importOption, file);
             }
+        }
+
+        [HttpGet]
+        public FileContentResult Template(ImportOption importOption)
+        {
+            TemplateModel template = ImportResolverService.GenerateTemplate(importOption);
+
+            return File(template.Content, template.ContentType, template.Name);
         }
     }
 }

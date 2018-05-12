@@ -28,6 +28,11 @@ namespace CP.ImportExport.Import.Location.Services
 
         #endregion
 
+        public override string GetTemplateName()
+        {
+            return "Locations";
+        }
+
         public override IEnumerable<LocationModel> Parse(List<LocationImportModel> importModels)
         {
             AddOrUpdateCountries(importModels);

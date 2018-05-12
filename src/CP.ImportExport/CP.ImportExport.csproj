@@ -111,6 +111,7 @@
     <Compile Include="Import\Core\Controllers\ImportController.cs" />
     <Compile Include="Import\Core\CoreModule.cs" />
     <Compile Include="Import\Core\Models\ImportOption.cs" />
+    <Compile Include="Import\Core\Models\TemplateModel.cs" />
     <Compile Include="Import\Core\Services\ImportServiceBase.cs" />
     <Compile Include="Import\Core\Services\ImportResolverService.cs" />
     <Compile Include="Import\CurrencyRate\Contract\ICurrencyRateImportService.cs" />

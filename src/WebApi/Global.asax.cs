@@ -8,7 +8,6 @@ using System.Web.Routing;
 using System.Web.Http;
 using System.Web.Optimization;
 using AutoMapper;
-using CP.Repository.Services;
 using CP.Shared.Core.Services;
 using Ninject;
 using Module = CP.Platform.DependencyResolvers.Services.Module;
@@ -28,8 +27,6 @@ namespace WebApi
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBoundles(BundleTable.Bundles);
-
-            new UserDbInitializer().InitializeDatabase(new ApplicationContext());
         }
 
         void RegisterServices(IKernel kernel)

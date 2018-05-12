@@ -29,6 +29,11 @@ namespace CP.ImportExport.Import.EmployeeLegalEntity.Services
 
         #endregion
 
+        public override string GetTemplateName()
+        {
+            return "EmployeeLegalEntities";
+        }
+
         public override IEnumerable<EmployeeLegalEntityModel> Parse(List<EmployeeLegalEntityImportModel> importModels)
         {
             foreach (EmployeeLegalEntityImportModel model in importModels)

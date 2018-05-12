@@ -16,6 +16,11 @@ namespace CP.ImportExport.Import.Currency.Services
         [Inject]
         ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
 
+        public override string GetTemplateName()
+        {
+            return "Currencies";
+        }
+
         public override IEnumerable<CurrencyModel> Parse(List<CurrencyImportModel> importModels)
         {
             foreach (CurrencyImportModel importModel in importModels)

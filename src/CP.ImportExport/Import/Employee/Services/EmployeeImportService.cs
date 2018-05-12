@@ -32,6 +32,11 @@ namespace CP.ImportExport.Import.Employee.Services
 
         #endregion
 
+        public override string GetTemplateName()
+        {
+            return "Employees";
+        }
+
         public override IEnumerable<EmployeeModel> Parse(List<EmployeeImportModel> importModels)
         {
             foreach (EmployeeImportModel model in importModels)

@@ -14,9 +14,7 @@
             { name: 'Job Functions', value: 8 },
             { name: 'Employee Statuses', value: 9 }
         ]),
-        selectedOption: ko.observable(),
-        file: ko.observable(),
-        upload: upload
+        file: ko.observable()
     }
 
     $(document).ready(function () {
@@ -32,11 +30,13 @@
 
         var fileData = new FormData();
         fileData.append(model.file.name, model.file);
-        var requestStr = 'Upload?importOption=' + model.selectedOption();
+
+        var selectedOption = document.getElementById("importSelect").selectedIndex;
+        var requestStr = 'Upload?importOption=' + selectedOption;
         request.sendAjax('POST', requestStr, fileData, { contentType: false, processData: false })
             .then(() => {
                 model.file = null;
-                alert.show('File successfully iploaded.');
+                alert.show('File successfully uploaded.');
                 $('#import-file').prop('value', null);
             })
             .catch((error) => alert.error(error));
@@ -44,8 +44,7 @@
 
     return {
         options: model.options,
-        selectedOption: model.selectedOption,
         file: model.file,
-        upload: model.upload
+        upload: upload
     }
 }();

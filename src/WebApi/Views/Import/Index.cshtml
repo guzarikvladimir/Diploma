@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+
 @{
     ViewBag.Title = "Compensations";
 }
@@ -12,20 +13,24 @@
 }
 
 <div class="import-container">
+    @using (Html.BeginForm("Template", "Import", FormMethod.Get))
+    {
+        <div class="input-group">
+            @Html.DropDownList("importOption", ViewBag.ImportOptions as SelectList, new { id = "importSelect" })
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Download Template" />
+        </div>
+    }
+
     <div class="input-group">
-        <select data-bind="options: imp.options,
-                optionsText: 'name',
-                optionsValue: 'value',
-                value: imp.selectedOption"></select>
-    </div>
-    <div class="input-group">
-        <dic class="col-half">
+        <div class="col-half">
             <input data-bind="event: { change: () => file = $element.files[0] }" type="file" id="import-file" />
-        </dic>
+        </div>
     </div>
     <div class="input-group">
-        <dic class="col-half">
+        <div class="col-half">
             <button data-bind="click: { single: imp.upload }">Import</button>
-        </dic>
+        </div>
     </div>
 </div>

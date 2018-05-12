@@ -2,8 +2,8 @@
 {
     public class JobFunctionImportModel
     {
-        public string Position { get; set; }
-
         public string Title { get; set; }
+
+        public string Position { get; set; }
     }
 }

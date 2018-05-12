@@ -19,6 +19,11 @@ namespace CP.ImportExport.Import.CurrencyRate.Service
         [Inject]
         ICurrencyRetrievingService CurrencyRetrievingService { get; set; }
 
+        public override string GetTemplateName()
+        {
+            return "CurrencyRates";
+        }
+
         public override IEnumerable<CurrencyRateModel> Parse(List<CurrencyRateImportModel> importModels)
         {
             foreach (CurrencyRateImportModel model in importModels)

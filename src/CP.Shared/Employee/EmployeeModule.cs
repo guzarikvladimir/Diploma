@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using CP.Platform.Crud.Contract;
 using CP.Platform.DependencyResolvers.Services;
 using CP.Platform.Mappers.Contract;
-using CP.Shared.Contract.Core.Services;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
 using CP.Shared.Employee.Mappers;

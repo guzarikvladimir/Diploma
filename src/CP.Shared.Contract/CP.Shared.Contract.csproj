@@ -54,10 +54,6 @@
     <Compile Include="Compensation\Models\CompensationsByPeriodView.cs" />
     <Compile Include="Compensation\Models\ValueWithCurrency.cs" />
     <Compile Include="Compensation\Services\ICompensationCalculationService.cs" />
-    <Compile Include="Core\Models\IModelWithId.cs" />
-    <Compile Include="Core\Models\IEntityView.cs" />
-    <Compile Include="Core\Services\ISimpleModifyingService.cs" />
-    <Compile Include="Core\Services\ISimpleRetrievingService.cs" />
     <Compile Include="Country\Models\CountryModel.cs" />
     <Compile Include="Country\Models\CountryView.cs" />
     <Compile Include="Country\Services\ICountryModifyingService.cs" />
@@ -134,6 +130,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
+      <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
+      <Name>CP.Platform</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Repository\CP.Repository.csproj">
       <Project>{A565953B-77E4-4CDF-A8F5-D395B16FE73A}</Project>
       <Name>CP.Repository</Name>

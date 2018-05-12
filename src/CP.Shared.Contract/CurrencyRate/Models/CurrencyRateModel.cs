@@ -1,10 +1,10 @@
 ﻿using System;
+using CP.Platform.Crud.Models;
 using CP.Repository.Models;
-using CP.Shared.Contract.Core.Models;
 
 namespace CP.Shared.Contract.CurrencyRate.Models
 {
-    public class CurrencyRateModel : IModelWithId<Guid?>
+    public class CurrencyRateModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

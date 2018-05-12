@@ -1,5 +1,5 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 using CP.Shared.Contract.JobFunctionPosition.Models;
 using CP.Shared.Contract.JobFunctionTitile.Models;
 

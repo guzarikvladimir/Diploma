@@ -1,5 +1,5 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.LegalEntity.Models;
 

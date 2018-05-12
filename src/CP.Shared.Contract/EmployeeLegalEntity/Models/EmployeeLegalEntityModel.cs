@@ -1,9 +1,9 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.EmployeeLegalEntity.Models
 {
-    public class EmployeeLegalEntityModel : IModelWithId<Guid?>
+    public class EmployeeLegalEntityModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CP.Shared.Contract.Core.Services
+namespace CP.Platform.Crud.Contract
 {
     public interface ISimpleRetrievingService<out TView>
         where TView : class

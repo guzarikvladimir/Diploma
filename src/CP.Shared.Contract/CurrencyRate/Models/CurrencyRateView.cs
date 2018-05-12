@@ -1,6 +1,6 @@
 ﻿using System;
+using CP.Platform.Crud.Models;
 using CP.Repository.Models;
-using CP.Shared.Contract.Core.Models;
 using CP.Shared.Contract.Currency.Models;
 
 namespace CP.Shared.Contract.CurrencyRate.Models

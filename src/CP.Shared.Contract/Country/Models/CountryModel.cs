@@ -1,9 +1,9 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.Country.Models
 {
-    public class CountryModel : IModelWithId<Guid?>
+    public class CountryModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

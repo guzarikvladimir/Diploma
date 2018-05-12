@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web;
 using CP.ImportExport.Import.Core.Contract;
 using CP.ImportExport.Import.Core.Models;
+using CP.Platform.Crud.Contract;
+using CP.Platform.Crud.Models;
 using CP.Platform.Db.Contract;
-using CP.Shared.Contract.Core.Models;
-using CP.Shared.Contract.Core.Services;
 using Ninject;
 using OfficeOpenXml;
 
@@ -15,7 +15,7 @@ namespace CP.ImportExport.Import.Core.Services
 {
     public abstract class ImportServiceBase<TImportModel, TEntityModel> : IImportServiceBase
         where TImportModel : new()
-        where TEntityModel : class, IModelWithId<Guid?>
+        where TEntityModel : class, IEntityModel<Guid?>
     {
         #region Injects
 

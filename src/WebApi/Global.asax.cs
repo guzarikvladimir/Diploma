@@ -8,7 +8,7 @@ using System.Web.Routing;
 using System.Web.Http;
 using System.Web.Optimization;
 using AutoMapper;
-using CP.Shared.Core.Services;
+using CP.Platform.Crud.Services;
 using Ninject;
 using Module = CP.Platform.DependencyResolvers.Services.Module;
 

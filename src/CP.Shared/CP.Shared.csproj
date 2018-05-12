@@ -82,8 +82,6 @@
     <Compile Include="CompensationPromotion\Services\CompensationPromotionService.cs" />
     <Compile Include="Compensation\CompensationModule.cs" />
     <Compile Include="Compensation\Services\CompensationCalculationService.cs" />
-    <Compile Include="Core\Services\SimpleModifyingService.cs" />
-    <Compile Include="Core\Services\SimpleRetrievingService.cs" />
     <Compile Include="Country\CountryModule.cs" />
     <Compile Include="Country\Mappers\CountryMapper.cs" />
     <Compile Include="Country\Services\CountryModifyingService.cs" />

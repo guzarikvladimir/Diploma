@@ -1,5 +1,5 @@
-﻿using CP.Shared.Contract.Bonus.Models;
-using CP.Shared.Contract.Core.Services;
+﻿using CP.Platform.Crud.Contract;
+using CP.Shared.Contract.Bonus.Models;
 
 namespace CP.Shared.Contract.Bonus.Services
 {

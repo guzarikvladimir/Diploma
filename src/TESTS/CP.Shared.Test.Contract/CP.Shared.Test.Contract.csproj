@@ -125,6 +125,10 @@
     <Compile Include="User\Models\UserViewCustomizationModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CP.Platform\CP.Platform.csproj">
+      <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
+      <Name>CP.Platform</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\CP.Repository\CP.Repository.csproj">
       <Project>{A565953B-77E4-4CDF-A8F5-D395B16FE73A}</Project>
       <Name>CP.Repository</Name>

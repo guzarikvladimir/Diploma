@@ -1,10 +1,10 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
-namespace CP.Shared.Contract.Core.Services
+namespace CP.Platform.Crud.Contract
 {
     public interface ISimpleModifyingService<in TModel>
-        where TModel : class, IModelWithId<Guid?>
+        where TModel : class, IEntityModel<Guid?>
     {
         void Add(TModel model);
 

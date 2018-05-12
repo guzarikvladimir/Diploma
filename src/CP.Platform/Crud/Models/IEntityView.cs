@@ -1,4 +1,4 @@
-﻿namespace CP.Shared.Contract.Core.Models
+﻿namespace CP.Platform.Crud.Models
 {
     public interface IEntityView<TId>
     {

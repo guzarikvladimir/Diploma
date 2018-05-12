@@ -1,10 +1,9 @@
 ﻿using System;
-using CP.Repository.Contract;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.JobFunctionPosition.Models
 {
-    public class JobFunctionPositionModel : IModelWithId<Guid?>
+    public class JobFunctionPositionModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

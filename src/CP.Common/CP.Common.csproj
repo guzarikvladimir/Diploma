@@ -64,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CP.Platform\CP.Platform.csproj">
+      <Project>{2E345F9F-5F60-4F6A-B3FA-872F1E05784C}</Project>
+      <Name>CP.Platform</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CP.Shared.Contract\CP.Shared.Contract.csproj">
       <Project>{C862C837-F423-4E0C-B447-6D8601518582}</Project>
       <Name>CP.Shared.Contract</Name>

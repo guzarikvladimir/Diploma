@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Linq;
+using CP.Platform.Crud.Contract;
+using CP.Platform.Crud.Models;
 using CP.Platform.Db.Contract;
 using CP.Platform.Mappers.Contract;
 using CP.Repository.Contract;
-using CP.Shared.Contract.Core.Models;
-using CP.Shared.Contract.Core.Services;
 using Ninject;
 
-namespace CP.Shared.Core.Services
+namespace CP.Platform.Crud.Services
 {
     public class SimpleModifyingService<TEntity, TModel> : ISimpleModifyingService<TModel>
-        where TModel : class, IModelWithId<Guid?>
+        where TModel : class, IEntityModel<Guid?>
         where TEntity : class, IEntity<Guid>
     {
         #region Injects

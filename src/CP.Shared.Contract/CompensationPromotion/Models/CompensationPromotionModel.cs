@@ -1,10 +1,10 @@
 ﻿using System;
+using CP.Platform.Crud.Models;
 using CP.Repository.Models;
-using CP.Shared.Contract.Core.Models;
 
 namespace CP.Shared.Contract.CompensationPromotion.Models
 {
-    public class CompensationPromotionModel : IModelWithId<Guid?>
+    public class CompensationPromotionModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

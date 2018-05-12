@@ -1,9 +1,9 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.Location.Models
 {
-    public class LocationModel : IModelWithId<Guid?>
+    public class LocationModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

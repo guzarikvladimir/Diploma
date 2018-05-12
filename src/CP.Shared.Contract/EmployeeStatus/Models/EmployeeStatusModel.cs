@@ -1,9 +1,9 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.EmployeeStatus.Models
 {
-    public class EmployeeStatusModel : IModelWithId<Guid?>
+    public class EmployeeStatusModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

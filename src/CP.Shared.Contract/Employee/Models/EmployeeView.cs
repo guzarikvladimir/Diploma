@@ -1,5 +1,5 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 using CP.Shared.Contract.EmployeeStatus.Models;
 using CP.Shared.Contract.JobFunction.Models;
 using CP.Shared.Contract.Location.Models;

@@ -1,9 +1,9 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.Currency.Models
 {
-    public class CurrencyModel : IModelWithId<Guid?>
+    public class CurrencyModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

@@ -1,6 +1,6 @@
-﻿using CP.Shared.Contract.JobFunctionTitile.Models;
+﻿using CP.Platform.Crud.Services;
+using CP.Shared.Contract.JobFunctionTitile.Models;
 using CP.Shared.Contract.JobFunctionTitile.Services;
-using CP.Shared.Core.Services;
 using JobFunctionTitleEntity = CP.Repository.Models.JobFunctionTitle;
 
 namespace CP.Shared.JobFunctionTitle.Services

@@ -1,9 +1,9 @@
 ﻿using System;
-using CP.Shared.Contract.Core.Models;
+using CP.Platform.Crud.Models;
 
 namespace CP.Shared.Contract.User.Models
 {
-    public class UserModel : IModelWithId<Guid?>
+    public class UserModel : IEntityModel<Guid?>
     {
         public Guid? Id { get; set; }
 

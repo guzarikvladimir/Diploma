@@ -20,7 +20,13 @@
 
                 return request.sendAjax('GET', '/api/Compensations/SidePanel/' + obj.Employee.Id);
             })
-            .then((data) => model.employeeCompensations(data))
+            .then((data) => {
+                model.employeeCompensations(data);
+                co.fillWithData(data.CompensationPromotions.slice(0, 5), cosidelist.employeeCompensations);
+                if (data.CompensationPromotions.length >= 5) {
+                    cosidelist.overflow(true);
+                }
+            })
             .then(() => {
                 model.isOpened(true);
                 document.getElementById("sidenav").style.display = "block";
@@ -30,6 +36,7 @@
 
     function hide() {
         model.isOpened(false);
+        cosidelist.overflow(false);
         document.getElementById("sidenav").style.display = "none";
     }
 

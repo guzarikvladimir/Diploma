@@ -1,7 +1,13 @@
-﻿<div data-bind="foreach: coside.employeeCompensations().CompensationPromotions" class="side-panel-list">
-    <div class="side-panel-item">
-        <p data-bind="text: cosidelist.getListItemPreview($data)"></p>
-        <a data-bind="click: { single: cosidelist.rejectCompensation },
+﻿<div class="side-panel-list-wrapper">
+    <div data-bind="foreach: cosidelist.employeeCompensations" class="side-panel-list">
+        <div class="side-panel-item">
+            <p data-bind="text: cosidelist.getListItemPreview($data)"></p>
+            <a data-bind="click: { single: cosidelist.rejectCompensation },
            visible: cosidelist.isApproved($data)" href="javascript:void(0)">&times;</a>
+        </div>
+    </div>
+    <div data-bind="if: cosidelist.overflow">
+        <span data-bind="ifnot: cosidelist.isMore, click: { single: cosidelist.toggleMore }">Show more</span>
+        <span data-bind="if: cosidelist.isMore, click: { single: cosidelist.toggleMore }">Show less</span>
     </div>
 </div>

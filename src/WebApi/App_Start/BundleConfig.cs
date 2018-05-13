@@ -20,6 +20,7 @@ namespace WebApi
                 .Include("~/Resources/Content/Common/controls.css",
                     "~/Resources/vendor/bootstrap/css/bootstrap.min.css",
                     "~/Resources/Content/Common/alert.css",
+                    "~/Resources/Content/Common/loading.css",
                     "~/Resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
                     "~/Resources/Content/Common/nav.css",
                     "~/Resources/Content/w3.css"));

@@ -1,8 +1,19 @@
-﻿.side-panel-list {
+﻿.side-panel-list-wrapper {
     max-width: 44em;
     margin: 2em auto;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
     font-family: Montserrat-Medium;
+}
+
+.side-panel-list-wrapper span {
+    font-size: 13px;
+    font-family: Montserrat-Medium;
+    cursor: pointer;
+    text-decoration: underline;
+    color: cornflowerblue;
+}
+
+.side-panel-list {
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
 .side-panel-item {

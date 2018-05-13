@@ -2,10 +2,18 @@
     "use strict";
 
     var model = {
-        getListItemPreview: getListItemPreview,
-        rejectCompensation: rejectCompensation,
-        isApproved: function(item) {
-            return item.PromotionStatus === 0;
+        employeeCompensations: ko.observableArray(),
+        isMore: ko.observable(false),
+        overflow: ko.observable(false)
+    }
+
+    function toggleMore() {
+        if (model.isMore() === false) {
+            co.fillWithData(coside.employeeCompensations().CompensationPromotions, model.employeeCompensations);
+            model.isMore(true);
+        } else {
+            co.fillWithData(coside.employeeCompensations().CompensationPromotions.slice(0, 5), model.employeeCompensations);
+            model.isMore(false);
         }
     }
 
@@ -49,9 +57,17 @@
         return item;
     }
 
+    function isApproved(item) {
+        return item.PromotionStatus === 0;
+    }
+
     return {
-        getListItemPreview: model.getListItemPreview,
+        isMore: model.isMore,
+        employeeCompensations: model.employeeCompensations,
+        overflow: model.overflow,
+        getListItemPreview: getListItemPreview,
         rejectCompensation: rejectCompensation,
-        isApproved: model.isApproved
+        isApproved: isApproved,
+        toggleMore: toggleMore
     }
 })();

@@ -182,7 +182,7 @@
   <ItemGroup>
     <Content Include="Resources\Content\bootstrap.css" />
     <Content Include="Resources\Content\bootstrap.min.css" />
-    <Content Include="Resources\Content\Common\nav-simple.css" />
+    <Content Include="Resources\Content\Common\loading.css" />
     <Content Include="Resources\Content\Common\nav.css" />
     <Content Include="Resources\Content\Common\controls.css" />
     <Content Include="Resources\Content\Common\table-filters.css" />
@@ -193,7 +193,7 @@
     <Content Include="Resources\Content\Compensation\side-panel.css" />
     <Content Include="Resources\Content\Compensation\compensation-table.css" />
     <Content Include="Resources\Content\Common\util.css" />
-    <Content Include="Resources\Content\ImportExport\importExport.css" />
+    <Content Include="Resources\Content\Import\import.css" />
     <Content Include="Resources\Content\w3.css" />
     <Content Include="Resources\Images\analyst-placeholder-avatar.png" />
     <Content Include="Resources\Images\start-bg.jpg" />

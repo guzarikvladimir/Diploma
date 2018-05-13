@@ -6,7 +6,7 @@ using UserEntity = CP.Repository.Models.User;
 namespace CP.Shared.User.Services
 {
     public class UserModifyingService : 
-        SimpleModifyingService<UserEntity, UserModel>,
+        SimpleModifyingService<UserEntity, UserModel, UserView>,
         IUserModifyingService
     {
     }

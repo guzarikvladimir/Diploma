@@ -1,18 +1,18 @@
 ﻿@using System.Web.Optimization
 
 @{
-    ViewBag.Title = "Compensations";
+    ViewBag.Title = "Import";
 }
 @section styles
 {
-    @Styles.Render("~/Content/css/import")
+    @Styles.Render("~/Content/css/importExport")
 }
 @section scripts
 {
     @Scripts.Render("~/bundles/import")
 }
 
-<div class="import-container">
+<div class="importExport-container">
     @using (Html.BeginForm("Template", "Import", FormMethod.Post))
     {
         <div class="input-group">

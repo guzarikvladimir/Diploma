@@ -7,6 +7,7 @@ using CP.Shared.EmployeeLegalEntity.Mappers;
 using CP.Shared.EmployeeLegalEntity.Services;
 using Ninject;
 using Ninject.Web.Common;
+using EmployeeLegalEntityEntity = CP.Repository.Models.EmployeeLegalEntity;
 
 namespace CP.Shared.EmployeeLegalEntity
 {
@@ -14,15 +15,15 @@ namespace CP.Shared.EmployeeLegalEntity
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IEmployeeLegalEntityRetrievingService>()
+            kernel.Bind<IEmployeeLegalEntityRetrievingService, ISimpleRetrievingService<EmployeeLegalEntityView>>()
                 .To<EmployeeLegalEntityRetrievingService>()
                 .InRequestScope();
             kernel.Bind<IEmployeeLegalEntityModifyingService, ISimpleModifyingService<EmployeeLegalEntityModel>>()
                 .To<EmployeeLegalEntityModifyingService>()
                 .InRequestScope();
 
-            kernel.Bind<IEntityMapper<Repository.Models.EmployeeLegalEntity, EmployeeLegalEntityView>,
-                    IEntityModifyingMapper<EmployeeLegalEntityModel, Repository.Models.EmployeeLegalEntity>>()
+            kernel.Bind<IEntityMapper<EmployeeLegalEntityEntity, EmployeeLegalEntityView>,
+                    IEntityModifyingMapper<EmployeeLegalEntityModel, EmployeeLegalEntityEntity>>()
                 .To<EmployeeLegalEntityMapper>()
                 .InRequestScope();
         }

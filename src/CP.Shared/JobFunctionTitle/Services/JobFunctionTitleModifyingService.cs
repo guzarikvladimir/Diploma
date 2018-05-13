@@ -6,7 +6,7 @@ using JobFunctionTitleEntity = CP.Repository.Models.JobFunctionTitle;
 namespace CP.Shared.JobFunctionTitle.Services
 {
     public class JobFunctionTitleModifyingService :
-        SimpleModifyingService<JobFunctionTitleEntity, JobFunctionTitleModel>,
+        SimpleModifyingService<JobFunctionTitleEntity, JobFunctionTitleModel, JobFunctionTitleView>,
         IJobFunctionTitleModifyingService
     {
     }

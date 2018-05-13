@@ -6,7 +6,7 @@ using CountryEntity = CP.Repository.Models.Country;
 namespace CP.Shared.Country.Services
 {
     public class CountryModifyingService :
-        SimpleModifyingService<CountryEntity, CountryModel>,
+        SimpleModifyingService<CountryEntity, CountryModel, CountryView>,
         ICountryModifyingService
     {
     }

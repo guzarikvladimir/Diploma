@@ -10,7 +10,8 @@ namespace CP.Compensation.Workflow.Contract
 
         void Create(BonusPromotionModel model);
 
-        void Reject(CompensationPromotionModel model);
+        void Reject(SalaryPromotionModel model);
 
+        void Reject(BonusPromotionModel model);
     }
 }

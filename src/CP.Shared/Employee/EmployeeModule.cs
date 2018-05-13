@@ -16,7 +16,9 @@ namespace CP.Shared.Employee
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IEmployeeRetrievingService>().To<EmployeeRetrievingService>().InRequestScope();
+            kernel.Bind<IEmployeeRetrievingService, ISimpleRetrievingService<EmployeeView>>()
+                .To<EmployeeRetrievingService>()
+                .InRequestScope();
             kernel.Bind<IEmployeeModifyingService, ISimpleModifyingService<EmployeeModel>>()
                 .To<EmployeeModifyingService>()
                 .InRequestScope();

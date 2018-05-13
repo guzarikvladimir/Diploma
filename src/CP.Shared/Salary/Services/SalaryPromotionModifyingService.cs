@@ -6,7 +6,7 @@ using CP.Shared.Contract.Salary.Services;
 namespace CP.Shared.Salary.Services
 {
     public class SalaryPromotionModifyingService :
-        SimpleModifyingService<SalaryPromotion, SalaryPromotionModel>,
+        SimpleModifyingService<SalaryPromotion, SalaryPromotionModel, SalaryPromotionView>,
         ISalaryPromotionModifyingService
     {
     }

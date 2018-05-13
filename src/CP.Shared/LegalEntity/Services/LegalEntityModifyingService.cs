@@ -6,7 +6,7 @@ using LegalEntityEntity = CP.Repository.Models.LegalEntity;
 namespace CP.Shared.LegalEntity.Services
 {
     public class LegalEntityModifyingService : 
-        SimpleModifyingService<LegalEntityEntity, LegalEntityModel>,
+        SimpleModifyingService<LegalEntityEntity, LegalEntityModel, LegalEntityView>,
         ILegalEntityModifyingService
     {
     }

@@ -15,7 +15,6 @@ namespace CP.Compensation.Workflow.Services.Steps
 
         public void Update(CompensationPromotionModel model)
         {
-            model.Id = Guid.NewGuid();
             model.CreatedDate = DateTime.Now;
             model.CreatedById = UserService.Current.GetUserId();
             model.PromotionStatus = CompensationPromotionStatus.Approved;

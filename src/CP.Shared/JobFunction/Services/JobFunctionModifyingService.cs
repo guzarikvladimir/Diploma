@@ -6,7 +6,7 @@ using JobFunctionEntity = CP.Repository.Models.JobFunction;
 namespace CP.Shared.JobFunction.Services
 {
     public class JobFunctionModifyingService :
-        SimpleModifyingService<JobFunctionEntity, JobFunctionModel>,
+        SimpleModifyingService<JobFunctionEntity, JobFunctionModel, JobFunctionView>,
         IJobFunctionModifyingService
     {
     }

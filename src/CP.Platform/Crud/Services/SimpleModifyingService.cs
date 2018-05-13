@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using CP.Platform.Crud.Contract;
 using CP.Platform.Crud.Models;
@@ -9,9 +10,12 @@ using Ninject;
 
 namespace CP.Platform.Crud.Services
 {
-    public class SimpleModifyingService<TEntity, TModel> : ISimpleModifyingService<TModel>
+    public class SimpleModifyingService<TEntity, TModel, TView> : 
+        MemoryStorageBase<TView>,
+        ISimpleModifyingService<TModel>
         where TModel : class, IEntityModel<Guid?>
         where TEntity : class, IEntity<Guid>
+        where TView : class, IEntityView<Guid>
     {
         #region Injects
 
@@ -19,11 +23,11 @@ namespace CP.Platform.Crud.Services
         protected IEntityModifyingMapper<TModel, TEntity> ModifyingMapper { get; set; }
 
         [Inject]
-        protected IDbContextScopeFactory DbContextScopeFactory { get; set; }
+        protected IEntityMapper<TEntity, TView> Mapper { get; set; }
 
         #endregion
 
-        public void Add(TModel model)
+        public void AddOrUpdate(TModel model)
         {
             if (!model.Id.HasValue)
             {
@@ -31,34 +35,25 @@ namespace CP.Platform.Crud.Services
             }
 
             TEntity entity = ModifyingMapper.Map(model);
+            AddOrUpdateInternal(Mapper.Map(entity));
             using (var scope = DbContextScopeFactory.Create())
             {
-                scope.Set<TEntity>().Add(entity);
+                scope.Set<TEntity>().AddOrUpdate(entity);
 
                 scope.SaveChanges();
             }
         }
 
-        public void Update(TModel model)
-        {
-            using (var scope = DbContextScopeFactory.Create())
-            {
-                TEntity entity = scope.Set<TEntity>().Single(e => e.Id == model.Id);
-                ModifyingMapper.Map(model, entity);
+        //public void Update(TModel model)
+        //{
+        //    using (var scope = DbContextScopeFactory.Create())
+        //    {
+        //        TEntity entity = scope.Set<TEntity>().Single(e => e.Id == model.Id);
+        //        ModifyingMapper.Map(model, entity);
+        //        AddOrUpdateInternal(Mapper.Map(entity));
 
-                scope.SaveChanges();
-            }
-        }
-
-        public void Delete(Guid id)
-        {
-            using (var scope = DbContextScopeFactory.Create())
-            {
-                TEntity entity = scope.Set<TEntity>().Single(e => e.Id == id);
-                scope.Set<TEntity>().Remove(entity);
-
-                scope.SaveChanges();
-            }
-        }
+        //        scope.SaveChanges();
+        //    }
+        //}
     }
 }

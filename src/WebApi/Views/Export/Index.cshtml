@@ -1,0 +1,21 @@
+﻿@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "Export";
+}
+@section styles
+{
+    @Styles.Render("~/Content/css/importExport")
+}
+
+<div class="importExport-container">
+    @using (Html.BeginForm("Export", "Export", FormMethod.Post))
+    {
+        <div class="input-group">
+            @Html.DropDownList("exportOption", ViewBag.ExportOptions as SelectList, new { id = "exportSelect" })
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Export" />
+        </div>
+    }
+</div>

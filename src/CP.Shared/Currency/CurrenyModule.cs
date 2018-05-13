@@ -16,12 +16,14 @@ namespace CP.Shared.Currency
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ICurrencyRetrievingService>().To<CurrencyRetrievingService>().InRequestScope();
-            kernel.Bind<ICurrencyService>().To<CurrencyService>().InRequestScope();
-            kernel.Bind<ICurrencyResolverService>().To<CurrencyResolverService>().InRequestScope();
+            kernel.Bind<ISimpleRetrievingService<CurrencyView>, ICurrencyRetrievingService>()
+                .To<CurrencyRetrievingService>()
+                .InRequestScope();
             kernel.Bind<ISimpleModifyingService<CurrencyModel>, ICurrencyModifyingService>()
                 .To<CurrencyModifyingService>()
                 .InRequestScope();
+            kernel.Bind<ICurrencyService>().To<CurrencyService>().InRequestScope();
+            kernel.Bind<ICurrencyResolverService>().To<CurrencyResolverService>().InRequestScope();
             kernel.Bind<ICurrencyConverterService>().To<CurrencyConverterService>().InRequestScope();
 
             kernel.Bind<IEntityMapper<CurrencyEntity, CurrencyView>,

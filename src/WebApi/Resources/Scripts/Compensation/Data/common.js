@@ -8,7 +8,7 @@
 
     $(document).ready(function () {
         getCurrencies();
-        cotable.getCompensations();
+        //cotable.getCompensations();
     });
 
     function getCurrencies() {

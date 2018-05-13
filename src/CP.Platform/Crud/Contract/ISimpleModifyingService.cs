@@ -6,10 +6,8 @@ namespace CP.Platform.Crud.Contract
     public interface ISimpleModifyingService<in TModel>
         where TModel : class, IEntityModel<Guid?>
     {
-        void Add(TModel model);
+        void AddOrUpdate(TModel model);
 
-        void Update(TModel model);
-
-        void Delete(Guid id);
+        //void Update(TModel model);
     }
 }

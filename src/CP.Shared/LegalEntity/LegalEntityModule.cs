@@ -16,7 +16,9 @@ namespace CP.Shared.LegalEntity
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ILegalEntityRetrievingService>().To<LegalEntityRetrievingService>().InRequestScope();
+            kernel.Bind<ILegalEntityRetrievingService, ISimpleRetrievingService<LegalEntityView>>()
+                .To<LegalEntityRetrievingService>()
+                .InRequestScope();
             kernel.Bind<ILegalEntityModifyingService, ISimpleModifyingService<LegalEntityModel>>()
                 .To<LegalEntityModifyingService>()
                 .InRequestScope();

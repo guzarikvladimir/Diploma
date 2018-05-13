@@ -101,13 +101,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crud\Contract\IMemoryStorageBase.cs" />
+    <Compile Include="Crud\Contract\IMemoryStorage.cs" />
     <Compile Include="Crud\Contract\ISimpleModifyingService.cs" />
     <Compile Include="Crud\Contract\ISimpleRetrievingService.cs" />
     <Compile Include="Crud\CrudModule.cs" />
     <Compile Include="Crud\Models\IEntityModel.cs" />
     <Compile Include="Crud\Models\IEntityView.cs" />
     <Compile Include="Crud\Services\MemoryStorageBase.cs" />
+    <Compile Include="Crud\Services\MemoryStorage.cs" />
     <Compile Include="Crud\Services\SimpleModifyingService.cs" />
     <Compile Include="Crud\Services\SimpleRetrievingService.cs" />
     <Compile Include="Db\Contract\IDbContextScopeFactory.cs" />

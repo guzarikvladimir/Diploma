@@ -16,7 +16,9 @@ namespace CP.Shared.EmployeeStatus
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IEmployeeStatusRetrievingService>().To<EmployeeStatusRetrievingService>().InRequestScope();
+            kernel.Bind<IEmployeeStatusRetrievingService, ISimpleRetrievingService<EmployeeStatusView>>()
+                .To<EmployeeStatusRetrievingService>()
+                .InRequestScope();
             kernel.Bind<IEmployeeStatusModifyingService, ISimpleModifyingService<EmployeeStatusModel>>()
                 .To<EmployeeStatusModifyingService>()
                 .InRequestScope();

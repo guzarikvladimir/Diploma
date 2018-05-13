@@ -6,7 +6,7 @@ using LocationEntity = CP.Repository.Models.Location;
 namespace CP.Shared.Location.Services
 {
     public class LocationModifyingService :
-        SimpleModifyingService<LocationEntity, LocationModel>,
+        SimpleModifyingService<LocationEntity, LocationModel, LocationView>,
         ILocationModifyingService
     {
     }

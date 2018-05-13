@@ -3,13 +3,14 @@
 *:after {
     box-sizing: border-box;
 }
-button {
-    font-family: "Roboto", sans-serif;
+button,
+input[type="submit"]{
     text-transform: uppercase;
     outline: 0;
     background: #4CAF50;
     width: 100%;
     border: 0;
+    border-radius: 0;
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;

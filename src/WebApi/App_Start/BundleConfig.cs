@@ -59,8 +59,8 @@ namespace WebApi
             bundles.Add(new ScriptBundle("~/bundles/import")
                 .Include("~/Resources/Scripts/Import/import.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css/import")
-                .Include("~/Resources/Content/Import/import.css"));
+            bundles.Add(new StyleBundle("~/Content/css/importExport")
+                .Include("~/Resources/Content/ImportExport/importExport.css"));
         }
     }
 }

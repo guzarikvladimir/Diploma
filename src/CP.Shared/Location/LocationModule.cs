@@ -16,7 +16,9 @@ namespace CP.Shared.Location
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ILocationRetrievingService>().To<LocationRetrievingService>().InRequestScope();
+            kernel.Bind<ILocationRetrievingService, ISimpleRetrievingService<LocationView>>()
+                .To<LocationRetrievingService>()
+                .InRequestScope();
             kernel.Bind<ILocationModifyingService, ISimpleModifyingService<LocationModel>>()
                 .To<LocationModifyingService>()
                 .InRequestScope();

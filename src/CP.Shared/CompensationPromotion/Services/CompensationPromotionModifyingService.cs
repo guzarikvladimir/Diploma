@@ -6,7 +6,7 @@ using CompensationPromotionEntity = CP.Repository.Models.CompensationPromotion;
 namespace CP.Shared.CompensationPromotion.Services
 {
     public class CompensationPromotionModifyingService :
-        SimpleModifyingService<CompensationPromotionEntity, CompensationPromotionModel>,
+        SimpleModifyingService<CompensationPromotionEntity, CompensationPromotionModel, CompensationPromotionView>,
         ICompensationPromotionModifyingService
     {
     }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CP.Compensation.Workflow.Contract;
 using CP.Platform.Db.Contract;
 using CP.Repository.Models;
@@ -42,7 +41,7 @@ namespace CP.Compensation.Workflow.Services
             using (var scope = DbContextScopeFactory.Create())
             {
                 SalaryPromotionModel salary = CreateInternal(model);
-                SalaryPromotionModifyingService.Add(salary);
+                SalaryPromotionModifyingService.AddOrUpdate(salary);
 
                 scope.SaveChanges();
             }
@@ -53,7 +52,7 @@ namespace CP.Compensation.Workflow.Services
             using (var scope = DbContextScopeFactory.Create())
             {
                 BonusPromotionModel bonus = CreateInternal(model);
-                BonusPromotionModifyingService.Add(bonus);
+                BonusPromotionModifyingService.AddOrUpdate(bonus);
 
                 scope.SaveChanges();
             }
@@ -72,16 +71,28 @@ namespace CP.Compensation.Workflow.Services
                 step.Update(model);
             }
 
-            CompensationPromotionModifyingService.Add(model);
+            CompensationPromotionModifyingService.AddOrUpdate(model);
 
             return model;
         }
 
-        public void Reject(CompensationPromotionModel model)
+        public void Reject(SalaryPromotionModel model)
+        {
+            RejectInternal(model);
+            SalaryPromotionModifyingService.AddOrUpdate(model);
+        }
+
+        public void Reject(BonusPromotionModel model)
+        {
+            RejectInternal(model);
+            BonusPromotionModifyingService.AddOrUpdate(model);
+        }
+
+        private void RejectInternal(CompensationPromotionModel model)
         {
             model.PromotionStatus = CompensationPromotionStatus.Rejected;
             model.Comment = CompensationPromotionStatus.Rejected.ToString();
-            CompensationPromotionModifyingService.Update(model);
+            CompensationPromotionModifyingService.AddOrUpdate(model);
         }
     }
 }

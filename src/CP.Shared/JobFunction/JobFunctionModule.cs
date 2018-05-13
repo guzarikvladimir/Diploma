@@ -16,7 +16,9 @@ namespace CP.Shared.JobFunction
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IJobFunctionRetrievingService>().To<JobFunctionRetrievingService>().InRequestScope();
+            kernel.Bind<IJobFunctionRetrievingService, ISimpleRetrievingService<JobFunctionView>>()
+                .To<JobFunctionRetrievingService>()
+                .InRequestScope();
             kernel.Bind<IJobFunctionModifyingService, ISimpleModifyingService<JobFunctionModel>>()
                 .To<JobFunctionModifyingService>()
                 .InRequestScope();

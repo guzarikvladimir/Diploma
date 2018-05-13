@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -106,54 +110,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Import\Core\Contract\IImportServiceBase.cs" />
-    <Compile Include="Import\Core\Contract\IImportResolverService.cs" />
-    <Compile Include="Import\Core\Controllers\ImportController.cs" />
-    <Compile Include="Import\Core\CoreModule.cs" />
-    <Compile Include="Import\Core\Models\ImportOption.cs" />
-    <Compile Include="Import\Core\Models\TemplateModel.cs" />
-    <Compile Include="Import\Core\Services\ImportServiceBase.cs" />
-    <Compile Include="Import\Core\Services\ImportResolverService.cs" />
-    <Compile Include="Import\CurrencyRate\Contract\ICurrencyRateImportService.cs" />
-    <Compile Include="Import\CurrencyRate\CurrencyRateModule.cs" />
-    <Compile Include="Import\CurrencyRate\Models\CurrencyRateImportModel.cs" />
-    <Compile Include="Import\CurrencyRate\Service\CurrencyRateImportService.cs" />
-    <Compile Include="Import\Currency\CurrencyModule.cs" />
-    <Compile Include="Import\Currency\Models\CurrencyImportModel.cs" />
-    <Compile Include="Import\Currency\Contract\ICurrencyImportService.cs" />
-    <Compile Include="Import\Currency\Services\CurrencyImportService.cs" />
-    <Compile Include="Import\EmployeeLegalEntity\Contract\IEmployeeLegalEntityImportService.cs" />
-    <Compile Include="Import\EmployeeLegalEntity\EmployeeLegalEntityModule.cs" />
-    <Compile Include="Import\EmployeeLegalEntity\Models\EmployeeLegalEntityImportModel.cs" />
-    <Compile Include="Import\EmployeeLegalEntity\Services\EmployeeLegalEntityImportService.cs" />
-    <Compile Include="Import\EmployeeRole\Contract\IEmployeeRoleImportService.cs" />
-    <Compile Include="Import\EmployeeRole\EmployeeRoleModule.cs" />
-    <Compile Include="Import\EmployeeRole\Models\EmployeeRoleImportModel.cs" />
-    <Compile Include="Import\EmployeeRole\Services\EmployeeRoleImportService.cs" />
-    <Compile Include="Import\EmployeeStatus\Contract\IEmployeeStatusImportService.cs" />
-    <Compile Include="Import\EmployeeStatus\EmployeeStatusModule.cs" />
-    <Compile Include="Import\EmployeeStatus\Models\EmployeeStatusImportModel.cs" />
-    <Compile Include="Import\EmployeeStatus\Services\EmployeeStatusImportService.cs" />
-    <Compile Include="Import\Employee\Contract\IEmployeeImportService.cs" />
-    <Compile Include="Import\Employee\EmployeeModule.cs" />
-    <Compile Include="Import\Employee\Services\EmployeeImportService.cs" />
-    <Compile Include="Import\JobFunction\Contract\IJobFunctionImportService.cs" />
-    <Compile Include="Import\JobFunction\JobFunctionModule.cs" />
-    <Compile Include="Import\JobFunction\Models\JobFunctionImportModel.cs" />
-    <Compile Include="Import\JobFunction\Services\JobFunctionImportService.cs" />
-    <Compile Include="Import\LegalEntity\Contract\ILegalEntityImportService.cs" />
-    <Compile Include="Import\LegalEntity\LegalEntityModule.cs" />
-    <Compile Include="Import\LegalEntity\Models\LegalEntityImportModel.cs" />
-    <Compile Include="Import\LegalEntity\Services\LegalEntityImportService.cs" />
-    <Compile Include="Import\Location\Contract\ILocationImportService.cs" />
-    <Compile Include="Import\Location\LocationModule.cs" />
-    <Compile Include="Import\Location\Models\LocationImportModel.cs" />
-    <Compile Include="Import\Location\Services\LocationImportService.cs" />
-    <Compile Include="Import\Roles\Contract\IRoleImportService.cs" />
-    <Compile Include="Import\Employee\Models\EmployeeImportModel.cs" />
-    <Compile Include="Import\Roles\Models\RoleImportModel.cs" />
-    <Compile Include="Import\Roles\RoleModule.cs" />
-    <Compile Include="Import\Roles\Services\RoleImportService.cs" />
+    <Compile Include="Common\CommonModule.cs" />
+    <Compile Include="Common\Contract\IImportExportService.cs" />
+    <Compile Include="Common\Helpers\ImportExportHelper.cs" />
+    <Compile Include="Common\Services\ImportExportService.cs" />
+    <Compile Include="Common\Controllers\ExportController.cs" />
+    <Compile Include="Common\Contract\IImportExportServiceBase.cs" />
+    <Compile Include="Common\Contract\IImportExportResolverService.cs" />
+    <Compile Include="Common\Controllers\ImportController.cs" />
+    <Compile Include="Common\Models\ImportExportOption.cs" />
+    <Compile Include="Common\Models\TemplateModel.cs" />
+    <Compile Include="Common\Services\ImportExportServiceBase.cs" />
+    <Compile Include="Common\Services\ImportExportResolverService.cs" />
+    <Compile Include="CurrencyRate\Contract\ICurrencyRateImportExportService.cs" />
+    <Compile Include="CurrencyRate\CurrencyRateModule.cs" />
+    <Compile Include="CurrencyRate\Models\CurrencyRateImportExportModel.cs" />
+    <Compile Include="CurrencyRate\Service\CurrencyRateImportExportService.cs" />
+    <Compile Include="Currency\CurrencyModule.cs" />
+    <Compile Include="Currency\Models\CurrencyImportExportModel.cs" />
+    <Compile Include="Currency\Contract\ICurrencyImportExportService.cs" />
+    <Compile Include="Currency\Services\CurrencyImportExportService.cs" />
+    <Compile Include="EmployeeLegalEntity\Contract\IEmployeeLegalEntityImportExportService.cs" />
+    <Compile Include="EmployeeLegalEntity\EmployeeLegalEntityModule.cs" />
+    <Compile Include="EmployeeLegalEntity\Models\EmployeeLegalEntityImportExportModel.cs" />
+    <Compile Include="EmployeeLegalEntity\Services\EmployeeLegalEntityImportExportService.cs" />
+    <Compile Include="EmployeeRole\Contract\IEmployeeRoleImportExportService.cs" />
+    <Compile Include="EmployeeRole\EmployeeRoleModule.cs" />
+    <Compile Include="EmployeeRole\Models\EmployeeRoleImportExportModel.cs" />
+    <Compile Include="EmployeeRole\Services\EmployeeRoleImportExportService.cs" />
+    <Compile Include="EmployeeStatus\Contract\IEmployeeStatusImportExportService.cs" />
+    <Compile Include="EmployeeStatus\EmployeeStatusModule.cs" />
+    <Compile Include="EmployeeStatus\Models\EmployeeStatusImportExportModel.cs" />
+    <Compile Include="EmployeeStatus\Services\EmployeeStatusImportExportService.cs" />
+    <Compile Include="Employee\Contract\IEmployeeImportExportService.cs" />
+    <Compile Include="Employee\EmployeeModule.cs" />
+    <Compile Include="Employee\Services\EmployeeImportExportService.cs" />
+    <Compile Include="JobFunction\Contract\IJobFunctionImportExportService.cs" />
+    <Compile Include="JobFunction\JobFunctionModule.cs" />
+    <Compile Include="JobFunction\Models\JobFunctionImportExportModel.cs" />
+    <Compile Include="JobFunction\Services\JobFunctionImportExportService.cs" />
+    <Compile Include="LegalEntity\Contract\ILegalEntityImportExportService.cs" />
+    <Compile Include="LegalEntity\LegalEntityModule.cs" />
+    <Compile Include="LegalEntity\Models\LegalEntityImportExportModel.cs" />
+    <Compile Include="LegalEntity\Services\LegalEntityImportExportService.cs" />
+    <Compile Include="Location\Contract\ILocationImportExportService.cs" />
+    <Compile Include="Location\LocationModule.cs" />
+    <Compile Include="Location\Models\LocationImportExportModel.cs" />
+    <Compile Include="Location\Services\LocationImportExportService.cs" />
+    <Compile Include="Roles\Contract\IRoleImportExportService.cs" />
+    <Compile Include="Employee\Models\EmployeeImportExportModel.cs" />
+    <Compile Include="Roles\Models\RoleImportExportModel.cs" />
+    <Compile Include="Roles\RoleModule.cs" />
+    <Compile Include="Roles\Services\RoleImportExportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

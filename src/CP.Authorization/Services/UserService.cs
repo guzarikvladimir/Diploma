@@ -87,7 +87,7 @@ namespace CP.Authorization.Services
 
             UserModel model = ModelMapper.Map(view);
             model.Id = employee.Id;
-            UserModifyingService.Add(model);
+            UserModifyingService.AddOrUpdate(model);
         }
     }
 }

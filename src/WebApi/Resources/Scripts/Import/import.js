@@ -32,7 +32,7 @@
         fileData.append(model.file.name, model.file);
 
         var selectedOption = document.getElementById("importSelect").selectedIndex;
-        var requestStr = 'Upload?importOption=' + selectedOption;
+        var requestStr = 'Import/Upload?importOption=' + selectedOption;
         request.sendAjax('POST', requestStr, fileData, { contentType: false, processData: false })
             .then(() => {
                 model.file = null;

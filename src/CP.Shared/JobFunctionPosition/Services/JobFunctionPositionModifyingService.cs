@@ -6,7 +6,7 @@ using JobFunctionPositionEntity = CP.Repository.Models.JobFunctionPosition;
 namespace CP.Shared.JobFunctionPosition.Services
 {
     public class JobFunctionPositionModifyingService :
-        SimpleModifyingService<JobFunctionPositionEntity, JobFunctionPositionModel>,
+        SimpleModifyingService<JobFunctionPositionEntity, JobFunctionPositionModel, JobFunctionPositionView>,
         IJobFunctionPositionModifyingService
     {
     }

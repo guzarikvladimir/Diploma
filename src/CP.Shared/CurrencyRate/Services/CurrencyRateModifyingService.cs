@@ -6,7 +6,7 @@ using CurrencyRateEntity = CP.Repository.Models.CurrencyRate;
 namespace CP.Shared.CurrencyRate.Services
 {
     public class CurrencyRateModifyingService :
-        SimpleModifyingService<CurrencyRateEntity, CurrencyRateModel>,
+        SimpleModifyingService<CurrencyRateEntity, CurrencyRateModel, CurrencyRateView>,
         ICurrencyRateModifyingService
     {
     }

@@ -1,0 +1,6 @@
+﻿.importExport-container {
+    margin: 20px;
+}
+.importExport-container input,button,select {
+    width: 250px;
+}

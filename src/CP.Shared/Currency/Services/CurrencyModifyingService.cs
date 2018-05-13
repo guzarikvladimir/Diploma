@@ -6,7 +6,7 @@ using CurrencyEntity = CP.Repository.Models.Currency;
 namespace CP.Shared.Currency.Services
 {
     public class CurrencyModifyingService : 
-        SimpleModifyingService<CurrencyEntity, CurrencyModel>,
+        SimpleModifyingService<CurrencyEntity, CurrencyModel, CurrencyView>,
         ICurrencyModifyingService
     {
     }

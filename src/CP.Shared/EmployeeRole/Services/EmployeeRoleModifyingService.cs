@@ -6,7 +6,7 @@ using EmployeeRoleEntity = CP.Repository.Models.EmployeeRole;
 namespace CP.Shared.EmployeeRole.Services
 {
     public class EmployeeRoleModifyingService :
-        SimpleModifyingService<EmployeeRoleEntity, EmployeeRoleModel>,
+        SimpleModifyingService<EmployeeRoleEntity, EmployeeRoleModel, EmployeeRoleView>,
         IEmployeeRoleModifyingService
     {
     }

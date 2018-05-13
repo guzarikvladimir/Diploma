@@ -16,7 +16,9 @@ namespace CP.Shared.CurrencyRate
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ICurrencyRateRetrievingService>().To<CurrencyRateRetrievingService>().InRequestScope();
+            kernel.Bind<ICurrencyRateRetrievingService, ISimpleRetrievingService<CurrencyRateView>>()
+                .To<CurrencyRateRetrievingService>()
+                .InRequestScope();
             kernel.Bind<ICurrencyRateModifyingService, ISimpleModifyingService<CurrencyRateModel>>()
                 .To<CurrencyRateModifyingService>()
                 .InRequestScope();

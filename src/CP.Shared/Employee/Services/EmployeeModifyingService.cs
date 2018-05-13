@@ -6,7 +6,7 @@ using EmployeeEntity = CP.Repository.Models.Employee;
 namespace CP.Shared.Employee.Services
 {
     public class EmployeeModifyingService :
-        SimpleModifyingService<EmployeeEntity, EmployeeModel>,
+        SimpleModifyingService<EmployeeEntity, EmployeeModel, EmployeeView>,
         IEmployeeModifyingService
     {
     }

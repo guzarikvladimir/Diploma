@@ -6,7 +6,7 @@ using CP.Shared.Contract.Bonus.Services;
 namespace CP.Shared.Bonus.Services
 {
     public class BonusPromotionModifyingService :
-        SimpleModifyingService<BonusPromotion, BonusPromotionModel>,
+        SimpleModifyingService<BonusPromotion, BonusPromotionModel, BonusPromotionView>,
         IBonusPromotionModifyingService
     {
     }

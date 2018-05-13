@@ -9,7 +9,7 @@ namespace CP.Platform.Crud
     {
         public override void RegisterServices(IKernel kernel)
         {
-            kernel.Bind(typeof(IMemoryStorageBase<>)).To(typeof(MemoryStorageBase<>)).InSingletonScope();
+            kernel.Bind(typeof(IMemoryStorage<>)).To(typeof(MemoryStorage<>)).InSingletonScope();
         }
     }
 }

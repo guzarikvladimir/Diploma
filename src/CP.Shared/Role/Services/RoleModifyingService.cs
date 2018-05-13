@@ -6,7 +6,7 @@ using RoleEntity = CP.Repository.Models.Role;
 namespace CP.Shared.Role.Services
 {
     public class RoleModifyingService :
-        SimpleModifyingService<RoleEntity, RoleModel>,
+        SimpleModifyingService<RoleEntity, RoleModel, RoleView>,
         IRoleModifyingService
     {
     }

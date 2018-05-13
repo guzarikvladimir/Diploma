@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using CP.Platform.Crud.Contract;
 using CP.Platform.Crud.Models;
+using CP.Platform.Db.Contract;
+using Ninject;
 
 namespace CP.Platform.Crud.Services
 {
-    public class MemoryStorageBase<TView> : IMemoryStorageBase<TView>
+    public abstract class MemoryStorageBase<TView>
         where TView : class, IEntityView<Guid>
     {
-        private readonly List<TView> entities = new List<TView>();
+        #region Injects
 
-        public bool Updated { get; set; } = false;
+        [Inject]
+        protected IMemoryStorage<TView> MemoryStorage { get; set; }
 
-        public List<TView> GetInternal()
+        [Inject]
+        protected IDbContextScopeFactory DbContextScopeFactory { get; set; }
+
+        #endregion
+
+        public virtual List<TView> GetInternal()
         {
-            return entities;
+            return MemoryStorage.Get();
         }
 
-        public void AddInternal(TView entity)
+        public virtual void AddOrUpdateInternal(TView entity)
         {
-            entities.Add(entity);
-        }
-
-        public void UpdateInternal(TView entity)
-        {
-            TView oldEntity = entities.First(e => e.Id == entity.Id);
-            entities.Remove(oldEntity);
-            entities.Add(entity);
+            MemoryStorage.AddOrUpdate(entity);
         }
     }
 }

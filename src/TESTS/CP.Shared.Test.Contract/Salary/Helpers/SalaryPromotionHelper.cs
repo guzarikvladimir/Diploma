@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoFixture;
-using CP.Platform.Test.Core.Helpers;
 using CP.Repository.Models;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Salary.Models;
 using CP.Shared.Test.Contract.CompensationPromotion.Helpers;
 using CP.Shared.Test.Contract.CompensationPromotion.Models;
 using CP.Shared.Test.Contract.Salary.Models;
+using CP.SpecFlowEx.Test.Helpers;
 
 namespace CP.Shared.Test.Contract.Salary.Helpers
 {

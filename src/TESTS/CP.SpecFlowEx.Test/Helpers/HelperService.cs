@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using CP.Platform.Period.Models;
 
-namespace CP.Platform.Test.Core.Helpers
+namespace CP.SpecFlowEx.Test.Helpers
 {
     public static class HelperService
     {
@@ -17,9 +18,9 @@ namespace CP.Platform.Test.Core.Helpers
             return DateTime.Parse(value, new CultureInfo("en-US"), DateTimeStyles.None);
         }
 
-        public static Period.Models.Period ParsePeriod(string value)
+        public static Period ParsePeriod(string value)
         {
-            return Period.Models.Period.Parse(value);
+            return Period.Parse(value);
         }
 
         public static decimal? ParseNullableDecimal(string value)

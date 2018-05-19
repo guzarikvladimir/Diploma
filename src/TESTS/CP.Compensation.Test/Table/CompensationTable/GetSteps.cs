@@ -6,8 +6,6 @@ using CP.Compensation.Table.Models;
 using CP.Compensation.Table.Services;
 using CP.Compensation.Test.Contract.Table.Helpers;
 using CP.Compensation.Test.Contract.Table.Models;
-using CP.Platform.Test.Core.Models;
-using CP.Platform.Test.Core.Services;
 using CP.Shared.Bonus.Services;
 using CP.Shared.Compensation.Services;
 using CP.Shared.CompensationPromotion.Services;
@@ -34,10 +32,11 @@ using GetEmployeeToLegalEntities = CP.Shared.Test.Contract.EmployeeLegalEntity.M
 using GetCurrencies = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetSteps;
 using GetCurrencyById = CP.Shared.Test.Contract.Currency.Mocks.CurrencyRetrieving.GetByIdSteps;
 using GetCurrencyRates = CP.Shared.Test.Contract.CurrencyRate.Mocks.CurrencyRateRetrieving.GetSteps;
-using CP.Platform.Helpers;
 using CP.Platform.Period.Helpers;
 using CP.Shared.Contract.Filters.Services;
 using CP.Shared.Filters.Services;
+using CP.SpecFlowEx.Test.Models;
+using CP.SpecFlowEx.Test.Services;
 
 namespace CP.Compensation.Test.Table.CompensationTable
 {

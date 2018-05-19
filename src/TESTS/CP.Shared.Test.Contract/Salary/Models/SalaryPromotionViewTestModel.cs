@@ -1,5 +1,5 @@
-﻿using CP.Platform.Test.Core.Models;
-using CP.Shared.Contract.Salary.Models;
+﻿using CP.Shared.Contract.Salary.Models;
+using CP.SpecFlowEx.Test.Models;
 
 namespace CP.Shared.Test.Contract.Salary.Models
 {

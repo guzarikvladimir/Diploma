@@ -2,12 +2,12 @@
 using System.Linq;
 using AutoFixture;
 using CP.Compensation.Test.Contract.Table.Models;
-using CP.Platform.Test.Core.Helpers;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Compensation.Models;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Test.Contract.CompensationPromotion.Models;
+using CP.SpecFlowEx.Test.Helpers;
 
 namespace CP.Compensation.Test.Contract.Table.Helpers
 {

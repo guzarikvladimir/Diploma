@@ -3,7 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace CP.Platform.Test.Core.Models
+namespace CP.SpecFlowEx.Test.Models
 {
     public class FunctionWrapper<TFunc>
         where TFunc : class

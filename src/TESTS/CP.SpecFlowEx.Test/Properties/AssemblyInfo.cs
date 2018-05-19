@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CP.Authorization.Test.Contract")]
+[assembly: AssemblyTitle("CP.SpecFlowEx.Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CP.Authorization.Test.Contract")]
+[assembly: AssemblyProduct("CP.SpecFlowEx.Test")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("aba109a3-a395-4302-9b17-2470a01032dc")]
+[assembly: Guid("25f7e9f8-14c5-4ad6-bc90-d280996ef702")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -108,12 +108,6 @@
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
     <Compile Include="Services\User\LoginSteps.cs" />
-    <Compile Include="Services\User\Register.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Register.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Services\User\RegisterSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -121,10 +115,6 @@
     <None Include="Services\User\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Services\User\Register.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Register.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +145,10 @@
     <ProjectReference Include="..\CP.Shared.Test.Contract\CP.Shared.Test.Contract.csproj">
       <Project>{8c10c370-9f82-49d4-8e25-7a0994009ebe}</Project>
       <Name>CP.Shared.Test.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.SpecFlowEx.Test\CP.SpecFlowEx.Test.csproj">
+      <Project>{25f7e9f8-14c5-4ad6-bc90-d280996ef702}</Project>
+      <Name>CP.SpecFlowEx.Test</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

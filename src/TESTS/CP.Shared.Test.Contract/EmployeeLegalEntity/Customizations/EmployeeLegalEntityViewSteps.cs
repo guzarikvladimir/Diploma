@@ -1,9 +1,9 @@
 ﻿using AutoFixture;
-using CP.Platform.Test.Core.Models;
-using CP.Platform.Test.Core.Services;
 using CP.Shared.Contract.EmployeeLegalEntity.Models;
 using CP.Shared.Test.Contract.EmployeeLegalEntity.Helpers;
 using CP.Shared.Test.Contract.EmployeeLegalEntity.Models;
+using CP.SpecFlowEx.Test.Models;
+using CP.SpecFlowEx.Test.Services;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 

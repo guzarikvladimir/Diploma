@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoFixture;
-using CP.Platform.Test.Core.Helpers;
-using CP.Platform.Test.Core.Models;
-using CP.Platform.Test.Core.Services;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.Employee.Services;
+using CP.SpecFlowEx.Test.Helpers;
+using CP.SpecFlowEx.Test.Models;
+using CP.SpecFlowEx.Test.Services;
 using TechTalk.SpecFlow;
 
 namespace CP.Shared.Test.Contract.Employee.Mocks.EmployeeRetrieving

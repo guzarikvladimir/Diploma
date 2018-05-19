@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoFixture;
-using CP.Platform.Test.Core.Helpers;
-using CP.Platform.Test.Core.Models;
-using CP.Platform.Test.Core.Services;
 using CP.Shared.Contract.User.Models;
 using CP.Shared.Contract.User.Services;
+using CP.SpecFlowEx.Test.Helpers;
+using CP.SpecFlowEx.Test.Models;
+using CP.SpecFlowEx.Test.Services;
 using Moq;
 using TechTalk.SpecFlow;
 

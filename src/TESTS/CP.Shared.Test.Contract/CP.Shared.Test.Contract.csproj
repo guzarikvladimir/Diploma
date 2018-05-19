@@ -53,8 +53,8 @@
       <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -140,6 +140,10 @@
     <ProjectReference Include="..\CP.Platform.Test\CP.Platform.Test.csproj">
       <Project>{7651085a-a3ae-4f84-8e6c-e4fccb70809a}</Project>
       <Name>CP.Platform.Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CP.SpecFlowEx.Test\CP.SpecFlowEx.Test.csproj">
+      <Project>{25f7e9f8-14c5-4ad6-bc90-d280996ef702}</Project>
+      <Name>CP.SpecFlowEx.Test</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

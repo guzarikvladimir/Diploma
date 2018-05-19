@@ -1,5 +1,5 @@
-﻿using CP.Platform.Test.Core.Models;
-using CP.Shared.Contract.CompensationPromotion.Models;
+﻿using CP.Shared.Contract.CompensationPromotion.Models;
+using CP.SpecFlowEx.Test.Models;
 
 namespace CP.Shared.Test.Contract.CompensationPromotion.Models
 {

@@ -1,4 +1,4 @@
-﻿namespace CP.Platform.Test.Core.Models
+﻿namespace CP.SpecFlowEx.Test.Models
 {
     public interface ITestModel<T>
     {

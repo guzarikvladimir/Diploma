@@ -1,6 +1,6 @@
-﻿using CP.Platform.Test.Core.Models;
+﻿using CP.SpecFlowEx.Test.Models;
 
-namespace CP.Platform.Test.Core.Services
+namespace CP.SpecFlowEx.Test.Services
 {
     public abstract class ConfigurationStepsBase<TFunc> : StepsBase 
         where TFunc : class

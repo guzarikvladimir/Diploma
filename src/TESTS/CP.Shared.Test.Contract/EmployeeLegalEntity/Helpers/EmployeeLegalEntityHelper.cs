@@ -2,11 +2,11 @@
 using System.Linq;
 using AutoFixture;
 using Castle.Core.Internal;
-using CP.Platform.Test.Core.Helpers;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.EmployeeLegalEntity.Models;
 using CP.Shared.Contract.LegalEntity.Models;
 using CP.Shared.Test.Contract.EmployeeLegalEntity.Models;
+using CP.SpecFlowEx.Test.Helpers;
 
 namespace CP.Shared.Test.Contract.EmployeeLegalEntity.Helpers
 {

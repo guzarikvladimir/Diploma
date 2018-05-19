@@ -1,7 +1,7 @@
 ﻿using AutoFixture;
 using Ninject;
 
-namespace CP.Platform.Test.Core.Models
+namespace CP.SpecFlowEx.Test.Models
 {
     public class BaseTestData : IBaseTestData
     {

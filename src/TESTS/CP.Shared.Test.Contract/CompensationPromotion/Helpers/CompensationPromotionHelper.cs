@@ -2,13 +2,13 @@
 using System.Linq;
 using AutoFixture;
 using Castle.Core.Internal;
-using CP.Platform.Test.Core.Helpers;
 using CP.Repository.Models;
 using CP.Shared.Contract.CompensationPromotion.Models;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Employee.Models;
 using CP.Shared.Contract.LegalEntity.Models;
 using CP.Shared.Test.Contract.CompensationPromotion.Models;
+using CP.SpecFlowEx.Test.Helpers;
 
 namespace CP.Shared.Test.Contract.CompensationPromotion.Helpers
 {

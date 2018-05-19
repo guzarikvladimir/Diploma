@@ -116,6 +116,10 @@
       <Project>{8c10c370-9f82-49d4-8e25-7a0994009ebe}</Project>
       <Name>CP.Shared.Test.Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CP.SpecFlowEx.Test\CP.SpecFlowEx.Test.csproj">
+      <Project>{25f7e9f8-14c5-4ad6-bc90-d280996ef702}</Project>
+      <Name>CP.SpecFlowEx.Test</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

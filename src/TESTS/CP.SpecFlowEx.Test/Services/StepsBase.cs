@@ -1,10 +1,10 @@
 ﻿using AutoFixture;
-using CP.Platform.Test.Core.Models;
+using CP.SpecFlowEx.Test.Models;
 using Ninject;
 using Ninject.MockingKernel.Moq;
 using TechTalk.SpecFlow;
 
-namespace CP.Platform.Test.Core.Services
+namespace CP.SpecFlowEx.Test.Services
 {
     public abstract class StepsBase : Steps
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using CP.Platform.Test.Core.Models;
+using CP.SpecFlowEx.Test.Models;
 using Moq;
 using Ninject;
 
-namespace CP.Platform.Test.Core.Helpers
+namespace CP.SpecFlowEx.Test.Helpers
 {
     public static class KernelExtensions
     {

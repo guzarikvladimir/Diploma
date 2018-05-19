@@ -1,5 +1,5 @@
-﻿using CP.Platform.Test.Core.Models;
-using CP.Shared.Contract.Bonus.Models;
+﻿using CP.Shared.Contract.Bonus.Models;
+using CP.SpecFlowEx.Test.Models;
 
 namespace CP.Shared.Test.Contract.Bonus.Models
 {

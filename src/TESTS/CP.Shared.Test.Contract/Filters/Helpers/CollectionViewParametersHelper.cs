@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AutoFixture;
-using Castle.Core.Internal;
-using CP.Platform.Test.Core.Helpers;
 using CP.Shared.Contract.Currency.Models;
 using CP.Shared.Contract.Filters.Model;
 using CP.Shared.Test.Contract.Filters.Models;
+using CP.SpecFlowEx.Test.Helpers;
 
 namespace CP.Shared.Test.Contract.Filters.Helpers
 {
